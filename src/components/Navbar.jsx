@@ -24,6 +24,11 @@ const Navbar = () => {
   const DesktopNavLinks = () => (
     <>
       <li className="nav-item">
+        <Link to="/" className="nav-links" onClick={() => setIsOpen(false)}>
+          Home
+        </Link>
+      </li>
+      <li className="nav-item">
         <Link to="/solutions" className="nav-links" onClick={() => setIsOpen(false)}>
           Solutions
         </Link>
