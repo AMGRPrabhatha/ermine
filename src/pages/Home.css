@@ -651,4 +651,14 @@
     align-items: flex-start;
     gap: 1rem;
   }
+
+  .hero-cta-group {
+    flex-wrap: wrap;
+  }
+
+  .btn-modern {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+    gap: 0.5rem;
+  }
 }
