@@ -27,10 +27,21 @@ const Capabilities = () => {
     <div className="capabilities-wrapper">
       {/* 1. Hero Section */}
       <section className="cap-hero">
-        <div className="container">
-          <div className="cap-hero-content fade-up">
-            <h1>Capabilities & Technologies</h1>
-            <p>Advanced textile bonding solutions powered by cutting-edge technology and innovation</p>
+        <div className="cap-hero-bg"></div>
+        <div className="cap-hero-overlay"></div>
+        
+        <div className="container cap-hero-centered">
+          <div className="cap-hero-content fade-up text-center">
+            <h1>Capabilities & <span className="text-accent">Technologies</span></h1>
+            <p className="mx-auto">Advanced textile bonding solutions powered by cutting-edge technology and innovation</p>
+            <div className="hero-cta-group justify-center">
+              <Link to="/solutions" className="btn-modern btn-primary-modern">
+                Our Solutions <ArrowRight size={18} />
+              </Link>
+              <Link to="/contact" className="btn-modern btn-outline-modern">
+                Inquire Now
+              </Link>
+            </div>
           </div>
         </div>
       </section>

@@ -75,15 +75,28 @@ const Solutions = () => {
 
   return (
     <div className="solutions-wrapper">
-      {/* 1. Refined Hero */}
+      {/* 1. Immersive Hero Section */}
       <section className="sol-hero">
-        <div className="container">
-          <div className="sol-hero-content fade-up">
-            <h1 className="sol-title">Our Solutions</h1>
-            <p className="sol-subtitle">
+        <div className="sol-hero-bg"></div>
+        <div className="sol-hero-overlay"></div>
+        
+        <div className="container sol-hero-centered">
+          <div className="sol-hero-content fade-up text-center">
+            <h1 className="sol-title">
+              Our <span className="text-accent">Solutions</span>
+            </h1>
+            <p className="sol-subtitle mx-auto">
               Ermine provides one-stop solutions in the bonded apparel space by customizing our base products, 
               components, and services to our valued customers.
             </p>
+            <div className="hero-cta-group justify-center">
+              <Link to="/contact" className="btn-modern btn-primary-modern">
+                Get a Quote <ArrowRight size={18} />
+              </Link>
+              <Link to="/capabilities" className="btn-modern btn-outline-modern">
+                Our Technology
+              </Link>
+            </div>
           </div>
         </div>
       </section>

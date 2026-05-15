@@ -1,6 +1,5 @@
 .solutions-wrapper {
   background-color: #ffffff;
-  padding-top: 70px;
 }
 
 /* Base Animations - Optimized */
@@ -18,29 +17,65 @@
 
 /* 1. Hero Section */
 .sol-hero {
-  padding: 6rem 0 4rem;
-  background-color: #fcfcfc;
-  border-bottom: 1px solid rgba(0,0,0,0.03);
+  min-height: 60vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.sol-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/solutions-hero.webp');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.sol-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.4) 100%);
+  z-index: 1;
+}
+
+.sol-hero-centered {
+  position: relative;
+  z-index: 2;
+  width: 100%;
 }
 
 .sol-hero-content {
   max-width: 800px;
   margin: 0 auto;
-  text-align: center;
 }
 
 .sol-title {
-  font-size: clamp(3rem, 5vw, 4rem);
+  font-size: clamp(3rem, 6vw, 4.5rem);
   font-weight: 800;
   color: #111;
   margin-bottom: 1.5rem;
   letter-spacing: -2px;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
 }
 
 .sol-subtitle {
-  font-size: 1.2rem;
-  color: #555;
-  line-height: 1.7;
+  font-size: 1.1rem;
+  color: #ffffff;
+  line-height: 1.6;
+  max-width: 600px;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  margin-bottom: 2.5rem;
 }
 
 /* 2. Solutions Grid */
