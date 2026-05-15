@@ -54,48 +54,80 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 2. Bento Box Features Grid */}
-      <section className="bento-section">
+      {/* 2. Innovation Section */}
+      <section className="innovation-section">
+        <div className="container">
+          <div className="innovation-grid">
+            <div className="innovation-content fade-up">
+              <h2 className="section-title-alt">Leading Innovation in Textile Technology</h2>
+              <p className="innovation-text">
+                Ermine is a leading provider of state-of-the-art bonding and fabric processing solutions. 
+                With a strong focus on innovation and precision, we specialize in ultrasonic cutting, 
+                laser cutting, and high-performance fabric bonding technologies.
+              </p>
+              <p className="innovation-text">
+                Our goal is to revolutionize textile manufacturing through advanced technology and sustainable practices.
+              </p>
+              
+              <ul className="innovation-list">
+                <li>
+                  <div className="list-icon"><ShieldCheck size={20} /></div>
+                  <div className="list-text">
+                    <strong>Advanced Technology</strong>
+                    <span>Cutting-edge bonding and processing solutions</span>
+                  </div>
+                </li>
+                <li>
+                  <div className="list-icon"><Zap size={20} /></div>
+                  <div className="list-text">
+                    <strong>Precision Manufacturing</strong>
+                    <span>State-of-the-art facilities and expert team</span>
+                  </div>
+                </li>
+                <li>
+                  <div className="list-icon"><Globe size={20} /></div>
+                  <div className="list-text">
+                    <strong>Sustainable Practices</strong>
+                    <span>Eco-friendly and environmentally responsible solutions</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div className="innovation-image-container fade-up delay-100">
+              <img src="/solutions-2.webp" alt="Bonding Machine" className="innovation-image" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Core Expertise (Redesigned Ermine Advantage) */}
+      <section className="expertise-section">
         <div className="container">
           <div className="section-header text-center fade-up">
-            <h2 className="section-title">The Ermine Advantage</h2>
-            <p className="section-subtitle">Why the world's top brands choose our bonding technology over traditional stitching.</p>
+            <h2 className="section-title">Core Expertise</h2>
+            <p className="section-subtitle">Specialized in advanced bonding solutions and high-tech fabric processing</p>
           </div>
 
-          <div className="bento-grid">
-            <div className="bento-item bento-large fade-up">
-              <div className="bento-content">
-                <Zap size={32} className="bento-icon" />
-                <h3>Precision Ultrasonic Bonding</h3>
-                <p>Our state-of-the-art ultrasonic machines fuse fabrics at a molecular level, ensuring a 100% seamless finish that is stronger and lighter than thread.</p>
-                <div className="bento-visual tech-visual"></div>
-              </div>
+          <div className="expertise-grid">
+            <div className="expertise-card fade-up">
+              <div className="expertise-icon-box"><Zap size={24} /></div>
+              <h3>Ultrasonic Cutting</h3>
+              <p>Advanced ultrasonic technology for precise fabric cutting and processing</p>
             </div>
-            
-            <div className="bento-item fade-up delay-100">
-              <div className="bento-content">
-                <ShieldCheck size={32} className="bento-icon" />
-                <h3>Zero Chafe Guarantee</h3>
-                <p>Perfect for activewear and intimates. No stitches mean ultimate comfort.</p>
-              </div>
+            <div className="expertise-card fade-up delay-100">
+              <div className="expertise-icon-box"><Activity size={24} /></div>
+              <h3>Laser Cutting</h3>
+              <p>High-precision laser cutting systems for complex fabric patterns</p>
             </div>
-
-            <div className="bento-item fade-up delay-200">
-              <div className="bento-content">
-                <Activity size={32} className="bento-icon" />
-                <h3>Rapid Prototyping</h3>
-                <p>Accelerate your innovation cycle with our dedicated R&D team and agile sample development process.</p>
-              </div>
+            <div className="expertise-card fade-up delay-200">
+              <div className="expertise-icon-box"><Droplet size={24} /></div>
+              <h3>Fabric Bonding</h3>
+              <p>Innovative bonding techniques for superior fabric adhesion and durability</p>
             </div>
-
-            <div className="bento-item bento-wide fade-up delay-100">
-              <div className="bento-content wide-content">
-                <div className="wide-text">
-                  <h3>Scalable Contract Manufacturing</h3>
-                  <p>From niche athletic wear startups to global apparel brands, our manufacturing infrastructure scales dynamically to meet your production volume without ever compromising on precision.</p>
-                </div>
-                <div className="wide-visual bg-manufacturing"></div>
-              </div>
+            <div className="expertise-card fade-up delay-300">
+              <div className="expertise-icon-box"><ShieldCheck size={24} /></div>
+              <h3>Quality Assurance</h3>
+              <p>Rigorous testing and validation to ensure consistent excellence</p>
             </div>
           </div>
         </div>
@@ -169,7 +201,36 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 4. Expanded Customers & Partners */}
+      {/* 4. Strategically Located */}
+      <section className="location-section">
+        <div className="container">
+          <div className="location-grid">
+            <div className="location-image-container fade-up">
+              <img src={homeHero} alt="Ermine Factory" className="location-image" />
+            </div>
+            <div className="location-content fade-up delay-100">
+              <h2 className="section-title-alt">Strategically Located</h2>
+              <p className="location-text">
+                With both our corporate office and manufacturing facility strategically positioned in Sri Lanka, 
+                we provide seamless access to regional markets and global partners.
+              </p>
+              
+              <div className="address-grid">
+                <div className="address-card">
+                  <h4>Company Address</h4>
+                  <p>Ermine Pvt Ltd<br/>No 192/10 9th Lane, Nawala Rd<br/>Kotte, Sri Lanka</p>
+                </div>
+                <div className="address-card">
+                  <h4>Factory Address</h4>
+                  <p>Ermine International Pvt Ltd<br/>No 4, Ridee Mawatha<br/>Kalamulla, Kalutara<br/>Sri Lanka</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Expanded Customers & Partners */}
       <section className="partners-section">
         <div className="marquee-container fade-up">
           <div className="marquee">
