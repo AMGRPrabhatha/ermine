@@ -1,48 +1,56 @@
 import React, { useEffect } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './Solutions.css';
 
 const services = [
   {
     title: "Product Design",
-    description: "Ermine provides product design services from concept design to technical design for bonded apparel products. Our customers can introduce novel designs into the market with great attraction while optimizing costs by designing their products through our product design services.",
-    image: "/solutions-1.webp"
+    description: "Ermine provides product design services from concept design to technical design for bonded apparel products. Our customers can introduce novel designs into the market with great attraction while optimizing costs.",
+    image: "/solutions-1.webp",
+    features: ["Concept Development", "Technical Specification", "Cost Optimization"]
   },
   {
     title: "Product Validation",
-    description: "Methodical and scientific validation of bonded apparel products for their desired attributes such as comfort, quality, durability, as well as applications such as bending, washing, and pressing is carried out under the product validation services. Our customers will get a detailed datasheet for the above along with an analysis and conclusions.",
-    image: "/solutions-2.webp"
+    description: "Methodical and scientific validation of bonded apparel products for comfort, quality, and durability. We provide detailed datasheets with analysis and conclusions for washing and pressing applications.",
+    image: "/solutions-2.webp",
+    features: ["Quality Testing", "Durability Analysis", "Scientific Validation"]
   },
   {
     title: "Product Innovations",
-    description: "We provide product innovation services to our customers to enable them to release new apparel products to the market as well as to release product upgrades (releasing a new version of an existing product) by adapting new innovations to the products through bonded technologies.",
-    image: "/solutions-3.webp"
+    description: "Enable your brand to release new apparel products or upgrades by adapting new innovations through our specialized bonded technologies and R&D expertise.",
+    image: "/solutions-3.webp",
+    features: ["New Feature Integration", "Version Upgrades", "Tech Adaptation"]
   },
   {
     title: "Tools and Machine Design",
-    description: "Most of our machinery for bonded apparel manufacturing is developed in-house by our RnD team. So we can customize tools and machinery required for new manufacturing requirements by our customers in order to introduce novel apparel products to the market with a competitive advantage.",
-    image: "/solutions-1.webp"
+    description: "Most of our machinery is developed in-house. We can customize tools and machinery required for new manufacturing requirements to give you a competitive advantage.",
+    image: "/solutions-1.webp",
+    features: ["Custom Tooling", "In-house R&D", "Machine Engineering"]
   },
   {
     title: "Process Innovations",
-    description: "Our agile manufacturing process enables us to introduce innovations and customizations in the manufacturing of bonded apparel products. This allows our customers to adapt to market-winning new approaches to achieve much needed speed and agility in today's world.",
-    image: "/solutions-2.webp"
+    description: "Our agile manufacturing process enables us to introduce innovations and customizations. Adapt to market-winning new approaches with speed and agility.",
+    image: "/solutions-2.webp",
+    features: ["Agile Manufacturing", "Speed to Market", "Process Customization"]
   },
   {
     title: "Contract Manufacturing",
-    description: "Ermine provides contract manufacturing services for global apparel companies and new apparel startups for items that utilize bonded apparel production technologies. We provide exceptional quality, speed, and cost benefits to our customers through our efficient and effective contract manufacturing services.",
-    image: "/solutions-3.webp"
+    description: "We provide contract manufacturing for global companies and startups utilizing bonded production technologies. We offer exceptional quality and cost benefits.",
+    image: "/solutions-3.webp",
+    features: ["Global Scaling", "Startup Support", "Volume Production"]
   },
   {
     title: "Material Selection and Sourcing",
-    description: "Ermine can carry out material selection and sourcing for the products we produce, especially in contract manufacturing and component manufacturing. This way, our customers can completely eliminate the burden of the complex and tedious process of material selection and sourcing while achieving their quality objectives in the end product in a transparent manner.",
-    image: "/solutions-1.webp"
+    description: "Completely eliminate the burden of material sourcing. We handle the complex process transparently while achieving your end-product quality objectives.",
+    image: "/solutions-1.webp",
+    features: ["Global Sourcing", "Quality Assurance", "Supply Chain Management"]
   },
   {
     title: "Component Manufacturing",
-    description: "Ermine can design, develop, and manufacture bonded product components used in regular or hybrid apparel products. This service is especially valuable for large-scale contract manufacturers in the apparel industry, where they can outsource bonded apparel component manufacturing to Ermine.",
-    image: "/solutions-2.webp"
+    description: "Design, develop, and manufacture bonded components for hybrid apparel products. Ideal for large-scale manufacturers looking to outsource specialized parts.",
+    image: "/solutions-2.webp",
+    features: ["Hybrid Integration", "Specialized Components", "Outsourcing Partner"]
   }
 ];
 
@@ -59,7 +67,7 @@ const Solutions = () => {
       { threshold: 0.1 }
     );
 
-    const elements = document.querySelectorAll('.fade-up, .slide-in-right, .slide-in-left');
+    const elements = document.querySelectorAll('.fade-up');
     elements.forEach((el) => observer.observe(el));
 
     return () => elements.forEach((el) => observer.unobserve(el));
@@ -67,63 +75,55 @@ const Solutions = () => {
 
   return (
     <div className="solutions-wrapper">
-      {/* Cinematic Hero */}
-      <section className="solutions-hero">
-        <div className="solutions-hero-bg"></div>
-        <div className="solutions-hero-overlay"></div>
-        
-        <div className="container solutions-hero-content">
-          <h1 className="solutions-title fade-up">Our Solutions</h1>
-          <div className="solutions-summary glass-card fade-up delay-200">
-            <p>
-              Ermine provides one-stop solutions in the bonded apparel space by customizing our base products, components, and services to our valued customers. Global apparel brands and apparel startups can vastly benefit from our tailor-made solutions by reducing the innovation cycle and cost. Apparel brands can get their new product concepts into the market in record time with Ermine’s services.
+      {/* 1. Refined Hero */}
+      <section className="sol-hero">
+        <div className="container">
+          <div className="sol-hero-content fade-up">
+            <h1 className="sol-title">Our Solutions</h1>
+            <p className="sol-subtitle">
+              Ermine provides one-stop solutions in the bonded apparel space by customizing our base products, 
+              components, and services to our valued customers.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Premium Immersive Services Section */}
-      <section className="premium-services-section">
+      {/* 2. Solutions Grid - Performance Optimized */}
+      <section className="sol-grid-section">
         <div className="container">
-          {services.map((service, index) => {
-            const isEven = index % 2 === 0;
-            return (
-              <div key={index} className={`premium-service-row ${isEven ? 'row-left' : 'row-right'}`}>
-                
-                {/* Background Number */}
-                <div className="premium-service-number fade-up">
-                  {(index + 1).toString().padStart(2, '0')}
+          <div className="sol-grid">
+            {services.map((service, index) => (
+              <div key={index} className="sol-card fade-up">
+                <div className="sol-card-image">
+                  <img src={service.image} alt={service.title} loading="lazy" />
+                  <div className="sol-card-overlay"></div>
                 </div>
-
-                {/* Massive Image */}
-                <div className={`premium-image-col ${isEven ? 'slide-in-left' : 'slide-in-right'}`}>
-                  <div className="premium-image" style={{ backgroundImage: `url(${service.image})` }}></div>
-                </div>
-
-                {/* Overlapping Glass Text Box */}
-                <div className={`premium-text-col delay-200 ${isEven ? 'slide-in-right' : 'slide-in-left'}`}>
-                  <div className="glass-text-box">
+                <div className="sol-card-body">
+                  <div className="sol-card-header">
+                    <span className="sol-number">{(index + 1).toString().padStart(2, '0')}</span>
                     <h2>{service.title}</h2>
-                    <p>{service.description}</p>
                   </div>
+                  <p>{service.description}</p>
+                  <ul className="sol-features">
+                    {service.features.map((feat, i) => (
+                      <li key={i}><CheckCircle2 size={14} className="icon-red" /> {feat}</li>
+                    ))}
+                  </ul>
                 </div>
-
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Modern CTA */}
-      <section className="solutions-cta fade-up">
-        <div className="container text-center">
+      {/* 3. Streamlined CTA */}
+      <section className="sol-cta">
+        <div className="container text-center fade-up">
           <h2>Ready to revolutionize your apparel?</h2>
           <p>Let's discuss how our custom bonded solutions can accelerate your product lifecycle.</p>
-          <div className="hero-cta-group justify-center" style={{ marginTop: '2rem' }}>
-            <Link to="/contact" className="btn-modern btn-primary-modern">
-              Contact Sales <ArrowRight size={18} />
-            </Link>
-          </div>
+          <Link to="/contact" className="btn-sol-cta">
+            Contact Sales Team <ArrowRight size={20} />
+          </Link>
         </div>
       </section>
     </div>

@@ -120,6 +120,7 @@
 
 .mobile-nav-overlay {
   display: none;
+  pointer-events: none;
 }
 
 @media screen and (max-width: 960px) {
@@ -161,6 +162,7 @@
 
   .mobile-nav-overlay.active {
     transform: translateX(0);
+    pointer-events: auto;
   }
 
   .mobile-nav-menu {
