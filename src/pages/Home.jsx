@@ -99,6 +99,33 @@ const Home = () => {
         </div>
       </section>
 
+      {/* 2.5 Featured Categories (Grid Layout) */}
+      <section className="featured-links-section">
+        <div className="featured-grid">
+          <Link to="/solutions" className="featured-card fade-up">
+            <div className="featured-bg" style={{ backgroundImage: 'url(/solutions-1.webp)' }}></div>
+            <div className="featured-overlay"></div>
+            <div className="featured-content">
+              <h3>Custom Solutions</h3>
+            </div>
+          </Link>
+          <Link to="/products" className="featured-card fade-up delay-100">
+            <div className="featured-bg" style={{ backgroundImage: 'url(/product-1.webp)' }}></div>
+            <div className="featured-overlay"></div>
+            <div className="featured-content">
+              <h3>Finished Products</h3>
+            </div>
+          </Link>
+          <Link to="/solutions" className="featured-card fade-up delay-200">
+            <div className="featured-bg" style={{ backgroundImage: 'url(/solutions-hero.webp)' }}></div>
+            <div className="featured-overlay"></div>
+            <div className="featured-content">
+              <h3>Process Innovation</h3>
+            </div>
+          </Link>
+        </div>
+      </section>
+
       {/* 3. Interactive Process Timeline */}
       <section className="process-section">
         <div className="container">
