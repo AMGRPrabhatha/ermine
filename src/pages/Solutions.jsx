@@ -83,7 +83,7 @@ const Solutions = () => {
         <div className="container sol-hero-centered">
           <div className="sol-hero-content fade-up text-center">
             <h1 className="sol-title">
-              Our <span className="text-accent">Solutions</span>
+              Our Solutions
             </h1>
             <p className="sol-subtitle mx-auto">
               Ermine provides one-stop solutions in the bonded apparel space by customizing our base products, 

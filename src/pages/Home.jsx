@@ -37,7 +37,7 @@ const Home = () => {
           <div className="hero-text-content fade-up text-center">
             {/* <div className="badge">Leading Apparel Tech</div> */}
             <h1 className="hero-title">
-              Precision Bonding <br/> <span className="text-accent">Technologies </span>
+              Precision Bonding Technologies
             </h1>
             <p className="hero-description mx-auto">
             Advanced bonding innovations for sustainable industrial progress.

@@ -32,7 +32,7 @@ const Capabilities = () => {
         
         <div className="container cap-hero-centered">
           <div className="cap-hero-content fade-up text-center">
-            <h1>Capabilities & <span className="text-accent">Technologies</span></h1>
+            <h1>Capabilities & Technologies</h1>
             <p className="mx-auto">Advanced textile bonding solutions powered by cutting-edge technology and innovation</p>
             <div className="hero-cta-group justify-center">
               <Link to="/solutions" className="btn-modern btn-primary-modern">

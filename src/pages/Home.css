@@ -194,24 +194,23 @@
 }
 
 .hero-title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-family: var(--font-sans);
+  font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 800;
   line-height: 1.1;
-  color: #111;
-  letter-spacing: -2px;
+  color: #ffffff;
+  letter-spacing: -1.5px;
   margin-bottom: 1.5rem;
-  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
 }
 
 .hero-description {
-  font-size: 1rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
   color: #ffffff;
   line-height: 1.6;
-  max-width: 500px;
-  margin-bottom: 2rem;
+  max-width: 650px;
+  margin-bottom: 2.5rem;
   text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .hero-cta-group {
