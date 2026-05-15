@@ -40,6 +40,11 @@ const Navbar = () => {
         </Link>
       </li>
       <li className="nav-item">
+        <Link to="/capabilities" className="nav-links" onClick={() => setIsOpen(false)}>
+          Capabilities
+        </Link>
+      </li>
+      <li className="nav-item">
         <Link to="/about" className="nav-links" onClick={() => setIsOpen(false)}>
           About Us
         </Link>
@@ -67,6 +72,11 @@ const Navbar = () => {
       <li className="nav-item">
         <Link to="/products" className="nav-links" onClick={() => setIsOpen(false)}>
           Products
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link to="/capabilities" className="nav-links" onClick={() => setIsOpen(false)}>
+          Capabilities
         </Link>
       </li>
       <li className="nav-item">
