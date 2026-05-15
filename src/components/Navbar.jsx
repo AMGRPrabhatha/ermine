@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import './Navbar.css';
+import logo from '../assets/images/logo.webp';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -86,7 +87,7 @@ const Navbar = () => {
       <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isOpen ? 'menu-open' : ''}`}>
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={() => setIsOpen(false)}>
-            ERMINE
+            <img src={logo} alt="Ermine Logo" className="logo-img" />
           </Link>
 
           <div className="menu-icon" onClick={() => setIsOpen(!isOpen)}>

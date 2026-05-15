@@ -3,6 +3,8 @@ import { ArrowRight, Activity, Zap, ShieldCheck, Globe, Droplet, ArrowDownRight 
 import { Link } from 'react-router-dom';
 import './Home.css';
 
+import homeHero from '../assets/images/homehero.webp';
+
 const Home = () => {
   // Intersection Observer for scroll animations
   useEffect(() => {
@@ -28,14 +30,14 @@ const Home = () => {
       {/* 1. Immersive Hero Section */}
       <section className="hero-modern">
         {/* Full Bleed Image Background */}
-        <div className="hero-modern-bg"></div>
+        <div className="hero-modern-bg" style={{ backgroundImage: `url(${homeHero})` }}></div>
         <div className="hero-modern-overlay"></div>
 
         <div className="container hero-centered">
           <div className="hero-text-content fade-up text-center">
             {/* <div className="badge">Leading Apparel Tech</div> */}
             <h1 className="hero-title">
-              Redefining Seamless <br/> <span className="text-accent">Construction.</span>
+              Precision Bonding <br/> <span className="text-accent">Precision Bonding  </span>
             </h1>
             <p className="hero-description mx-auto">
               Pioneering advanced bonded apparel solutions. We merge cutting-edge technology with sustainable practices to create garments without limits.
