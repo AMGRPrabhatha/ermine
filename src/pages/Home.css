@@ -301,56 +301,75 @@
   background-color: #ffffff;
 }
 
-.location-centered {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
 }
 
-.centered-text {
-  margin-left: auto;
-  margin-right: auto;
+.location-image-container {
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.1);
 }
 
-.centered-grid {
-  justify-content: center;
+.location-image {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .location-content {
   text-align: left;
 }
 
-.location-text {
-  font-size: 1.1rem;
-  color: #444;
-  line-height: 1.8;
-  margin-bottom: 2.5rem;
-}
-
 .address-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  gap: 3rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .address-card {
   background: #fcfcfc;
-  padding: 2rem;
-  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  border-radius: 32px;
   border: 1px solid rgba(0,0,0,0.03);
+  text-align: left;
+  transition: all 0.4s ease;
+}
+
+.address-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+  border-color: rgba(128, 0, 0, 0.1);
+}
+
+.address-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(128, 0, 0, 0.05);
+  color: var(--color-accent);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .address-card h4 {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: #111;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .address-card p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #666;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* --- 5. Customers & Partners --- */
@@ -405,14 +424,6 @@
   background-position: center;
 }
 
-.bg-active {
-  background-image: url('/product-1.webp');
-}
-
-.bg-intimate {
-  background-image: url('/product-3.webp');
-}
-
 .case-content {
   padding: 2.5rem;
 }
@@ -437,7 +448,14 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  background-image: url('https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1920&q=80&fm=webp');
+}
+
+.bg-active {
+  background-image: url('/product-1.webp');
+}
+
+.bg-intimate {
+  background-image: url('/product-3.webp');
 }
 
 .cta-overlay {

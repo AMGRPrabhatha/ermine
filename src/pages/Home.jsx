@@ -204,22 +204,24 @@ const Home = () => {
       {/* 4. Strategically Located */}
       <section className="location-section">
         <div className="container">
-          <div className="location-centered fade-up">
+          <div className="location-header text-center fade-up">
             <h2 className="section-title">Strategically Located</h2>
-            <p className="location-text centered-text">
+            <p className="section-subtitle">
               With both our corporate office and manufacturing facility strategically positioned in Sri Lanka, 
               we provide seamless access to regional markets and global partners.
             </p>
-            
-            <div className="address-grid centered-grid">
-              <div className="address-card">
-                <h4>Company Address</h4>
-                <p>Ermine Pvt Ltd<br/>No 192/10 9th Lane, Nawala Rd<br/>Kotte, Sri Lanka</p>
-              </div>
-              <div className="address-card">
-                <h4>Factory Address</h4>
-                <p>Ermine International Pvt Ltd<br/>No 4, Ridee Mawatha<br/>Kalamulla, Kalutara<br/>Sri Lanka</p>
-              </div>
+          </div>
+          
+          <div className="address-grid fade-up delay-100">
+            <div className="address-card">
+              <div className="address-icon"><Globe size={24} /></div>
+              <h4>Company Address</h4>
+              <p>Ermine Pvt Ltd<br/>No 192/10 9th Lane, Nawala Rd<br/>Kotte, Sri Lanka</p>
+            </div>
+            <div className="address-card">
+              <div className="address-icon"><Zap size={24} /></div>
+              <h4>Factory Address</h4>
+              <p>Ermine International Pvt Ltd<br/>No 4, Ridee Mawatha<br/>Kalamulla, Kalutara<br/>Sri Lanka</p>
             </div>
           </div>
         </div>
