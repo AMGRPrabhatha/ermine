@@ -56,7 +56,7 @@ const Solutions = () => {
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.1 }
     );
 
     const elements = document.querySelectorAll('.fade-up, .slide-in-right, .slide-in-left');
