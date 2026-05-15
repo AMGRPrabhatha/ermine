@@ -35,7 +35,7 @@ const Home = () => {
           <div className="hero-text-content fade-up text-center">
             {/* <div className="badge">Leading Apparel Tech</div> */}
             <h1 className="hero-title">
-              Redefining <br/> Seamless <br/> <span className="text-accent">Construction.</span>
+              Redefining Seamless <br/> <span className="text-accent">Construction.</span>
             </h1>
             <p className="hero-description mx-auto">
               Pioneering advanced bonded apparel solutions. We merge cutting-edge technology with sustainable practices to create garments without limits.
