@@ -47,7 +47,7 @@ const Home = () => {
                 Explore Technology <ArrowRight size={18} />
               </Link>
               <Link to="/about" className="btn-modern btn-outline-modern">
-                Our Story
+                Inquries
               </Link>
             </div>
           </div>
