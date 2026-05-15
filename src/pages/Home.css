@@ -38,7 +38,7 @@
 
 /* --- 1. Immersive Hero Section --- */
 .hero-modern {
-  min-height: 85vh;
+  min-height: 50vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -96,20 +96,20 @@
 
 .badge {
   display: inline-block;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.8rem;
   background: rgba(0,0,0,0.05);
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 100px;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: #111;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero-title {
-  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   font-family: var(--font-sans);
   font-weight: 800;
   line-height: 1.1;
@@ -119,11 +119,11 @@
 }
 
 .hero-description {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #444;
   line-height: 1.6;
   max-width: 500px;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .hero-cta-group {
@@ -138,7 +138,7 @@
   padding: 1.125rem 2.5rem;
   border-radius: 100px;
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   letter-spacing: 0.5px;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
