@@ -37,7 +37,7 @@ const Home = () => {
           <div className="hero-text-content fade-up text-center">
             {/* <div className="badge">Leading Apparel Tech</div> */}
             <h1 className="hero-title">
-              Precision Bonding <br/> <span className="text-accent">Precision Bonding  </span>
+              Precision Bonding <br/> <span className="text-accent">Technologies </span>
             </h1>
             <p className="hero-description mx-auto">
               Pioneering advanced bonded apparel solutions. We merge cutting-edge technology with sustainable practices to create garments without limits.
