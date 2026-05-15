@@ -40,7 +40,7 @@ const Home = () => {
               Precision Bonding <br/> <span className="text-accent">Technologies </span>
             </h1>
             <p className="hero-description mx-auto">
-              Pioneering advanced bonded apparel solutions. We merge cutting-edge technology with sustainable practices to create garments without limits.
+            Advanced bonding innovations for sustainable industrial progress.
             </p>
             <div className="hero-cta-group justify-center">
               <Link to="/solutions" className="btn-modern btn-primary-modern">
