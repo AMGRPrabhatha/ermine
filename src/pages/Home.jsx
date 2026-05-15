@@ -33,7 +33,7 @@ const Home = () => {
 
         <div className="container hero-centered">
           <div className="hero-text-content fade-up text-center">
-            <div className="badge">Leading Apparel Tech</div>
+            {/* <div className="badge">Leading Apparel Tech</div> */}
             <h1 className="hero-title">
               Redefining <br/> Seamless <br/> <span className="text-accent">Construction.</span>
             </h1>
