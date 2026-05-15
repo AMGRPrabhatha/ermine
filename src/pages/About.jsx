@@ -70,13 +70,13 @@ const About = () => {
         
         <div className="culture-grid">
           <div className="culture-img-wrap fade-up delay-100">
-            <div className="culture-img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')" }}></div>
+            <div className="culture-img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp')" }}></div>
           </div>
           <div className="culture-img-wrap fade-up delay-200">
-            <div className="culture-img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')" }}></div>
+            <div className="culture-img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp')" }}></div>
           </div>
           <div className="culture-img-wrap fade-up delay-300">
-            <div className="culture-img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')" }}></div>
+            <div className="culture-img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp')" }}></div>
           </div>
         </div>
       </section>
@@ -90,7 +90,7 @@ const About = () => {
             {/* Team Member 1 */}
             <div className="team-card fade-up delay-100">
               <div className="team-avatar">
-                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Pahan Vithanage" />
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80&fm=webp" alt="Pahan Vithanage" />
               </div>
               <div className="team-info">
                 <h3>Pahan Vithanage</h3>
@@ -104,7 +104,7 @@ const About = () => {
             {/* Team Member 2 */}
             <div className="team-card fade-up delay-200">
               <div className="team-avatar">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Nilmini Dassanayake" />
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80&fm=webp" alt="Nilmini Dassanayake" />
               </div>
               <div className="team-info">
                 <h3>Nilmini Dassanayake</h3>
@@ -118,7 +118,7 @@ const About = () => {
             {/* Team Member 3 */}
             <div className="team-card fade-up delay-300">
               <div className="team-avatar">
-                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Gayan Yapa" />
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80&fm=webp" alt="Gayan Yapa" />
               </div>
               <div className="team-info">
                 <h3>Gayan Yapa</h3>

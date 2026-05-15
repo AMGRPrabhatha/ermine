@@ -1,8 +1,8 @@
 .footer {
-  background-color: var(--color-primary);
-  color: var(--color-text-light);
+  background-color: #fcfcfc;
+  color: #111;
   padding: 5rem 5% 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid #eeeeee;
 }
 
 .footer-container {
@@ -42,8 +42,8 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.05);
-  color: var(--color-text-light);
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #111;
   transition: all var(--transition-normal);
 }
 
@@ -112,7 +112,7 @@
 .footer-bottom {
   margin-top: 4rem;
   padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid #eeeeee;
   display: flex;
   justify-content: space-between;
   align-items: center;

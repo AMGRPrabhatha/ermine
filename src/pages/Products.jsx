@@ -5,47 +5,47 @@ const products = [
   {
     title: "Period Panty",
     description: "Period panty technology is a bonded apparel innovation developed by Ermine, where end users will have great comfort with highly tested leak proofing and proven high absorbency.",
-    image: "/product-1.png"
+    image: "/product-1.webp"
   },
   {
     title: "Bonded Bras",
     description: "Bonded bras are another product range which we can manufacture using bonded apparel technologies with a great level of customization. These high-end bras are highly comfortable and attractive.",
-    image: "/product-2.png"
+    image: "/product-2.webp"
   },
   {
     title: "Raw Cut Panty",
     description: "Raw-cut panty is another bonded apparel technology product line that provides excellent comfort to end users. The seamless and stitchless nature of these improves the aesthetics as well.",
-    image: "/product-3.png"
+    image: "/product-3.webp"
   },
   {
     title: "Bonded Leggings",
     description: "Bonded leggings are highly attractive, stylish bonded apparel products with excellent compression, elasticity, and comfort.",
-    image: "/product-2.png"
+    image: "/product-2.webp"
   },
   {
     title: "One Size for All",
     description: "\"One size fits all panties\" are highly flexible through bonded apparel technologies. These are highly comfortable and best suited for online distribution strategies.",
-    image: "/product-3.png"
+    image: "/product-3.webp"
   },
   {
     title: "Sports Bra",
     description: "Bonded sports bras are highly stylish with a greater level of comfort and support. The lightweightness of these gives the wearer the ultimate freedom of carrying out sports without disturbance and aerodynamic drag.",
-    image: "/product-1.png"
+    image: "/product-1.webp"
   },
   {
     title: "Molding",
     description: "Molding is mainly used in intimate bras, sports bras, and bonded molded bras. Molding creates properties like anti-bouncing, compression, comfort, and shaping in these end products.",
-    image: "/product-3.png"
+    image: "/product-3.webp"
   },
   {
     title: "Compression Panels",
     description: "Compression panels are used for muscle compression and shape enhancement for sportswear. This improves muscle performance during sports and improves muscle recovery after workouts. This creates an anti-bouncing effect during the workouts as well.",
-    image: "/product-1.png"
+    image: "/product-1.webp"
   },
   {
     title: "Lamination",
     description: "Lamination is used in intimate bras and sports bras, which results in higher modulus, directional perspiration flow, and compression. Lamination will also result in waterproofing as well, mostly applicable in swimwear.",
-    image: "/product-2.png"
+    image: "/product-2.webp"
   }
 ];
 
@@ -72,7 +72,7 @@ const Products = () => {
     <div className="products-page">
       {/* Cinematic Hero */}
       <section className="products-hero">
-        <div className="products-hero-bg" style={{ backgroundImage: 'url(/products-hero.png)' }}></div>
+        <div className="products-hero-bg" style={{ backgroundImage: 'url(/products-hero.webp)' }}></div>
         <div className="products-hero-overlay"></div>
         <div className="container products-hero-content">
           <h1 className="fade-up">Our Products</h1>

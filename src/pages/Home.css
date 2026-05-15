@@ -1,7 +1,7 @@
 /* --- Modern Redesign Base --- */
 .home-modern-wrapper {
-  background-color: #050505;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #111111;
   overflow-x: hidden;
 }
 
@@ -53,7 +53,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+  background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80&fm=webp');
   background-size: cover;
   background-position: center;
   z-index: 0;
@@ -65,7 +65,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+  background: linear-gradient(to right, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.6) 100%);
   z-index: 1;
 }
 
@@ -98,14 +98,14 @@
 .badge {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.1);
   border-radius: 100px;
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #fff;
+  color: #111;
   margin-bottom: 2rem;
 }
 
@@ -114,14 +114,14 @@
   font-family: var(--font-sans);
   font-weight: 800;
   line-height: 1.1;
-  color: #fff;
+  color: #111;
   letter-spacing: -2px;
   margin-bottom: 1.5rem;
 }
 
 .hero-description {
   font-size: 1.2rem;
-  color: #ddd;
+  color: #444;
   line-height: 1.6;
   max-width: 500px;
   margin-bottom: 2.5rem;
@@ -149,30 +149,30 @@
 }
 
 .btn-primary-modern {
-  background: #ffffff;
-  color: #050505;
-  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
+  background: #111111;
+  color: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary-modern:hover {
   transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 15px 40px rgba(255, 255, 255, 0.25);
-  background: #f8f8f8;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  background: #000000;
 }
 
 .btn-outline-modern {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.03);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #111111;
 }
 
 .btn-outline-modern:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.2);
   transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .btn-outline-light-modern {
@@ -234,9 +234,9 @@
 
 /* --- 2. Bento Box Grid --- */
 .bento-section {
-  background-color: #0a0a0a;
+  background-color: #ffffff;
   padding: 8rem 0;
-  color: #fff;
+  color: #111;
 }
 
 .section-header {
@@ -263,9 +263,9 @@
 }
 
 .bento-item {
-  background: #151515;
+  background: #fcfcfc;
   border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.05);
+  border: 1px solid rgba(0,0,0,0.05);
   overflow: hidden;
   position: relative;
   transition: transform 0.3s ease, border-color 0.3s ease;
@@ -344,7 +344,7 @@
 }
 
 .tech-visual {
-  background-image: url('/solutions-1.png');
+  background-image: url('/solutions-1.webp');
 }
 
 .bg-manufacturing {
@@ -352,14 +352,14 @@
   height: 100%;
   right: 0;
   top: 0;
-  background-image: url('/products-hero.png');
+  background-image: url('/products-hero.webp');
   border-radius: 0;
   clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
 }
 
 /* --- 3. Interactive Timeline --- */
 .process-section {
-  background-color: #111;
+  background-color: #fcfcfc;
   padding: 8rem 0;
 }
 
@@ -433,8 +433,8 @@
 
 /* --- 4. Marquee & Case Studies --- */
 .partners-section {
-  background-color: #050505;
-  color: #fff;
+  background-color: #ffffff;
+  color: #111;
   padding: 6rem 0 8rem;
   overflow: hidden;
 }
@@ -454,7 +454,7 @@
   font-weight: 800;
   font-family: var(--font-sans);
   color: transparent;
-  -webkit-text-stroke: 1px rgba(255,255,255,0.15);
+  -webkit-text-stroke: 1px rgba(0,0,0,0.1);
   animation: scroll-left 20s linear infinite;
 }
 
@@ -481,11 +481,11 @@
 .case-card {
   border-radius: 24px;
   overflow: hidden;
-  background: rgba(15, 15, 15, 0.5);
+  background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -502,11 +502,11 @@
 }
 
 .bg-active {
-  background-image: url('/product-1.png');
+  background-image: url('/product-1.webp');
 }
 
 .bg-intimate {
-  background-image: url('/product-3.png');
+  background-image: url('/product-3.webp');
 }
 
 .case-content {
@@ -541,7 +541,7 @@
   position: relative;
   padding: 10rem 0;
   text-align: center;
-  background-image: url('https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+  background-image: url('https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80&fm=webp');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
