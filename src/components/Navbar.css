@@ -1,5 +1,5 @@
 .navbar {
-  height: 80px;
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,7 +15,7 @@
 }
 
 .navbar.scrolled {
-  height: 70px;
+  height: 60px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
@@ -41,14 +41,14 @@
 }
 
 .logo-img {
-  height: 40px;
+  height: 34px;
   width: auto;
   object-fit: contain;
   transition: height 0.4s ease;
 }
 
 .navbar.scrolled .logo-img {
-  height: 32px;
+  height: 28px;
 }
 
 .nav-menu {
