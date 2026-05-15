@@ -301,23 +301,19 @@
   background-color: #ffffff;
 }
 
-.location-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  align-items: center;
+.location-centered {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.location-image-container {
-  border-radius: 32px;
-  overflow: hidden;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+.centered-text {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.location-image {
-  width: 100%;
-  height: auto;
-  display: block;
+.centered-grid {
+  justify-content: center;
 }
 
 .location-content {
@@ -407,6 +403,14 @@
   height: 300px;
   background-size: cover;
   background-position: center;
+}
+
+.bg-active {
+  background-image: url('/product-1.webp');
+}
+
+.bg-intimate {
+  background-image: url('/product-3.webp');
 }
 
 .case-content {
