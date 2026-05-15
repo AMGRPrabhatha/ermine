@@ -1,0 +1,301 @@
+.capabilities-wrapper {
+  padding-top: 70px; /* Navbar height */
+  overflow-x: hidden;
+}
+
+/* Animations */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+/* 1. Hero Section */
+.cap-hero {
+  background-color: #800000;
+  padding: 8rem 0;
+  color: #ffffff;
+}
+
+.cap-hero-content {
+  max-width: 800px;
+}
+
+.cap-hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -2px;
+}
+
+.cap-hero p {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  opacity: 0.9;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* 2. Technology Ecosystem */
+.eco-section {
+  padding: 8rem 0;
+  background-color: #ffffff;
+}
+
+.section-header h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.section-header p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 4rem;
+}
+
+.eco-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.eco-card {
+  background: #ffffff;
+  padding: 3rem 2.5rem;
+  border-radius: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s ease;
+}
+
+.eco-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: rgba(128, 0, 0, 0.1);
+}
+
+.eco-icon-box {
+  width: 56px;
+  height: 56px;
+  background: rgba(128, 0, 0, 0.05);
+  color: #800000;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.eco-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #111;
+}
+
+.eco-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* 3. Cutting Technologies */
+.cutting-section {
+  padding: 8rem 0;
+  background-color: #fcfcfc;
+}
+
+.cutting-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.cutting-card {
+  background: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  transition: all 0.4s ease;
+  height: 100%;
+}
+
+.cutting-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+}
+
+.cutting-header {
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cap-maroon { background-color: #800000; }
+.cap-purple { background-color: #7c3aed; }
+.cap-green { background-color: #059669; }
+
+.cutting-body {
+  padding: 3rem 2.5rem;
+}
+
+.cutting-body h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: #111;
+}
+
+.cutting-body ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cutting-body ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+.cutting-body ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #800000;
+  font-weight: bold;
+}
+
+/* 4. Fabric Bonding Technologies */
+.bonding-tech-section {
+  padding: 8rem 0;
+  background-color: #ffffff;
+}
+
+.bonding-tech-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.bonding-tech-content h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 1.5rem;
+}
+
+.bonding-intro {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+.bonding-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.bonding-list-item {
+  padding-left: 2rem;
+  border-left: 3px solid #800000;
+}
+
+.bonding-list-item h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 0.5rem;
+}
+
+.bonding-list-item p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.bonding-tech-image {
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+}
+
+.bonding-tech-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 5. Footer CTA */
+.cap-cta {
+  background-color: #800000;
+  padding: 6rem 0;
+  color: #ffffff;
+}
+
+.cap-cta h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.cap-cta p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin-bottom: 2.5rem;
+}
+
+.btn-cap-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #ffffff;
+  color: #111;
+  padding: 1.2rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-cap-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+  .eco-grid { grid-template-columns: repeat(2, 1fr); }
+  .cutting-grid { grid-template-columns: repeat(2, 1fr); }
+  .bonding-tech-grid { grid-template-columns: 1fr; gap: 4rem; }
+}
+
+@media screen and (max-width: 768px) {
+  .eco-grid { grid-template-columns: 1fr; }
+  .cutting-grid { grid-template-columns: 1fr; }
+  .cap-hero { padding: 6rem 0; }
+  .section-header h2 { font-size: 2.2rem; }
+  .bonding-tech-content h2 { font-size: 2.2rem; }
+  .cap-cta h2 { font-size: 2rem; }
+}
