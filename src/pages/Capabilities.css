@@ -88,10 +88,10 @@
   margin-right: auto;
 }
 
-/* 2. Technology Ecosystem */
+/* 2. Technology Ecosystem (Bento Grid) */
 .eco-section {
   padding: 8rem 0;
-  background-color: #ffffff;
+  background-color: #fcfcfc;
 }
 
 .section-header h2 {
@@ -110,8 +110,12 @@
 
 .eco-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
+}
+
+.eco-wide {
+  grid-column: span 2;
 }
 
 .eco-card {
@@ -121,6 +125,8 @@
   border: 1px solid rgba(0, 0, 0, 0.04);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
   transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .eco-card:hover {
@@ -154,90 +160,106 @@
   line-height: 1.6;
 }
 
-/* 3. Cutting Technologies */
+/* 3. Cutting Technologies (Modern Immersive) */
 .cutting-section {
   padding: 8rem 0;
-  background-color: #fcfcfc;
+  background-color: #ffffff;
 }
 
-.cutting-grid {
+.cutting-modern-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
 }
 
-.cutting-card {
-  background: #ffffff;
+.cutting-modern-card {
+  position: relative;
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-  transition: all 0.4s ease;
-  height: 100%;
-}
-
-.cutting-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
-}
-
-.cutting-header {
-  height: 240px;
+  height: 500px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
-.cap-maroon { background-color: #800000; }
-.cap-purple { background-color: #7c3aed; }
-.cap-green { background-color: #059669; }
-
-.cutting-body {
-  padding: 3rem 2.5rem;
+.cutting-bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s ease;
+  z-index: 0;
 }
 
-.cutting-body h3 {
+.cutting-modern-card:hover .cutting-bg {
+  transform: scale(1.05);
+}
+
+.cutting-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%);
+  z-index: 1;
+}
+
+.cutting-content {
+  position: relative;
+  z-index: 2;
+  padding: 3rem 2rem;
+  color: #fff;
+}
+
+.cutting-icon-circle {
+  width: 60px; height: 60px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.cutting-content h3 {
   font-size: 1.8rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
-  color: #111;
+  color: #fff;
 }
 
-.cutting-body ul {
-  list-style: none;
-  padding: 0;
+.cutting-content ul {
+  list-style: none; padding: 0;
 }
 
-.cutting-body ul li {
+.cutting-content ul li {
   position: relative;
   padding-left: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   font-size: 0.95rem;
-  color: #444;
-  line-height: 1.5;
+  color: rgba(255,255,255,0.85);
 }
 
-.cutting-body ul li::before {
+.cutting-content ul li::before {
   content: "•";
-  position: absolute;
-  left: 0;
-  color: #800000;
-  font-weight: bold;
+  position: absolute; left: 0; color: #fff;
 }
 
-/* 4. Fabric Bonding Technologies */
+/* 4. Fabric Bonding Technologies (Sticky) */
 .bonding-tech-section {
   padding: 8rem 0;
-  background-color: #ffffff;
+  background-color: #fcfcfc;
 }
 
 .bonding-tech-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 5rem;
-  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: flex-start;
 }
 
-.bonding-tech-content h2 {
+.bonding-text-col h2 {
   font-size: 2.8rem;
   font-weight: 800;
   color: #111;
@@ -254,34 +276,55 @@
 .bonding-list {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .bonding-list-item {
-  padding-left: 2rem;
-  border-left: 3px solid #800000;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
 }
 
-.bonding-list-item h3 {
-  font-size: 1.15rem;
+.bonding-item-number {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #800000;
+  background: rgba(128, 0, 0, 0.05);
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bonding-item-content h3 {
+  font-size: 1.25rem;
   font-weight: 700;
   color: #111;
   margin-bottom: 0.5rem;
 }
 
-.bonding-list-item p {
-  font-size: 0.95rem;
+.bonding-item-content p {
+  font-size: 1rem;
   color: #666;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-.bonding-tech-image {
+.bonding-image-col {
+  position: sticky;
+  top: 120px;
+}
+
+.sticky-image-wrapper {
   border-radius: 32px;
   overflow: hidden;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+  height: 600px;
 }
 
-.bonding-tech-image img {
+.sticky-image-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -328,15 +371,17 @@
 /* Responsive Styles */
 @media screen and (max-width: 1024px) {
   .eco-grid { grid-template-columns: repeat(2, 1fr); }
-  .cutting-grid { grid-template-columns: repeat(2, 1fr); }
+  .eco-wide { grid-column: span 1; }
+  .cutting-modern-grid { grid-template-columns: repeat(2, 1fr); }
   .bonding-tech-grid { grid-template-columns: 1fr; gap: 4rem; }
+  .bonding-image-col { position: relative; top: 0; }
+  .sticky-image-wrapper { height: 450px; }
 }
 
 @media screen and (max-width: 768px) {
   .eco-grid { grid-template-columns: 1fr; }
-  .cutting-grid { grid-template-columns: 1fr; }
-  .cap-hero { padding: 6rem 0; }
-  .section-header h2 { font-size: 2.2rem; }
-  .bonding-tech-content h2 { font-size: 2.2rem; }
+  .cutting-modern-grid { grid-template-columns: 1fr; }
+  .section-header h2, .bonding-text-col h2 { font-size: 2.2rem; }
   .cap-cta h2 { font-size: 2rem; }
+  .sticky-image-wrapper { height: 350px; }
 }

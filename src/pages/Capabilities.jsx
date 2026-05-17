@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
-import { Zap, Scissors, Building2, Leaf, Settings, ShieldCheck, ArrowRight, Activity, Droplet } from 'lucide-react';
+import { Zap, Scissors, Building2, Leaf, Settings, ShieldCheck, ArrowRight, Activity } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './Capabilities.css';
 
 const Capabilities = () => {
-  // Intersection Observer for scroll animations
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -17,7 +16,7 @@ const Capabilities = () => {
       { threshold: 0.1 }
     );
 
-    const elements = document.querySelectorAll('.fade-up, .scale-in, .slide-in-left, .slide-in-right');
+    const elements = document.querySelectorAll('.fade-up');
     elements.forEach((el) => observer.observe(el));
 
     return () => elements.forEach((el) => observer.unobserve(el));
@@ -31,7 +30,7 @@ const Capabilities = () => {
         <div className="cap-hero-overlay"></div>
         
         <div className="container cap-hero-centered">
-          <div className="cap-hero-content fade-up text-center">
+          <div className="cap-hero-content fade-up">
             <h1>Capabilities & Technologies</h1>
             <p className="mx-auto">Advanced textile bonding solutions powered by cutting-edge technology and innovation</p>
             <div className="hero-cta-group justify-center">
@@ -46,7 +45,7 @@ const Capabilities = () => {
         </div>
       </section>
 
-      {/* 2. Technology Ecosystem */}
+      {/* 2. Technology Ecosystem (Bento Grid) */}
       <section className="eco-section">
         <div className="container">
           <div className="section-header text-center fade-up">
@@ -55,41 +54,41 @@ const Capabilities = () => {
           </div>
 
           <div className="eco-grid">
-            <div className="eco-card fade-up">
+            <div className="eco-card eco-wide fade-up">
               <div className="eco-icon-box"><Zap size={28} /></div>
               <h3>Advanced Bonding Solutions</h3>
-              <p>State-of-the-art textile bonding technologies for superior adhesion and performance</p>
+              <p>State-of-the-art textile bonding technologies for superior adhesion and performance. We ensure your products meet the highest global standards for durability and comfort.</p>
             </div>
             <div className="eco-card fade-up delay-100">
               <div className="eco-icon-box"><Scissors size={28} /></div>
-              <h3>Precision Cutting Capabilities</h3>
-              <p>Ultrasonic and laser cutting systems for unmatched accuracy</p>
+              <h3>Precision Cutting</h3>
+              <p>Ultrasonic and laser cutting systems for unmatched accuracy and clean edges.</p>
             </div>
             <div className="eco-card fade-up delay-200">
               <div className="eco-icon-box"><Building2 size={28} /></div>
-              <h3>Specialized Infrastructure</h3>
-              <p>Purpose-built facilities for precision manufacturing and quality control</p>
+              <h3>Infrastructure</h3>
+              <p>Purpose-built facilities for precision manufacturing and stringent quality control.</p>
             </div>
             <div className="eco-card fade-up delay-300">
               <div className="eco-icon-box"><Leaf size={28} /></div>
-              <h3>Eco-Friendly Solutions</h3>
-              <p>Sustainable textile processing that minimizes environmental impact</p>
+              <h3>Eco-Friendly</h3>
+              <p>Sustainable textile processing that minimizes environmental impact and reduces waste.</p>
             </div>
             <div className="eco-card fade-up delay-400">
               <div className="eco-icon-box"><Settings size={28} /></div>
-              <h3>Custom Machine Development</h3>
-              <p>Tailored production equipment designed to meet specific manufacturing needs</p>
+              <h3>Custom Machines</h3>
+              <p>Tailored production equipment designed to meet specific manufacturing needs.</p>
             </div>
-            <div className="eco-card fade-up delay-500">
+            <div className="eco-card eco-wide fade-up delay-500">
               <div className="eco-icon-box"><ShieldCheck size={28} /></div>
-              <h3>Quality Assurance</h3>
-              <p>Robust quality control processes to ensure consistent performance</p>
+              <h3>Quality Assurance Excellence</h3>
+              <p>Robust quality control processes implemented at every stage of production to ensure consistent, flawless performance across all your bonded apparel.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3. Cutting Technologies */}
+      {/* 3. Cutting Technologies (Immersive Cards) */}
       <section className="cutting-section">
         <div className="container">
           <div className="section-header text-center fade-up">
@@ -97,48 +96,48 @@ const Capabilities = () => {
             <p>Precision cutting solutions for every application</p>
           </div>
 
-          <div className="cutting-grid">
-            <div className="cutting-card fade-up">
-              <div className="cutting-header cap-maroon">
-                <Zap size={48} color="#fff" />
-              </div>
-              <div className="cutting-body">
+          <div className="cutting-modern-grid">
+            <div className="cutting-modern-card fade-up">
+              <div className="cutting-bg" style={{ backgroundImage: 'url(/product-1.webp)' }}></div>
+              <div className="cutting-overlay"></div>
+              <div className="cutting-content">
+                <div className="cutting-icon-circle"><Zap size={32} /></div>
                 <h3>Ultrasonic Cutting</h3>
                 <ul>
-                  <li>Continuous ultrasonic machines for high-volume production</li>
-                  <li>Ultrasonic die cutting for precision shaping</li>
+                  <li>Continuous machines for high-volume</li>
+                  <li>Die cutting for precision shaping</li>
                   <li>Clean edge finishing without fraying</li>
-                  <li>Reduced material waste and enhanced efficiency</li>
+                  <li>Reduced material waste</li>
                 </ul>
               </div>
             </div>
 
-            <div className="cutting-card fade-up delay-100">
-              <div className="cutting-header cap-purple">
-                <Activity size={48} color="#fff" />
-              </div>
-              <div className="cutting-body">
+            <div className="cutting-modern-card fade-up delay-100">
+              <div className="cutting-bg" style={{ backgroundImage: 'url(/product-2.webp)' }}></div>
+              <div className="cutting-overlay"></div>
+              <div className="cutting-content">
+                <div className="cutting-icon-circle"><Activity size={32} /></div>
                 <h3>Laser Cutting</h3>
                 <ul>
-                  <li>Fabric laser cutting machines for complex patterns</li>
-                  <li>High-precision cutting with minimal heat affected zone</li>
-                  <li>Intricate design capabilities for technical textiles</li>
-                  <li>Automated cutting systems for consistency</li>
+                  <li>Fabric machines for complex patterns</li>
+                  <li>High-precision with minimal heat zones</li>
+                  <li>Intricate design capabilities</li>
+                  <li>Automated cutting systems</li>
                 </ul>
               </div>
             </div>
 
-            <div className="cutting-card fade-up delay-200">
-              <div className="cutting-header cap-green">
-                <Scissors size={48} color="#fff" />
-              </div>
-              <div className="cutting-body">
+            <div className="cutting-modern-card fade-up delay-200">
+              <div className="cutting-bg" style={{ backgroundImage: 'url(/product-3.webp)' }}></div>
+              <div className="cutting-overlay"></div>
+              <div className="cutting-content">
+                <div className="cutting-icon-circle"><Scissors size={32} /></div>
                 <h3>Die Cutting</h3>
                 <ul>
-                  <li>Die cutting machines for precision fabric shaping</li>
-                  <li>Custom die development for unique applications</li>
-                  <li>High-speed production capabilities</li>
-                  <li>Consistent quality across large production runs</li>
+                  <li>Machines for precision fabric shaping</li>
+                  <li>Custom die development</li>
+                  <li>High-speed production</li>
+                  <li>Consistent quality across runs</li>
                 </ul>
               </div>
             </div>
@@ -146,11 +145,11 @@ const Capabilities = () => {
         </div>
       </section>
 
-      {/* 4. Fabric Bonding Technologies */}
+      {/* 4. Fabric Bonding Technologies (Sticky Layout) */}
       <section className="bonding-tech-section">
         <div className="container">
           <div className="bonding-tech-grid">
-            <div className="bonding-tech-content fade-up">
+            <div className="bonding-text-col fade-up">
               <h2>Fabric Bonding Technologies</h2>
               <p className="bonding-intro">
                 Our comprehensive bonding solutions deliver superior adhesion, durability, 
@@ -159,29 +158,47 @@ const Capabilities = () => {
               
               <div className="bonding-list">
                 <div className="bonding-list-item">
-                  <h3>Full-Width Bonding Machines</h3>
-                  <p>Seamless fabric adhesion across the entire width for consistent quality and minimal waste</p>
+                  <div className="bonding-item-number">01</div>
+                  <div className="bonding-item-content">
+                    <h3>Full-Width Bonding Machines</h3>
+                    <p>Seamless fabric adhesion across the entire width for consistent quality and minimal waste</p>
+                  </div>
                 </div>
                 <div className="bonding-list-item">
-                  <h3>Heat Bonding & Adhesive Lamination</h3>
-                  <p>Advanced thermal bonding techniques and precision adhesive application systems</p>
+                  <div className="bonding-item-number">02</div>
+                  <div className="bonding-item-content">
+                    <h3>Heat Bonding & Adhesive Lamination</h3>
+                    <p>Advanced thermal bonding techniques and precision adhesive application systems</p>
+                  </div>
                 </div>
                 <div className="bonding-list-item">
-                  <h3>Fabric Laydown Systems</h3>
-                  <p>Precision placement technology ensuring optimal alignment and positioning</p>
+                  <div className="bonding-item-number">03</div>
+                  <div className="bonding-item-content">
+                    <h3>Fabric Laydown Systems</h3>
+                    <p>Precision placement technology ensuring optimal alignment and positioning</p>
+                  </div>
                 </div>
                 <div className="bonding-list-item">
-                  <h3>Pre-Shrink Processing</h3>
-                  <p>Ensures fabric stability and consistency throughout the manufacturing process</p>
+                  <div className="bonding-item-number">04</div>
+                  <div className="bonding-item-content">
+                    <h3>Pre-Shrink Processing</h3>
+                    <p>Ensures fabric stability and consistency throughout the manufacturing process</p>
+                  </div>
                 </div>
                 <div className="bonding-list-item">
-                  <h3>Specialized Bonding Techniques</h3>
-                  <p>Custom solutions for technical textiles and performance fabrics with unique requirements</p>
+                  <div className="bonding-item-number">05</div>
+                  <div className="bonding-item-content">
+                    <h3>Specialized Bonding Techniques</h3>
+                    <p>Custom solutions for technical textiles and performance fabrics with unique requirements</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="bonding-tech-image fade-up delay-200">
-              <img src="/solutions-3.webp" alt="Bonding Technology" />
+            
+            <div className="bonding-image-col">
+              <div className="sticky-image-wrapper fade-up delay-200">
+                <img src="/solutions-3.webp" alt="Bonding Technology" />
+              </div>
             </div>
           </div>
         </div>
