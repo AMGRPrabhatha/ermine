@@ -1,16 +1,14 @@
-/* --- About Us Page Styles --- */
 .about-wrapper {
-  background-color: #ffffff;
-  color: #111111;
   overflow-x: hidden;
 }
 
 /* Animations */
 .fade-up {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 .fade-up.visible {
   opacity: 1;
   transform: translateY(0);
@@ -20,15 +18,15 @@
 .delay-200 { transition-delay: 200ms; }
 .delay-300 { transition-delay: 300ms; }
 
-/* --- Hero Section --- */
+/* 1. Hero Section */
 .about-hero {
-  min-height: 50vh;
+  min-height: 60vh;
   position: relative;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  padding-top: var(--header-height);
   overflow: hidden;
+  background-color: #000;
 }
 
 .about-hero-bg {
@@ -40,9 +38,7 @@
   background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80&fm=webp');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   z-index: 0;
-  filter: grayscale(30%);
 }
 
 .about-hero-overlay {
@@ -51,138 +47,267 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.7) 0%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.4) 100%);
   z-index: 1;
 }
 
-.about-hero-content {
+.about-hero-centered {
   position: relative;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 4rem 0;
+  z-index: 2;
+  width: 100%;
 }
 
-.about-title {
-  font-size: clamp(3rem, 5vw, 5rem);
+.about-hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 800;
-  letter-spacing: -1px;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1.5px;
+  color: #ffffff;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+  text-align: center;
 }
 
-/* --- Intro Section --- */
-.about-intro-section {
-  padding: 4rem 0 6rem;
+.about-hero p {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  color: #ffffff;
+  line-height: 1.6;
+  max-width: 650px;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+  font-weight: 400;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 2. Brand Narrative Section */
+.about-story-section {
+  padding: 8rem 0;
   background-color: #ffffff;
 }
 
-.about-intro-container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.intro-lead {
-  font-size: 1.5rem;
-  line-height: 1.6;
-  color: #111;
-  text-align: center;
-  margin-bottom: 4rem;
-  font-weight: 500;
-}
-
-.intro-columns {
+.story-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 6rem;
+  align-items: center;
 }
 
-.intro-columns p {
-  color: #444;
-  line-height: 1.8;
-  font-size: 1.1rem;
-}
-
-/* --- Vision Section --- */
-.vision-section {
-  padding: 2rem 0 6rem;
-}
-
-.vision-banner {
-  max-width: 1200px;
-  margin: 0 auto;
-  background: linear-gradient(135deg, rgba(180, 0, 0, 0.05) 0%, rgba(240, 240, 240, 0.8) 100%);
-  border: 1px solid rgba(255, 0, 0, 0.1);
-  border-radius: 24px;
-  padding: 5rem 2rem;
-  text-align: center;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.05);
-}
-
-.vision-content h2 {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  color: #ff3333; /* Crimson accent */
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-}
-
-.vision-content p {
-  font-size: clamp(2rem, 4vw, 3.5rem);
+.section-badge {
+  display: inline-block;
+  font-size: 0.8rem;
   font-weight: 800;
+  letter-spacing: 2px;
+  color: #800000;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.story-content h2 {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
   color: #111;
-  line-height: 1.2;
-}
-
-/* --- Culture Section --- */
-.culture-section {
-  padding: 6rem 0;
-  background-color: #fcfcfc;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
+  letter-spacing: -1.5px;
   margin-bottom: 2rem;
 }
 
-.culture-text {
-  max-width: 800px;
-  margin: 0 auto 4rem;
-  color: #999;
-  font-size: 1.15rem;
-  line-height: 1.8;
+.lead-paragraph {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #111;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
 }
 
-.culture-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  width: 100%;
+.story-content p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 1.5rem;
 }
 
-.culture-img-wrap {
-  width: 100%;
-  aspect-ratio: 4/5;
+.story-image-card {
+  position: relative;
+  border-radius: 32px;
   overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+  height: 550px;
 }
 
-.culture-img {
+.story-image-card img {
   width: 100%;
   height: 100%;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.6s ease;
+  object-fit: cover;
+  display: block;
 }
 
-.culture-img-wrap:hover .culture-img {
-  transform: scale(1.05);
+.story-stat-badge {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 2.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 1.8rem 2.5rem;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-/* --- Leadership Section --- */
-.leadership-section {
+.stat-num {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #800000;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #444;
+  margin-top: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* 3. Core Pillars Section */
+.pillars-section {
+  padding: 8rem 0;
+  background-color: #fcfcfc;
+  border-top: 1px solid rgba(0,0,0,0.03);
+  border-bottom: 1px solid rgba(0,0,0,0.03);
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.pillar-card {
+  background: #ffffff;
+  padding: 4rem 3rem;
+  border-radius: 28px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.02);
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: all 0.4s ease;
+}
+
+.pillar-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+  border-color: rgba(128, 0, 0, 0.1);
+}
+
+.pillar-num {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #800000;
+  background: rgba(128, 0, 0, 0.05);
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.pillar-card h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 1.2rem;
+}
+
+.pillar-card p {
+  font-size: 1.05rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* 4. Culture & Values Showcase */
+.about-culture-section {
   padding: 8rem 0;
   background-color: #ffffff;
+}
+
+.culture-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.culture-card {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  height: 550px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.culture-bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 0;
+}
+
+.culture-card:hover .culture-bg {
+  transform: scale(1.06);
+}
+
+.culture-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.1) 100%);
+  z-index: 1;
+}
+
+.culture-content {
+  position: relative;
+  z-index: 2;
+  padding: 3.5rem 2.5rem;
+}
+
+.culture-content span {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #fff;
+  opacity: 0.8;
+  margin-bottom: 0.8rem;
+}
+
+.culture-content h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+/* 5. Leadership Section */
+.leadership-section {
+  padding: 8rem 0;
+  background-color: #fcfcfc;
+  border-top: 1px solid rgba(0,0,0,0.03);
 }
 
 .team-grid {
@@ -194,85 +319,125 @@
 
 .team-card {
   background: #ffffff;
-  border-radius: 24px;
-  padding: 3rem 2rem;
-  text-align: center;
-  border: 1px solid rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, border-color 0.3s ease;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border-radius: 32px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.04);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .team-card:hover {
-  transform: translateY(-10px);
-  border-color: rgba(255,255,255,0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+  border-color: rgba(128, 0, 0, 0.1);
 }
 
-.team-avatar {
-  width: 160px;
-  height: 160px;
-  margin: 0 auto 2rem;
-  border-radius: 50%;
+.team-avatar-wrapper {
+  width: 100%;
+  height: 380px;
   overflow: hidden;
-  border: 4px solid #eeeeee;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  position: relative;
 }
 
-.team-avatar img {
+.team-avatar-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(20%);
-  transition: filter 0.3s ease;
+  filter: grayscale(15%);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
 }
 
-.team-card:hover .team-avatar img {
+.team-card:hover .team-avatar-wrapper img {
+  transform: scale(1.04);
   filter: grayscale(0%);
+}
+
+.team-info {
+  padding: 3rem 2.5rem;
 }
 
 .team-info h3 {
   font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+  font-weight: 800;
   color: #111;
+  margin-bottom: 0.4rem;
 }
 
-.team-info h4 {
-  font-size: 1rem;
-  color: #ff3333;
+.team-role {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #800000;
   margin-bottom: 1.5rem;
-  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .team-info p {
-  color: #888;
-  font-size: 0.95rem;
+  font-size: 0.98rem;
   line-height: 1.6;
+  color: #666;
 }
 
-/* --- Responsive --- */
-@media screen and (max-width: 992px) {
-  .intro-columns {
+/* Responsive Breakpoints */
+@media screen and (max-width: 1024px) {
+  .story-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 4rem;
   }
   
-  .culture-grid {
-    grid-template-columns: 1fr;
+  .story-image-card {
+    height: 450px;
   }
   
-  .culture-img-wrap {
-    aspect-ratio: 16/9;
+  .pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .culture-showcase-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+  
+  .culture-card {
+    height: 400px;
   }
   
   .team-grid {
     grid-template-columns: 1fr;
-    max-width: 500px;
+    max-width: 550px;
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+@media screen and (max-width: 768px) {
+  .about-hero {
+    min-height: 50vh;
+  }
   
-  .vision-banner {
-    margin: 0 1rem;
-    padding: 3rem 1.5rem;
+  .section-header h2 {
+    font-size: 2.2rem;
+  }
+  
+  .story-content h2 {
+    font-size: 2.2rem;
+  }
+  
+  .story-image-card {
+    height: 350px;
+  }
+  
+  .story-stat-badge {
+    bottom: 1.5rem;
+    left: 1.5rem;
+    padding: 1.2rem 1.8rem;
+  }
+  
+  .stat-num {
+    font-size: 2rem;
   }
 }

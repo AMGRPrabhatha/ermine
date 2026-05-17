@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { ArrowRight, Trophy, Users, ShieldAlert, Award } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import './About.css';
 
 const About = () => {
@@ -11,10 +13,10 @@ const About = () => {
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.1 }
     );
 
-    const elements = document.querySelectorAll('.fade-up, .scale-in, .slide-in-right');
+    const elements = document.querySelectorAll('.fade-up');
     elements.forEach((el) => observer.observe(el));
 
     return () => elements.forEach((el) => observer.unobserve(el));
@@ -22,116 +24,167 @@ const About = () => {
 
   return (
     <div className="about-wrapper">
-      {/* Hero Section */}
+      {/* 1. Immersive Hero Section */}
       <section className="about-hero">
         <div className="about-hero-bg"></div>
         <div className="about-hero-overlay"></div>
         
-        <div className="container about-hero-content">
-          <h1 className="about-title fade-up">About Us</h1>
-        </div>
-      </section>
-
-      {/* Introduction Text */}
-      <section className="about-intro-section">
-        <div className="container about-intro-container fade-up delay-200">
-          <p className="intro-lead">
-            Ermine is an innovative bonded apparel manufacturing company, led by dynamic and diverse professionals with years of experience from different walks of life. Our utmost priority is providing innovative and high-quality solutions in the evolving bonded apparel space to our valued customers.
-          </p>
-          <div className="intro-columns">
-            <p>
-              Ermine was established in March 2010 as Ermine (Pvt) Ltd under the “Registration of the Companies Act” in Sri Lanka under registration number PV 71667. We specialize in providing customized bonded apparel solutions to a wide range of customers, such as well-known global apparel brands, innovative apparel startups, and leading apparel manufacturers.
-            </p>
-            <p>
-              Bonded garments have evolved by abandoning the sewing techniques of using needles and thread as the main joining method. Over the last five years, brands in the global garment sphere have started increasingly relying on bonding techniques to join fabric panels, create hems and incorporate features like pockets and patterns. Hence, Ermine has heavily invested in its RnD and innovated this technology with great confidence as a full garment solution provider.
-            </p>
+        <div className="container about-hero-centered">
+          <div className="about-hero-content fade-up text-center">
+            <h1>Our Story & <span className="text-accent">Vision</span></h1>
+            <p className="mx-auto">Redefining modern apparel manufacturing through advanced needle-free bonding technology</p>
+            <div className="hero-cta-group justify-center">
+              <Link to="/capabilities" className="btn-modern btn-primary-modern">
+                Our Capabilities <ArrowRight size={18} />
+              </Link>
+              <Link to="/contact" className="btn-modern btn-outline-modern">
+                Get In Touch
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Vision Section (Glassmorphic Banner instead of Hexagon) */}
-      <section className="vision-section fade-up">
-        <div className="vision-banner">
-          <div className="vision-content">
-            <h2>Our Vision</h2>
-            <p>Global leader in innovative apparel.</p>
+      {/* 2. Brand Narrative Section */}
+      <section className="about-story-section">
+        <div className="container">
+          <div className="story-grid">
+            <div className="story-content fade-up">
+              <span className="section-badge">ESTABLISHED 2010</span>
+              <h2>Pioneering the Future of Seamless Apparel</h2>
+              <p className="lead-paragraph">
+                Ermine is an innovative bonded apparel manufacturing company, led by dynamic and diverse professionals with decades of cumulative global experience.
+              </p>
+              <p>
+                Founded in March 2010 in Sri Lanka (PV 71667), we specialize in delivering customized, turnkey bonded apparel solutions to international brands, high-growth startups, and large-scale industrial manufacturing partners.
+              </p>
+              <p>
+                Stitchless garments represent the pinnacle of technical apparel evolution, abandoning traditional needle-and-thread stitching. Over the past decade, global demand has shifted toward bonding to assemble fabric panels, create smooth hems, and integrate precise, structural components. Ermine continues to invest heavily in proprietary R&D to stand as a premier turnkey apparel solution provider.
+              </p>
+            </div>
+            <div className="story-media fade-up delay-200">
+              <div className="story-image-card">
+                <img src="/solutions-2.webp" alt="Ermine Precision R&D" />
+                <div className="story-stat-badge">
+                  <span className="stat-num">15+</span>
+                  <span className="stat-label">Years of R&D Excellence</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Culture Section */}
-      <section className="culture-section">
-        <div className="container text-center fade-up">
-          <h2 className="section-title">Our Culture</h2>
-          <p className="culture-text">
-            Our culture is driven by our key values, which are passion, innovativeness, and integrity. Our philosophy is to provide the highest quality and value to our customers while ensuring environmental sustainability and the wellbeing of our employees.
-          </p>
-        </div>
-        
-        <div className="culture-grid">
-          <div className="culture-img-wrap fade-up delay-100">
-            <div className="culture-img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp')" }}></div>
-          </div>
-          <div className="culture-img-wrap fade-up delay-200">
-            <div className="culture-img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp')" }}></div>
-          </div>
-          <div className="culture-img-wrap fade-up delay-300">
-            <div className="culture-img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp')" }}></div>
+      {/* 3. Core Pillars (Vision, Mission, Philosophy) */}
+      <section className="pillars-section">
+        <div className="container">
+          <div className="pillars-grid">
+            <div className="pillar-card fade-up">
+              <div className="pillar-num">01</div>
+              <h3>Our Vision</h3>
+              <p>To be the definitive global leader in stitchless apparel technology, constantly pushing the boundaries of fabric engineering.</p>
+            </div>
+            <div className="pillar-card fade-up delay-100">
+              <div className="pillar-num">02</div>
+              <h3>Our Mission</h3>
+              <p>To empower global fashion and performance brands with sustainable, highly durable bonded apparel solutions and components.</p>
+            </div>
+            <div className="pillar-card fade-up delay-200">
+              <div className="pillar-num">03</div>
+              <h3>Our Philosophy</h3>
+              <p>Delivering absolute precision while prioritizing ecological sustainability, continuous innovation, and employee wellbeing.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Leadership Team Section */}
+      {/* 4. Culture & Values (Visual Showcases) */}
+      <section className="about-culture-section">
+        <div className="container">
+          <div className="section-header text-center fade-up">
+            <h2>Our Culture & Values</h2>
+            <p>Driven by passion, continuous innovation, and absolute integrity</p>
+          </div>
+        </div>
+
+        <div className="culture-showcase-grid">
+          <div className="culture-card fade-up">
+            <div className="culture-bg" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp')" }}></div>
+            <div className="culture-overlay"></div>
+            <div className="culture-content">
+              <span>PASSION</span>
+              <h3>Engaged & Inspired Teams</h3>
+            </div>
+          </div>
+          <div className="culture-card fade-up delay-100">
+            <div className="culture-bg" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp')" }}></div>
+            <div className="culture-overlay"></div>
+            <div className="culture-content">
+              <span>INNOVATIVE</span>
+              <h3>Pioneering Fabric R&D</h3>
+            </div>
+          </div>
+          <div className="culture-card fade-up delay-200">
+            <div className="culture-bg" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp')" }}></div>
+            <div className="culture-overlay"></div>
+            <div className="culture-content">
+              <span>INTEGRITY</span>
+              <h3>Sustainable Manufacturing</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Leadership Section (Modern Squircle Headshots) */}
       <section className="leadership-section">
         <div className="container">
-          <h2 className="section-title text-center fade-up">Leadership Team</h2>
-          
+          <div className="section-header text-center fade-up">
+            <h2>Leadership Team</h2>
+            <p>Visionary directors guiding the future of seamless manufacturing</p>
+          </div>
+
           <div className="team-grid">
-            {/* Team Member 1 */}
-            <div className="team-card fade-up delay-100">
-              <div className="team-avatar">
+            <div className="team-card fade-up">
+              <div className="team-avatar-wrapper">
                 <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80&fm=webp" alt="Pahan Vithanage" />
               </div>
               <div className="team-info">
                 <h3>Pahan Vithanage</h3>
-                <h4>Director/Founder</h4>
+                <span className="team-role">Director & Founder</span>
                 <p>
-                  Pahan is a visionary leader who started the journey of building Ermine by stepping away from his lucrative executive engineering job. Ermine has gone through a tremendous growth journey under his leadership. Pahan has an engineering and management background with a B Sc in Mechanical Engineering from the University of Moratuwa.
+                  Visionary leader who founded Ermine following a successful executive engineering career. Under his management, the company has scaled exponentially. He holds a B.Sc. in Mechanical Engineering from the University of Moratuwa.
                 </p>
               </div>
             </div>
 
-            {/* Team Member 2 */}
-            <div className="team-card fade-up delay-200">
-              <div className="team-avatar">
+            <div className="team-card fade-up delay-100">
+              <div className="team-avatar-wrapper">
                 <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80&fm=webp" alt="Nilmini Dassanayake" />
               </div>
               <div className="team-info">
                 <h3>Nilmini Dassanayake</h3>
-                <h4>Director/Co-Founder</h4>
+                <span className="team-role">Director & Co-Founder</span>
                 <p>
-                  Nilmini is a charismatic and dynamic leader with a proven track record in different roles spanning from engineering to management to finance. She is a founding member and a key contributor to Ermine's success story. Nilmini holds a B Sc in Chemical and Process Engineering from the University of Moratuwa.
+                  Dynamic, results-driven leader with a proven history spanning engineering, corporate finance, and operations. As a founding partner, she plays a critical role in strategic growth. She holds a B.Sc. in Chemical Engineering from the University of Moratuwa.
                 </p>
               </div>
             </div>
 
-            {/* Team Member 3 */}
-            <div className="team-card fade-up delay-300">
-              <div className="team-avatar">
+            <div className="team-card fade-up delay-200">
+              <div className="team-avatar-wrapper">
                 <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80&fm=webp" alt="Gayan Yapa" />
               </div>
               <div className="team-info">
                 <h3>Gayan Yapa</h3>
-                <h4>Director/Co-Founder</h4>
+                <span className="team-role">Director & Co-Founder</span>
                 <p>
-                  Gayan is an innovative thought leader and technology expert with decades of experience in apparel-related technologies along with several filed patents. Gayan has been a key contributor to Ermine's extraordinary growth journey since the company's inception. Gayan holds a B Sc in Textile Engineering.
+                  Renowned thought leader and apparel technology specialist. Holding multiple patents in advanced garment engineering, he has pioneered Ermine's technological dominance. He holds a B.Sc. in Textile Engineering.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-
     </div>
   );
 };
