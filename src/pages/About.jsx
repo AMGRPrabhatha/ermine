@@ -5,21 +5,39 @@ import './About.css';
 
 const About = () => {
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+    const runObserver = () => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        },
+        { threshold: 0.05 } // Lower threshold for instant, robust activation
+      );
 
-    const elements = document.querySelectorAll('.fade-up');
-    elements.forEach((el) => observer.observe(el));
+      const elements = document.querySelectorAll('.fade-up');
+      elements.forEach((el) => observer.observe(el));
 
-    return () => elements.forEach((el) => observer.unobserve(el));
+      return observer;
+    };
+
+    // Run immediately
+    const observerInstance = runObserver();
+
+    // Run again after a short delay to capture any late-rendered elements
+    const timer = setTimeout(() => {
+      runObserver();
+    }, 150);
+
+    return () => {
+      clearTimeout(timer);
+      if (observerInstance) {
+        const elements = document.querySelectorAll('.fade-up');
+        elements.forEach((el) => observerInstance.unobserve(el));
+      }
+    };
   }, []);
 
   return (
@@ -31,7 +49,7 @@ const About = () => {
         
         <div className="container about-hero-centered">
           <div className="about-hero-content fade-up text-center">
-            <h1>Our Story & <span className="text-accent">Vision</span></h1>
+            <h1>Our Story & Vision</h1>
             <p className="mx-auto">Redefining modern apparel manufacturing through advanced needle-free bonding technology</p>
             <div className="hero-cta-group justify-center">
               <Link to="/capabilities" className="btn-modern btn-primary-modern">
