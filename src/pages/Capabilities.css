@@ -333,21 +333,59 @@
 
 /* 5. Footer CTA */
 .cap-cta {
-  background-color: #800000;
-  padding: 6rem 0;
+  padding: 8rem 0;
+  position: relative;
+  background-image: url('/products-hero.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: #ffffff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cap-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1;
+}
+
+.cap-cta .container {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 5rem 2rem;
+  border-radius: 32px;
+  max-width: 900px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+  width: 100%;
 }
 
 .cap-cta h2 {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: 800;
   margin-bottom: 1rem;
+  letter-spacing: -1px;
 }
 
 .cap-cta p {
-  font-size: 1.1rem;
-  opacity: 0.8;
+  font-size: 1.15rem;
+  opacity: 0.9;
   margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }
 
 .btn-cap-cta {
@@ -356,7 +394,7 @@
   gap: 0.75rem;
   background-color: #ffffff;
   color: #111;
-  padding: 1.2rem 2.5rem;
+  padding: 1.1rem 2.2rem;
   border-radius: 50px;
   font-weight: 700;
   text-decoration: none;
@@ -384,4 +422,9 @@
   .section-header h2, .bonding-text-col h2 { font-size: 2.2rem; }
   .cap-cta h2 { font-size: 2rem; }
   .sticky-image-wrapper { height: 350px; }
+  
+  .cap-cta .container {
+    padding: 3rem 1.5rem;
+    border-radius: 20px;
+  }
 }
