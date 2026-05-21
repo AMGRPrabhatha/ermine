@@ -1172,9 +1172,10 @@
   letter-spacing: -1px;
 }
 
-/* Controls Bar Mockup */
 .video-controls-mockup {
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   z-index: 2;
   width: 100%;
   padding: 1.5rem 2.5rem;
