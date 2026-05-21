@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './Home.css';
 
 import homeHero from '../assets/images/homehero.webp';
+import brandVideo from '../assets/images/video.mp4';
 
 const Home = () => {
   // Intersection Observer for scroll animations
@@ -243,7 +244,14 @@ const Home = () => {
           
           <div className="showcase-video-container fade-up delay-100">
             <div className="video-mockup-wrapper">
-              <div className="video-bg-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80&fm=webp')" }}></div>
+              <video 
+                src={brandVideo} 
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
+                className="showcase-video-player"
+              />
               <div className="video-overlay-tint"></div>
               
               <div className="video-center-content">
