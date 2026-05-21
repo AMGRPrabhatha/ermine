@@ -54,8 +54,8 @@ const Capabilities = () => {
           </div>
 
           <div className="eco-grid">
-            <div className="eco-card eco-wide fade-up">
-              <div className="eco-icon-box"><Zap size={28} /></div>
+            <div className="eco-card eco-wide eco-dark fade-up">
+              <div className="eco-icon-box eco-icon-gold"><Zap size={28} /></div>
               <h3>Advanced Bonding Solutions</h3>
               <p>State-of-the-art textile bonding technologies for superior adhesion and performance. We ensure your products meet the highest global standards for durability and comfort.</p>
             </div>
@@ -79,8 +79,8 @@ const Capabilities = () => {
               <h3>Custom Machines</h3>
               <p>Tailored production equipment designed to meet specific manufacturing needs.</p>
             </div>
-            <div className="eco-card eco-wide fade-up delay-500">
-              <div className="eco-icon-box"><ShieldCheck size={28} /></div>
+            <div className="eco-card eco-wide eco-dark fade-up delay-500">
+              <div className="eco-icon-box eco-icon-gold"><ShieldCheck size={28} /></div>
               <h3>Quality Assurance Excellence</h3>
               <p>Robust quality control processes implemented at every stage of production to ensure consistent, flawless performance across all your bonded apparel.</p>
             </div>
