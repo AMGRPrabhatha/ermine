@@ -251,7 +251,7 @@ const Home = () => {
               <div className="video-center-content">
                 <div className="bag-icon-wrapper">
                   <div className="bag-icon-svg">
-                    <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.5">
                       <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4H6zM3 6h18M16 10a4 4 0 01-8 0" />
                     </svg>
                   </div>
