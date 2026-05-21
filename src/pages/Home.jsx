@@ -7,6 +7,64 @@ import homeHero from '../assets/images/homehero.webp';
 import brandVideo from '../assets/images/video.mp4';
 
 const Home = () => {
+  const videoRef = React.useRef(null);
+  const [isPlaying, setIsPlaying] = React.useState(true);
+  const [currentTime, setCurrentTime] = React.useState(0);
+  const [duration, setDuration] = React.useState(0);
+  const [isMuted, setIsMuted] = React.useState(true);
+
+  const formatTime = (time) => {
+    if (isNaN(time)) return "00:00";
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  };
+
+  const togglePlay = () => {
+    if (!videoRef.current) return;
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    } else {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
+  };
+
+  const skipBackward = () => {
+    if (!videoRef.current) return;
+    videoRef.current.currentTime = Math.max(0, videoRef.current.currentTime - 15);
+  };
+
+  const skipForward = () => {
+    if (!videoRef.current) return;
+    videoRef.current.currentTime = Math.min(duration, videoRef.current.currentTime + 15);
+  };
+
+  const toggleMute = () => {
+    if (!videoRef.current) return;
+    videoRef.current.muted = !videoRef.current.muted;
+    setIsMuted(videoRef.current.muted);
+  };
+
+  const handleSeek = (e) => {
+    if (!videoRef.current || !duration) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const width = rect.width;
+    const percentage = clickX / width;
+    videoRef.current.currentTime = percentage * duration;
+  };
+
+  const toggleFullscreen = () => {
+    if (!videoRef.current) return;
+    if (videoRef.current.requestFullscreen) {
+      videoRef.current.requestFullscreen();
+    } else if (videoRef.current.webkitRequestFullscreen) {
+      videoRef.current.webkitRequestFullscreen();
+    }
+  };
+
   // Intersection Observer for scroll animations
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -245,47 +303,45 @@ const Home = () => {
           <div className="showcase-video-container fade-up delay-100">
             <div className="video-mockup-wrapper">
               <video 
+                ref={videoRef}
                 src={brandVideo} 
                 autoPlay 
                 loop 
                 muted 
                 playsInline 
                 className="showcase-video-player"
+                onTimeUpdate={() => setCurrentTime(videoRef.current.currentTime)}
+                onLoadedMetadata={() => setDuration(videoRef.current.duration)}
               />
               <div className="video-overlay-tint"></div>
               
-              <div className="video-center-content">
-                <div className="bag-icon-wrapper">
-                  <div className="bag-icon-svg">
-                    <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.5">
-                      <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4H6zM3 6h18M16 10a4 4 0 01-8 0" />
-                    </svg>
-                  </div>
-                </div>
-                <span className="video-product-tag">Nadetta Coat Beige</span>
-                <h3>Embrace Timeless Style with Our Beige Coat Collection</h3>
-              </div>
-              
-              {/* Bottom Video Controls Bar Mockup */}
+              {/* Bottom Video Controls Bar - Fully Functional */}
               <div className="video-controls-mockup">
                 <div className="controls-top-row">
-                  <div className="progress-bar-bg">
-                    <div className="progress-bar-fill" style={{ width: '70%' }}></div>
+                  <div className="progress-bar-bg" onClick={handleSeek} style={{ cursor: 'pointer' }}>
+                    <div 
+                      className="progress-bar-fill" 
+                      style={{ width: `${(currentTime / (duration || 1)) * 100}%` }}
+                    ></div>
                   </div>
                 </div>
                 <div className="controls-bottom-row">
                   <div className="controls-left">
-                    <span className="play-icon">▶</span>
-                    <span className="skip-icon">⟲ 15</span>
-                    <span className="skip-icon">⟳ 15</span>
-                    <span className="detail-product-label">Detail Product</span>
+                    <span className="play-icon" onClick={togglePlay} style={{ cursor: 'pointer' }}>
+                      {isPlaying ? '⏸' : '▶'}
+                    </span>
+                    <span className="skip-icon" onClick={skipBackward} style={{ cursor: 'pointer' }}>⟲ 15</span>
+                    <span className="skip-icon" onClick={skipForward} style={{ cursor: 'pointer' }}>⟳ 15</span>
+                    <span className="detail-product-label">Live Video</span>
                   </div>
                   <div className="controls-right">
-                    <span className="time-display">02:12 / 03:00</span>
-                    <span className="volume-icon">🔊</span>
-                    <span className="chat-icon">💬</span>
-                    <span className="fullscreen-icon">⛶</span>
-                    <span className="menu-icon">⋮</span>
+                    <span className="time-display">
+                      {formatTime(currentTime)} / {formatTime(duration)}
+                    </span>
+                    <span className="volume-icon" onClick={toggleMute} style={{ cursor: 'pointer' }}>
+                      {isMuted ? '🔇' : '🔊'}
+                    </span>
+                    <span className="fullscreen-icon" onClick={toggleFullscreen} style={{ cursor: 'pointer' }}>⛶</span>
                   </div>
                 </div>
               </div>
