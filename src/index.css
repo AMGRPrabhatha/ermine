@@ -99,7 +99,7 @@ img {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 80px;
 }
 
 .section {
@@ -168,6 +168,12 @@ img {
 .delay-100 { animation-delay: 100ms; }
 .delay-200 { animation-delay: 200ms; }
 .delay-300 { animation-delay: 300ms; }
+
+@media screen and (max-width: 1024px) {
+  .container {
+    padding: 0 40px;
+  }
+}
 
 @media screen and (max-width: 768px) {
   .container {
