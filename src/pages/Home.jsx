@@ -230,6 +230,64 @@ const Home = () => {
         </div>
       </section>
 
+      {/* 4.5 Product Showcase Section */}
+      <section className="product-showcase-section">
+        <div className="container">
+          <div className="showcase-header fade-up">
+            <div className="showcase-title-side">
+              <h2>Stylish Women's Coats <ArrowRight size={28} className="title-arrow" /></h2>
+              <span className="showcase-subtitle">Your Outerwear Upgrade</span>
+            </div>
+            <div className="showcase-desc-side">
+              <p>Stay cozy and stylish with our selection of women's coats! From classic trenches to warm parkas, we've got you covered in every season.</p>
+            </div>
+          </div>
+          
+          <div className="showcase-video-container fade-up delay-100">
+            <div className="video-mockup-wrapper">
+              <div className="video-bg-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80&fm=webp')" }}></div>
+              <div className="video-overlay-tint"></div>
+              
+              <div className="video-center-content">
+                <div className="bag-icon-wrapper">
+                  <div className="bag-icon-svg">
+                    <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4H6zM3 6h18M16 10a4 4 0 01-8 0" />
+                    </svg>
+                  </div>
+                </div>
+                <span className="video-product-tag">Nadetta Coat Beige</span>
+                <h3>Embrace Timeless Style with Our Beige Coat Collection</h3>
+              </div>
+              
+              {/* Bottom Video Controls Bar Mockup */}
+              <div className="video-controls-mockup">
+                <div className="controls-top-row">
+                  <div className="progress-bar-bg">
+                    <div className="progress-bar-fill" style={{ width: '70%' }}></div>
+                  </div>
+                </div>
+                <div className="controls-bottom-row">
+                  <div className="controls-left">
+                    <span className="play-icon">▶</span>
+                    <span className="skip-icon">⟲ 15</span>
+                    <span className="skip-icon">⟳ 15</span>
+                    <span className="detail-product-label">Detail Product</span>
+                  </div>
+                  <div className="controls-right">
+                    <span className="time-display">02:12 / 03:00</span>
+                    <span className="volume-icon">🔊</span>
+                    <span className="chat-icon">💬</span>
+                    <span className="fullscreen-icon">⛶</span>
+                    <span className="menu-icon">⋮</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 5. Expanded Customers & Partners */}
       <section className="partners-section">
         <div className="marquee-container fade-up">
