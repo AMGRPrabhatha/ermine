@@ -118,6 +118,7 @@ const Home = () => {
         <div className="container">
           <div className="innovation-grid">
             <div className="innovation-content fade-up">
+              <span className="innovation-badge">Innovation First</span>
               <h2 className="section-title-alt">Leading Innovation in Textile Technology</h2>
               <p className="innovation-text">
                 Ermine is a leading provider of state-of-the-art bonding and fabric processing solutions. 
@@ -129,22 +130,22 @@ const Home = () => {
               </p>
               
               <ul className="innovation-list">
-                <li>
-                  <div className="list-icon"><ShieldCheck size={20} /></div>
+                <li className="innovation-card">
+                  <div className="list-icon"><ShieldCheck size={22} /></div>
                   <div className="list-text">
                     <strong>Advanced Technology</strong>
                     <span>Cutting-edge bonding and processing solutions</span>
                   </div>
                 </li>
-                <li>
-                  <div className="list-icon"><Zap size={20} /></div>
+                <li className="innovation-card">
+                  <div className="list-icon"><Zap size={22} /></div>
                   <div className="list-text">
                     <strong>Precision Manufacturing</strong>
                     <span>State-of-the-art facilities and expert team</span>
                   </div>
                 </li>
-                <li>
-                  <div className="list-icon"><Globe size={20} /></div>
+                <li className="innovation-card">
+                  <div className="list-icon"><Globe size={22} /></div>
                   <div className="list-text">
                     <strong>Sustainable Practices</strong>
                     <span>Eco-friendly and environmentally responsible solutions</span>
@@ -154,6 +155,7 @@ const Home = () => {
             </div>
             <div className="innovation-image-container fade-up delay-100">
               <img src="/solutions-2.webp" alt="Bonding Machine" className="innovation-image" />
+              <div className="image-gold-glow"></div>
             </div>
           </div>
         </div>
