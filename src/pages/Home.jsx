@@ -133,30 +133,28 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 2.5 Featured Categories (Grid Layout) */}
-      <section className="featured-links-section">
-        <div className="featured-grid">
-          <Link to="/solutions" className="featured-card fade-up">
-            <div className="featured-bg" style={{ backgroundImage: 'url(/solutions-1.webp)' }}></div>
-            <div className="featured-overlay"></div>
-            <div className="featured-content">
-              <h3>Custom Solutions</h3>
-            </div>
-          </Link>
-          <Link to="/products" className="featured-card fade-up delay-100">
-            <div className="featured-bg" style={{ backgroundImage: 'url(/product-1.webp)' }}></div>
-            <div className="featured-overlay"></div>
-            <div className="featured-content">
-              <h3>Finished Products</h3>
-            </div>
-          </Link>
-          <Link to="/solutions" className="featured-card fade-up delay-200">
-            <div className="featured-bg" style={{ backgroundImage: 'url(/solutions-hero.webp)' }}></div>
-            <div className="featured-overlay"></div>
-            <div className="featured-content">
-              <h3>Process Innovation</h3>
-            </div>
-          </Link>
+      {/* 2.5 Featured Categories (Premium 2-Column Grid Layout) */}
+      <section className="featured-categories-section">
+        <div className="container">
+          <div className="categories-grid">
+            <Link to="/products" className="category-card-wide fade-up">
+              <div className="category-bg" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp')" }}></div>
+              <div className="category-overlay"></div>
+              <div className="category-content">
+                <span className="category-tag">97% Polyester</span>
+                <h3>Elegant coat with the best materials</h3>
+              </div>
+            </Link>
+            
+            <Link to="/solutions" className="category-card-narrow fade-up delay-100">
+              <div className="category-bg" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp')" }}></div>
+              <div className="category-overlay"></div>
+              <div className="category-content">
+                <span className="category-tag">Precision Bonding</span>
+                <h3>Durable and strong stitches</h3>
+              </div>
+            </Link>
+          </div>
         </div>
       </section>
 
