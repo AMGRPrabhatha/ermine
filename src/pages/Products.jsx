@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './Products.css';
+import productsHero from '../assets/images/products.jpg';
 
 const products = [
   {
@@ -72,7 +73,7 @@ const Products = () => {
     <div className="products-page">
       {/* Cinematic Hero */}
       <section className="products-hero">
-        <div className="products-hero-bg" style={{ backgroundImage: 'url(/products-hero.webp)' }}></div>
+        <div className="products-hero-bg" style={{ backgroundImage: `url(${productsHero})` }}></div>
         <div className="products-hero-overlay"></div>
         <div className="container products-hero-content">
           <h1 className="fade-up">Our Products</h1>

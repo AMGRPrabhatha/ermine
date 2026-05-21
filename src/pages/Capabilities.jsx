@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Zap, Scissors, Building2, Leaf, Settings, ShieldCheck, ArrowRight, Activity } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './Capabilities.css';
+import capHero from '../assets/images/capabilities.jpg';
 
 const Capabilities = () => {
   useEffect(() => {
@@ -26,7 +27,7 @@ const Capabilities = () => {
     <div className="capabilities-wrapper">
       {/* 1. Hero Section */}
       <section className="cap-hero">
-        <div className="cap-hero-bg"></div>
+        <div className="cap-hero-bg" style={{ backgroundImage: `url(${capHero})` }}></div>
         <div className="cap-hero-overlay"></div>
         
         <div className="container cap-hero-centered">

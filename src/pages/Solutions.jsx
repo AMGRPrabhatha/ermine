@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './Solutions.css';
+import solutionsHero from '../assets/images/solution.jpg';
 
 const services = [
   {
@@ -77,7 +78,7 @@ const Solutions = () => {
     <div className="solutions-wrapper">
       {/* 1. Immersive Hero Section */}
       <section className="sol-hero">
-        <div className="sol-hero-bg"></div>
+        <div className="sol-hero-bg" style={{ backgroundImage: `url(${solutionsHero})` }}></div>
         <div className="sol-hero-overlay"></div>
         
         <div className="container sol-hero-centered">

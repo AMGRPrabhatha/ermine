@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { ArrowRight, Trophy, Users, ShieldAlert, Award, ThumbsUp, Flag, ChevronDown, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './About.css';
+import aboutHero from '../assets/images/aboutus.jpg';
 
 const About = () => {
   useEffect(() => {
@@ -44,7 +45,7 @@ const About = () => {
     <div className="about-wrapper">
       {/* 1. Immersive Hero Section */}
       <section className="about-hero">
-        <div className="about-hero-bg"></div>
+        <div className="about-hero-bg" style={{ backgroundImage: `url(${aboutHero})` }}></div>
         <div className="about-hero-overlay"></div>
         
         <div className="container about-hero-centered">
