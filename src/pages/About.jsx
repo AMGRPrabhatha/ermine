@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ArrowRight, Trophy, Users, ShieldAlert, Award } from 'lucide-react';
+import { ArrowRight, Trophy, Users, ShieldAlert, Award, ThumbsUp, Flag, ChevronDown, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './About.css';
 
@@ -200,6 +200,153 @@ const About = () => {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Ratings & Reviews Section */}
+      <section className="reviews-section">
+        <div className="container">
+          <div className="reviews-top-bar fade-up">
+            <div className="reviews-title-side">
+              <h2>Rating & Reviews (328)</h2>
+              <span className="reviews-sub-info">Showing 4 results from total of 23 reviews</span>
+            </div>
+            <div className="reviews-filter-side">
+              <span className="filter-label">Filter by</span>
+              <div className="filter-dropdown">
+                <span className="star-rating"><Star size={14} fill="#d4af37" stroke="#d4af37" /> 5</span>
+                <ChevronDown size={16} />
+              </div>
+            </div>
+          </div>
+
+          <div className="reviews-grid">
+            {/* Review 1 */}
+            <div className="review-card fade-up">
+              <div className="review-header">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80&fm=webp" alt="Hasna Azlya" className="review-avatar" />
+                <div className="review-user-info">
+                  <div className="user-name-row">
+                    <h4>Hasna Azlya</h4>
+                    <span className="review-time">yesterday</span>
+                  </div>
+                  <div className="star-row">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={15} fill="#d4af37" stroke="#d4af37" />
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <p className="review-text">
+                "I absolutely adore my beige coat from Ermine! It's not just a coat; it's a statement piece that adds elegance to any outfit. The color is versatile, and the fit is incredibly flattering. It's become my go-to outerwear choice for both casual outings and formal events."
+              </p>
+              <div className="review-actions">
+                <button className="btn-action">Reply</button>
+                <button className="btn-action">
+                  <ThumbsUp size={14} /> <span>22</span>
+                </button>
+                <button className="btn-action report-btn">
+                  <Flag size={14} />
+                </button>
+              </div>
+            </div>
+
+            {/* Review 2 */}
+            <div className="review-card fade-up delay-100">
+              <div className="review-header">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80&fm=webp" alt="Hellena Joy" className="review-avatar" />
+                <div className="review-user-info">
+                  <div className="user-name-row">
+                    <h4>Hellena Joy</h4>
+                    <span className="review-time">yesterday</span>
+                  </div>
+                  <div className="star-row">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={15} fill="#d4af37" stroke="#d4af37" />
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <p className="review-text">
+                "As a busy professional, I need outerwear that's both stylish and practical, and this beige coat ticks all the boxes. It's sleek and sophisticated, ideal for meetings and client lunches, yet comfortable enough for everyday wear. I've received countless compliments since I started wearing it!"
+              </p>
+              <div className="review-actions">
+                <button className="btn-action">Reply</button>
+                <button className="btn-action">
+                  <ThumbsUp size={14} /> <span>22</span>
+                </button>
+                <button className="btn-action report-btn">
+                  <Flag size={14} />
+                </button>
+              </div>
+            </div>
+
+            {/* Review 3 */}
+            <div className="review-card fade-up">
+              <div className="review-header">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80&fm=webp" alt="Sarah Jasmine" className="review-avatar" />
+                <div className="review-user-info">
+                  <div className="user-name-row">
+                    <h4>Sarah Jasmine</h4>
+                    <span className="review-time">2 days ago</span>
+                  </div>
+                  <div className="star-row">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={15} fill="#d4af37" stroke="#d4af37" />
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <p className="review-text">
+                "I'm in love with my beige coat! It's so soft and cozy, like being wrapped in a warm hug. The color is gorgeous and goes with everything in my wardrobe. Whether I'm running errands or meeting friends for brunch, this coat effortlessly elevates my look."
+              </p>
+              <div className="review-actions">
+                <button className="btn-action">Reply</button>
+                <button className="btn-action">
+                  <ThumbsUp size={14} /> <span>10</span>
+                </button>
+                <button className="btn-action report-btn">
+                  <Flag size={14} />
+                </button>
+              </div>
+            </div>
+
+            {/* Review 4 */}
+            <div className="review-card fade-up delay-100">
+              <div className="review-header">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80&fm=webp" alt="Taylor Swift" className="review-avatar" />
+                <div className="review-user-info">
+                  <div className="user-name-row">
+                    <h4>Taylor Swift</h4>
+                    <span className="review-time">2 days ago</span>
+                  </div>
+                  <div className="star-row">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={15} fill="#d4af37" stroke="#d4af37" />
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <p className="review-text">
+                "This beige coat is a game-changer! I've never felt more confident and put-together than when I'm wearing it. The quality is top-notch, and the attention to detail is evident in every stitch. Plus, it's surprisingly warm without being bulky, making it perfect for chilly days."
+              </p>
+              <div className="review-actions">
+                <button className="btn-action">Reply</button>
+                <button className="btn-action">
+                  <ThumbsUp size={14} /> <span>10</span>
+                </button>
+                <button className="btn-action report-btn">
+                  <Flag size={14} />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="reviews-footer fade-up">
+            <button className="btn-show-more">
+              Show More <ArrowRight size={16} style={{ transform: 'rotate(90deg)' }} />
+            </button>
           </div>
         </div>
       </section>
