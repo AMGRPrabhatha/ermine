@@ -146,53 +146,66 @@ const Capabilities = () => {
         </div>
       </section>
 
-      {/* 4. Fabric Bonding Technologies (Sticky Layout) */}
+      {/* 4. Fabric Bonding Technologies (Redesigned Modern Layout) */}
       <section className="bonding-tech-section">
         <div className="container">
           <div className="bonding-tech-grid">
             <div className="bonding-text-col fade-up">
-              <h2>Fabric Bonding Technologies</h2>
+              <span className="why-choose-badge">WHY CHOOSE</span>
+              <h2>Fabric Bonding <span className="highlight-gold">Technologies</span></h2>
+              <div className="title-underline"></div>
+              
               <p className="bonding-intro">
                 Our comprehensive bonding solutions deliver superior adhesion, durability, 
                 and performance for technical textiles and performance fabrics.
               </p>
               
-              <div className="bonding-list">
-                <div className="bonding-list-item">
-                  <div className="bonding-item-number">01</div>
-                  <div className="bonding-item-content">
-                    <h3>Full-Width Bonding Machines</h3>
+              <div className="bonding-why-grid">
+                <div className="bonding-why-card">
+                  <div className="why-icon-badge">
+                    <Zap size={22} />
+                  </div>
+                  <div className="why-card-content">
+                    <h3>Full-Width Bonding</h3>
                     <p>Seamless fabric adhesion across the entire width for consistent quality and minimal waste</p>
                   </div>
                 </div>
-                <div className="bonding-list-item">
-                  <div className="bonding-item-number">02</div>
-                  <div className="bonding-item-content">
-                    <h3>Heat Bonding & Adhesive Lamination</h3>
+
+                <div className="bonding-why-card">
+                  <div className="why-icon-badge">
+                    <Activity size={22} />
+                  </div>
+                  <div className="why-card-content">
+                    <h3>Thermal Lamination</h3>
                     <p>Advanced thermal bonding techniques and precision adhesive application systems</p>
                   </div>
                 </div>
-                <div className="bonding-list-item">
-                  <div className="bonding-item-number">03</div>
-                  <div className="bonding-item-content">
-                    <h3>Fabric Laydown Systems</h3>
+
+                <div className="bonding-why-card">
+                  <div className="why-icon-badge">
+                    <Settings size={22} />
+                  </div>
+                  <div className="why-card-content">
+                    <h3>Fabric Laydown</h3>
                     <p>Precision placement technology ensuring optimal alignment and positioning</p>
                   </div>
                 </div>
-                <div className="bonding-list-item">
-                  <div className="bonding-item-number">04</div>
-                  <div className="bonding-item-content">
+
+                <div className="bonding-why-card">
+                  <div className="why-icon-badge">
+                    <ShieldCheck size={22} />
+                  </div>
+                  <div className="why-card-content">
                     <h3>Pre-Shrink Processing</h3>
                     <p>Ensures fabric stability and consistency throughout the manufacturing process</p>
                   </div>
                 </div>
-                <div className="bonding-list-item">
-                  <div className="bonding-item-number">05</div>
-                  <div className="bonding-item-content">
-                    <h3>Specialized Bonding Techniques</h3>
-                    <p>Custom solutions for technical textiles and performance fabrics with unique requirements</p>
-                  </div>
-                </div>
+              </div>
+
+              <div className="bonding-cta-container">
+                <Link to="/contact" className="btn-modern-why">
+                  INQUIRE NOW <span className="arrow">&gt;</span>
+                </Link>
               </div>
             </div>
             

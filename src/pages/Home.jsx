@@ -5,6 +5,7 @@ import './Home.css';
 
 import homeHero from '../assets/images/homehero.webp';
 import brandVideo from '../assets/images/video.mp4';
+import textileImg from '../assets/images/Textile.jpg';
 
 const Home = () => {
   const videoRef = React.useRef(null);
@@ -75,7 +76,10 @@ const Home = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { 
+        threshold: 0.01,              // Trigger as soon as 1% of the element is near view
+        rootMargin: '0px 0px 150px 0px' // Pre-load elements 150px before entering viewport
+      }
     );
 
     const elements = document.querySelectorAll('.fade-up, .slide-in-right, .scale-in');
@@ -113,85 +117,181 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 2. Innovation Section */}
+      {/* 2. Innovation Section (Redesigned Modern Layout) */}
       <section className="innovation-section">
         <div className="container">
           <div className="innovation-grid">
             <div className="innovation-content fade-up">
-              <span className="innovation-badge">
-                <span className="badge-pulse"></span>
-                Innovation First
-              </span>
-              <h2 className="section-title-alt">Leading Innovation in Textile Technology</h2>
-              <p className="innovation-text">
+              <span className="why-choose-badge">WHY CHOOSE</span>
+              <h2>Leading Innovation in <span className="highlight-gold">Textile Technology</span></h2>
+              <div className="title-underline"></div>
+              
+              <p className="innovation-intro">
                 Ermine is a leading provider of state-of-the-art bonding and fabric processing solutions. 
-                With a strong focus on innovation and precision, we specialize in ultrasonic cutting, 
-                laser cutting, and high-performance fabric bonding technologies.
-              </p>
-              <p className="innovation-text">
-                Our goal is to revolutionize textile manufacturing through advanced technology and sustainable practices.
+                With a strong focus on innovation and precision, our goal is to revolutionize textile 
+                manufacturing through advanced technology and sustainable practices.
               </p>
               
-              <ul className="innovation-list">
-                <li className="innovation-card">
-                  <div className="list-icon"><ShieldCheck size={22} /></div>
-                  <div className="list-text">
-                    <strong>Advanced Technology</strong>
-                    <span>Cutting-edge bonding and processing solutions</span>
+              <div className="innovation-why-grid">
+                <div className="innovation-why-card">
+                  <div className="why-icon-badge">
+                    <ShieldCheck size={22} />
                   </div>
-                </li>
-                <li className="innovation-card">
-                  <div className="list-icon"><Zap size={22} /></div>
-                  <div className="list-text">
-                    <strong>Precision Manufacturing</strong>
-                    <span>State-of-the-art facilities and expert team</span>
+                  <div className="why-card-content">
+                    <h3>Advanced Technology</h3>
+                    <p>Cutting-edge bonding and fabric processing solutions engineered for tomorrow</p>
                   </div>
-                </li>
-                <li className="innovation-card">
-                  <div className="list-icon"><Globe size={22} /></div>
-                  <div className="list-text">
-                    <strong>Sustainable Practices</strong>
-                    <span>Eco-friendly and environmentally responsible solutions</span>
+                </div>
+
+                <div className="innovation-why-card">
+                  <div className="why-icon-badge">
+                    <Zap size={22} />
                   </div>
-                </li>
-              </ul>
+                  <div className="why-card-content">
+                    <h3>Precision Manufacturing</h3>
+                    <p>State-of-the-art climate-controlled facilities and dedicated expert technical team</p>
+                  </div>
+                </div>
+
+                <div className="innovation-why-card">
+                  <div className="why-icon-badge">
+                    <Globe size={22} />
+                  </div>
+                  <div className="why-card-content">
+                    <h3>Sustainable Practices</h3>
+                    <p>Eco-friendly, energy-efficient, and environmentally responsible production systems</p>
+                  </div>
+                </div>
+
+                <div className="innovation-why-card">
+                  <div className="why-icon-badge">
+                    <Activity size={22} />
+                  </div>
+                  <div className="why-card-content">
+                    <h3>Global Compliance</h3>
+                    <p>Robust quality assurance protocols compliant with elite international apparel standards</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="innovation-image-container fade-up delay-100">
-              <img src="/solutions-2.webp" alt="Bonding Machine" className="innovation-image" />
-              <div className="image-gold-glow"></div>
+            
+            <div className="innovation-image-col">
+              <div className="innovation-image-wrapper fade-up delay-200">
+                <img src={textileImg} alt="Textile Innovation" />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3. Core Expertise (Redesigned Ermine Advantage) */}
-      <section className="expertise-section">
+      {/* 3. Core Expertise (Modernized Bento Layout) */}
+      <section className="expertise-section-modern">
+        {/* Glow Effects */}
+        <div className="expertise-glow-1"></div>
+        <div className="expertise-glow-2"></div>
+        
         <div className="container">
-          <div className="section-header text-center fade-up">
-            <h2 className="section-title">Core Expertise</h2>
-            <p className="section-subtitle">Specialized in advanced bonding solutions and high-tech fabric processing</p>
+          <div className="expertise-header-modern fade-up">
+            <span className="expertise-badge">Our Capabilities</span>
+            <h2 className="expertise-title-modern">Core Expertise</h2>
+            <div className="expertise-header-divider"></div>
+            <p className="expertise-subtitle-modern">
+              Engineered with absolute precision, utilizing state-of-the-art technologies to redefine textile performance and industrial bonding.
+            </p>
           </div>
 
-          <div className="expertise-grid">
-            <div className="expertise-card fade-up">
-              <div className="expertise-icon-box"><Zap size={24} /></div>
-              <h3>Ultrasonic Cutting</h3>
-              <p>Advanced ultrasonic technology for precise fabric cutting and processing</p>
+          <div className="expertise-bento-grid">
+            {/* Bento Card 1: Ultrasonic (Large featured card) */}
+            <div className="expertise-bento-card bento-large fade-up">
+              <div className="bento-card-bg"></div>
+              <div className="bento-card-content">
+                <div className="bento-top-meta">
+                  <span className="bento-number">01</span>
+                  <div className="bento-icon-wrapper"><Zap size={26} /></div>
+                </div>
+                <div className="bento-text">
+                  <h3>Ultrasonic Cutting</h3>
+                  <p>
+                    Utilizing high-frequency acoustic vibrations to slice fabrics with unmatched speed, sealing edges simultaneously to eliminate fraying and create seamless borders.
+                  </p>
+                  <div className="bento-tech-tags">
+                    <span>Acoustic Vibrations</span>
+                    <span>Self-Sealing Edges</span>
+                    <span>Zero Fraying</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="expertise-card fade-up delay-100">
-              <div className="expertise-icon-box"><Activity size={24} /></div>
-              <h3>Laser Cutting</h3>
-              <p>High-precision laser cutting systems for complex fabric patterns</p>
+
+            {/* Bento Card 2: Laser Cutting */}
+            <div className="expertise-bento-card bento-standard fade-up delay-100">
+              <div className="bento-card-bg"></div>
+              <div className="bento-card-content">
+                <div className="bento-top-meta">
+                  <span className="bento-number">02</span>
+                  <div className="bento-icon-wrapper"><Activity size={26} /></div>
+                </div>
+                <div className="bento-text">
+                  <h3>Laser Cutting</h3>
+                  <p>
+                    CNC-controlled multi-dimensional laser heads deliver complex shapes with micron-level tolerance. Ideal for high-performance activewear and technical garments.
+                  </p>
+                  <div className="bento-tech-tags">
+                    <span>Micron Tolerance</span>
+                    <span>CNC Precision</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="expertise-card fade-up delay-200">
-              <div className="expertise-icon-box"><Droplet size={24} /></div>
-              <h3>Fabric Bonding</h3>
-              <p>Innovative bonding techniques for superior fabric adhesion and durability</p>
+
+            {/* Bento Card 3: Fabric Bonding */}
+            <div className="expertise-bento-card bento-standard fade-up delay-200">
+              <div className="bento-card-bg"></div>
+              <div className="bento-card-content">
+                <div className="bento-top-meta">
+                  <span className="bento-number">03</span>
+                  <div className="bento-icon-wrapper"><Droplet size={26} /></div>
+                </div>
+                <div className="bento-text">
+                  <h3>Fabric Bonding</h3>
+                  <p>
+                    State-of-the-art molecular adhesion and film technology replaces standard seams, offering superior stretch, hydro-resistance, and streamlined silhouettes.
+                  </p>
+                  <div className="bento-tech-tags">
+                    <span>Molecular Adhesion</span>
+                    <span>Hydro-Resistance</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="expertise-card fade-up delay-300">
-              <div className="expertise-icon-box"><ShieldCheck size={24} /></div>
-              <h3>Quality Assurance</h3>
-              <p>Rigorous testing and validation to ensure consistent excellence</p>
+
+            {/* Bento Card 4: Quality Assurance (Wide featured card) */}
+            <div className="expertise-bento-card bento-wide fade-up delay-300">
+              <div className="bento-card-bg"></div>
+              <div className="bento-card-content">
+                <div className="bento-top-meta">
+                  <span className="bento-number">04</span>
+                  <div className="bento-icon-wrapper"><ShieldCheck size={26} /></div>
+                </div>
+                <div className="bento-text-horizontal">
+                  <div className="horizontal-main">
+                    <h3>Quality Assurance</h3>
+                    <p>
+                      Every bonding and cut undergoes rigorous multi-cycle stress, elongation, and hydrostatic testing to ensure compliance with elite athletic standards.
+                    </p>
+                  </div>
+                  <div className="horizontal-stats">
+                    <div className="stat-box">
+                      <span className="stat-num">100%</span>
+                      <span className="stat-label">Inspected</span>
+                    </div>
+                    <div className="stat-box">
+                      <span className="stat-num">50+</span>
+                      <span className="stat-label">Wash Cycles</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

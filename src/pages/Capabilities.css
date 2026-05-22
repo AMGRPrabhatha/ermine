@@ -293,70 +293,150 @@
   position: absolute; left: 0; color: #fff;
 }
 
-/* 4. Fabric Bonding Technologies (Sticky) */
+/* 4. Fabric Bonding Technologies (Redesigned Modern Layout) */
 .bonding-tech-section {
   padding: 8rem 0;
-  background-color: #fcfcfc;
+  background-color: #ffffff;
 }
 
 .bonding-tech-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 5rem;
   align-items: flex-start;
+}
+
+.why-choose-badge {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 2px;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
 }
 
 .bonding-text-col h2 {
-  font-size: 2.8rem;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
   font-weight: 800;
-  color: #111;
-  margin-bottom: 1.5rem;
+  color: #111111;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.highlight-gold {
+  color: var(--color-accent);
+}
+
+.title-underline {
+  width: 70px;
+  height: 3px;
+  background-color: var(--color-accent);
+  margin-bottom: 2rem;
+  border-radius: 2px;
 }
 
 .bonding-intro {
-  font-size: 1.1rem;
-  color: #444;
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
   line-height: 1.7;
   margin-bottom: 3rem;
+  max-width: 650px;
 }
 
-.bonding-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+.bonding-why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem 2rem;
+  margin-bottom: 3.5rem;
 }
 
-.bonding-list-item {
+.bonding-why-card {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.25rem;
   align-items: flex-start;
 }
 
-.bonding-item-number {
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: #800000;
-  background: rgba(128, 0, 0, 0.05);
-  width: 54px;
-  height: 54px;
-  border-radius: 16px;
+.why-icon-badge {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, rgba(214, 175, 55, 0.12) 0%, rgba(214, 175, 55, 0.04) 100%);
+  border: 1px solid rgba(214, 175, 55, 0.2);
+  color: var(--color-accent);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(214, 175, 55, 0.03);
 }
 
-.bonding-item-content h3 {
-  font-size: 1.25rem;
+.bonding-why-card:hover .why-icon-badge {
+  transform: scale(1.1) rotate(5deg);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
+  color: #ffffff;
+  box-shadow: 0 10px 22px rgba(214, 175, 55, 0.25);
+  border-color: var(--color-accent);
+}
+
+.why-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.why-card-content h3 {
+  font-size: 1.1rem;
   font-weight: 700;
-  color: #111;
-  margin-bottom: 0.5rem;
+  color: #111111;
+  margin: 0;
 }
 
-.bonding-item-content p {
-  font-size: 1rem;
-  color: #666;
-  line-height: 1.6;
+.why-card-content p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.bonding-cta-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btn-modern-why {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: 2px solid var(--color-accent);
+  background: transparent;
+  color: var(--color-accent);
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn-modern-why .arrow {
+  font-weight: 800;
+  transition: transform 0.3s ease;
+}
+
+.btn-modern-why:hover {
+  background-color: var(--color-accent);
+  color: #ffffff;
+  box-shadow: 0 8px 25px rgba(214, 175, 55, 0.25);
+  transform: translateY(-2px);
+}
+
+.btn-modern-why:hover .arrow {
+  transform: translateX(4px);
 }
 
 .bonding-image-col {
@@ -365,10 +445,11 @@
 }
 
 .sticky-image-wrapper {
-  border-radius: 32px;
+  border-radius: 30px;
   overflow: hidden;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
-  height: 600px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+  height: 550px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
 .sticky-image-wrapper img {
@@ -469,6 +550,7 @@
   .section-header h2, .bonding-text-col h2 { font-size: 2.2rem; }
   .cap-cta h2 { font-size: 2rem; }
   .sticky-image-wrapper { height: 350px; }
+  .bonding-why-grid { grid-template-columns: 1fr; gap: 2rem; }
   
   .cap-cta .container {
     padding: 3rem 1.5rem;
