@@ -118,7 +118,10 @@ const Home = () => {
         <div className="container">
           <div className="innovation-grid">
             <div className="innovation-content fade-up">
-              <span className="innovation-badge">Innovation First</span>
+              <span className="innovation-badge">
+                <span className="badge-pulse"></span>
+                Innovation First
+              </span>
               <h2 className="section-title-alt">Leading Innovation in Textile Technology</h2>
               <p className="innovation-text">
                 Ermine is a leading provider of state-of-the-art bonding and fabric processing solutions. 
