@@ -216,7 +216,7 @@ const About = () => {
             <div className="reviews-filter-side">
               <span className="filter-label">Filter by</span>
               <div className="filter-dropdown">
-                <span className="star-rating"><Star size={14} fill="#d4af37" stroke="#d4af37" /> 5</span>
+                <span className="star-rating"><Star size={14} fill="var(--color-accent)" stroke="var(--color-accent)" /> 5</span>
                 <ChevronDown size={16} />
               </div>
             </div>
@@ -234,7 +234,7 @@ const About = () => {
                   </div>
                   <div className="star-row">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={15} fill="#d4af37" stroke="#d4af37" />
+                      <Star key={i} size={15} fill="var(--color-accent)" stroke="var(--color-accent)" />
                     ))}
                   </div>
                 </div>
@@ -264,7 +264,7 @@ const About = () => {
                   </div>
                   <div className="star-row">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={15} fill="#d4af37" stroke="#d4af37" />
+                      <Star key={i} size={15} fill="var(--color-accent)" stroke="var(--color-accent)" />
                     ))}
                   </div>
                 </div>
@@ -294,7 +294,7 @@ const About = () => {
                   </div>
                   <div className="star-row">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={15} fill="#d4af37" stroke="#d4af37" />
+                      <Star key={i} size={15} fill="var(--color-accent)" stroke="var(--color-accent)" />
                     ))}
                   </div>
                 </div>
@@ -324,7 +324,7 @@ const About = () => {
                   </div>
                   <div className="star-row">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={15} fill="#d4af37" stroke="#d4af37" />
+                      <Star key={i} size={15} fill="var(--color-accent)" stroke="var(--color-accent)" />
                     ))}
                   </div>
                 </div>

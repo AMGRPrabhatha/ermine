@@ -142,6 +142,21 @@ const Capabilities = () => {
                 </ul>
               </div>
             </div>
+
+            <div className="cutting-modern-card fade-up delay-300">
+              <div className="cutting-bg" style={{ backgroundImage: 'url(/product-1.webp)' }}></div>
+              <div className="cutting-overlay"></div>
+              <div className="cutting-content">
+                <div className="cutting-icon-circle"><Settings size={32} /></div>
+                <h3>Tape Slitting</h3>
+                <ul>
+                  <li>High-precision roll slitting</li>
+                  <li>Specialized film width customization</li>
+                  <li>Efficient process with minimal waste</li>
+                  <li>Consistent tolerances for seamless bonding</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>

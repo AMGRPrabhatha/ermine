@@ -72,8 +72,9 @@
 
 .address-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1.5rem;
+  max-width: 450px;
 }
 
 .address-card {
@@ -1022,7 +1023,7 @@
   right: -5%;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, rgba(212, 175, 55, 0) 70%);
+  background: radial-gradient(circle, rgba(128, 0, 0, 0.05) 0%, rgba(128, 0, 0, 0) 70%);
   filter: blur(60px);
   z-index: 1;
   pointer-events: none;
@@ -1034,7 +1035,7 @@
   left: -5%;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.03) 0%, rgba(212, 175, 55, 0) 70%);
+  background: radial-gradient(circle, rgba(128, 0, 0, 0.03) 0%, rgba(128, 0, 0, 0) 70%);
   filter: blur(80px);
   z-index: 1;
   pointer-events: none;
@@ -1111,9 +1112,9 @@
 .expertise-bento-card:hover {
   transform: translateY(-5px); /* Gentle float */
   background: #ffffff;
-  border-color: rgba(212, 175, 55, 0.4);
+  border-color: rgba(128, 0, 0, 0.4);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06), 
-              0 0 20px rgba(212, 175, 55, 0.03);
+              0 0 20px rgba(128, 0, 0, 0.03);
 }
 
 .bento-card-bg {
@@ -1122,7 +1123,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 100% 0%, rgba(212, 175, 55, 0.04), transparent 50%);
+  background: radial-gradient(circle at 100% 0%, rgba(128, 0, 0, 0.04), transparent 50%);
   z-index: 1;
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -1217,8 +1218,8 @@
 
 .expertise-bento-card:hover .bento-tech-tags span {
   color: #111111;
-  background: rgba(212, 175, 55, 0.1);
-  border-color: rgba(212, 175, 55, 0.2);
+  background: rgba(128, 0, 0, 0.1);
+  border-color: rgba(128, 0, 0, 0.2);
 }
 
 /* Specific Card Layout Positions */
@@ -1392,8 +1393,9 @@
 
 .address-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1.5rem;
+  max-width: 450px;
 }
 
 .address-card {

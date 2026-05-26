@@ -206,7 +206,7 @@
 }
 
 .icon-gold {
-  color: #d4af37;
+  color: var(--color-accent);
 }
 
 .sol-card-arrow {
@@ -241,7 +241,7 @@
   display: inline-block;
   font-size: 0.85rem;
   font-weight: 700;
-  color: #d4af37;
+  color: var(--color-accent);
   text-transform: uppercase;
   letter-spacing: 1.5px;
   margin-bottom: 0.8rem;

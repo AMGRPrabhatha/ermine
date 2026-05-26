@@ -191,20 +191,20 @@
 }
 
 .eco-card.eco-dark .eco-icon-box.eco-icon-gold {
-  background: rgba(212, 175, 55, 0.1);
-  color: #d4af37;
-  border-color: rgba(212, 175, 55, 0.2);
+  background: rgba(128, 0, 0, 0.1);
+  color: var(--color-accent);
+  border-color: rgba(128, 0, 0, 0.2);
 }
 
 .eco-card.eco-dark:hover {
-  border-color: rgba(212, 175, 55, 0.3);
+  border-color: rgba(128, 0, 0, 0.3);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
 }
 
 .eco-card.eco-dark:hover .eco-icon-box.eco-icon-gold {
-  background-color: #d4af37;
+  background-color: var(--color-accent);
   color: #111111;
-  border-color: #d4af37;
+  border-color: var(--color-accent);
 }
 
 /* 3. Cutting Technologies (Modern Immersive) */
@@ -215,7 +215,7 @@
 
 .cutting-modern-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2.5rem;
 }
 

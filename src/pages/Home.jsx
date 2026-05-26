@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ArrowRight, Activity, Zap, ShieldCheck, Globe, Droplet, ArrowDownRight } from 'lucide-react';
+import { ArrowRight, Activity, Zap, ShieldCheck, Globe, Droplet, ArrowDownRight, Scissors } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 
@@ -265,12 +265,34 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Bento Card 4: Quality Assurance (Wide featured card) */}
-            <div className="expertise-bento-card bento-wide fade-up delay-300">
+            {/* Bento Card 4: Tape Slitting */}
+            <div className="expertise-bento-card bento-large fade-up delay-300">
               <div className="bento-card-bg"></div>
               <div className="bento-card-content">
                 <div className="bento-top-meta">
                   <span className="bento-number">04</span>
+                  <div className="bento-icon-wrapper"><Scissors size={26} /></div>
+                </div>
+                <div className="bento-text">
+                  <h3>Tape Slitting</h3>
+                  <p>
+                    Precision roll and tape slitting technologies for specialized adhesive film processing. Enabling custom width bond lines and seamless application profiles.
+                  </p>
+                  <div className="bento-tech-tags">
+                    <span>Custom Widths</span>
+                    <span>Roll Slitting</span>
+                    <span>Film Processing</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bento Card 5: Quality Assurance (Wide featured card) */}
+            <div className="expertise-bento-card bento-wide fade-up delay-400">
+              <div className="bento-card-bg"></div>
+              <div className="bento-card-content">
+                <div className="bento-top-meta">
+                  <span className="bento-number">05</span>
                   <div className="bento-icon-wrapper"><ShieldCheck size={26} /></div>
                 </div>
                 <div className="bento-text-horizontal">
@@ -373,15 +395,11 @@ const Home = () => {
             <div className="location-content fade-up delay-100">
               <h2 className="section-title-alt">Strategically Located</h2>
               <p className="location-text">
-                With both our corporate office and manufacturing facility strategically positioned in Sri Lanka, 
+                With our manufacturing facility strategically positioned in Sri Lanka, 
                 we provide seamless access to regional markets and global partners.
               </p>
               
               <div className="address-grid">
-                <div className="address-card">
-                  <h4>Company Address</h4>
-                  <p>Ermine Pvt Ltd<br/>No 192/10 9th Lane, Nawala Rd<br/>Kotte, Sri Lanka</p>
-                </div>
                 <div className="address-card">
                   <h4>Factory Address</h4>
                   <p>Ermine International Pvt Ltd<br/>No 4, Ridee Mawatha<br/>Kalamulla, Kalutara<br/>Sri Lanka</p>
