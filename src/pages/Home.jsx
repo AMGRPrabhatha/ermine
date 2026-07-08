@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { ArrowRight, Activity, Zap, ShieldCheck, Globe, Droplet, ArrowDownRight, Scissors } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { ArrowRight, Activity, Zap, ShieldCheck, Globe, Droplet, ArrowDownRight, Scissors, MapPin, Copy, Check, ExternalLink, Compass, Truck, Sun } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 
@@ -13,6 +13,19 @@ const Home = () => {
   const [currentTime, setCurrentTime] = React.useState(0);
   const [duration, setDuration] = React.useState(0);
   const [isMuted, setIsMuted] = React.useState(true);
+  const [isCopied, setIsCopied] = React.useState(false);
+
+  const handleCopyAddress = () => {
+    const addressText = "Ermine International Pvt Ltd\nNo 4, Ridee Mawatha\nKalamulla, Kalutara\nSri Lanka";
+    navigator.clipboard.writeText(addressText)
+      .then(() => {
+        setIsCopied(true);
+        setTimeout(() => setIsCopied(false), 2000);
+      })
+      .catch((err) => {
+        console.error("Failed to copy address: ", err);
+      });
+  };
 
   const formatTime = (time) => {
     if (isNaN(time)) return "00:00";
@@ -387,24 +400,106 @@ const Home = () => {
 
       {/* 4. Strategically Located */}
       <section className="location-section">
+        {/* Glow Effects */}
+        <div className="location-glow-1"></div>
+        <div className="location-glow-2"></div>
+
         <div className="container">
           <div className="location-grid">
-            <div className="location-image-container fade-up">
-              <img src="/products-hero.webp" alt="Ermine Headquarters" className="location-image" />
-            </div>
-            <div className="location-content fade-up delay-100">
-              <h2 className="section-title-alt">Strategically Located</h2>
-              <p className="location-text">
-                With our manufacturing facility strategically positioned in Sri Lanka, 
-                we provide seamless access to regional markets and global partners.
-              </p>
-              
-              <div className="address-grid">
-                <div className="address-card">
-                  <h4>Factory Address</h4>
-                  <p>Ermine International Pvt Ltd<br/>No 4, Ridee Mawatha<br/>Kalamulla, Kalutara<br/>Sri Lanka</p>
+            {/* Left Layered Media Dashboard */}
+            <div className="location-media-wrapper fade-up">
+              {/* Floating Active Pulse Badge */}
+              <div className="media-status-badge">
+                <span className="pulse-dot"></span>
+                <span className="status-text">ACTIVE OPERATIONS | 24/7</span>
+              </div>
+
+              {/* Main Image Container */}
+              <div className="location-image-container-modern">
+                <img src="/products-hero.webp" alt="Ermine Manufacturing Facility" className="location-image" />
+              </div>
+
+              {/* Floating Glassmorphic Stats Card */}
+              <div className="media-stats-floating-card">
+                <div className="floating-card-stat">
+                  <div className="stat-icon-badge">
+                    <Compass size={18} />
+                  </div>
+                  <div className="stat-info">
+                    <span className="stat-value">Colombo Hub</span>
+                    <span className="stat-desc">45 mins to Main Port</span>
+                  </div>
+                </div>
+                <div className="floating-card-stat">
+                  <div className="stat-icon-badge">
+                    <Truck size={18} />
+                  </div>
+                  <div className="stat-info">
+                    <span className="stat-value">Global Logistics</span>
+                    <span className="stat-desc">Air & Sea Shipping Lanes</span>
+                  </div>
                 </div>
               </div>
+            </div>
+
+            {/* Right Content Column */}
+            <div className="location-content fade-up delay-100">
+              <h2 className="section-title-alt">Strategically <span className="text-accent">Located</span></h2>
+              <p className="location-text">
+                Positioned at the heart of key Indian Ocean trade lanes, our state-of-the-art climate-controlled facility in Sri Lanka provides highly streamlined transit speeds and seamless access to elite global markets.
+              </p>
+
+              {/* Smart Address Card */}
+              <div className="smart-address-card">
+                <div className="address-header">
+                  <MapPin size={22} className="address-pin-icon" />
+                  <h4>Factory Headquarters</h4>
+                </div>
+
+                <div className="address-details">
+                  <div className="address-detail-item">
+                    <strong>Company</strong>
+                    <span>Ermine International Pvt Ltd</span>
+                  </div>
+                  <div className="address-detail-item">
+                    <strong>Address</strong>
+                    <span>No 4, Ridee Mawatha, Kalamulla, Kalutara, Sri Lanka</span>
+                  </div>
+                  <div className="address-detail-item">
+                    <strong>Clearance</strong>
+                    <span>Colombo Sea Port Proximity</span>
+                  </div>
+                </div>
+
+                <div className="address-actions">
+                  <button 
+                    onClick={handleCopyAddress} 
+                    className={`btn-copy-address ${isCopied ? 'copied' : ''}`}
+                    title="Copy address to clipboard"
+                  >
+                    {isCopied ? (
+                      <>
+                        <Check size={16} /> Copied!
+                      </>
+                    ) : (
+                      <>
+                        <Copy size={16} /> Copy Address
+                      </>
+                    )}
+                  </button>
+                  
+                  <a 
+                    href="https://maps.google.com/?q=Ermine+International+Pvt+Ltd+No+4+Ridee+Mawatha+Kalamulla+Kalutara+Sri+Lanka" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="btn-maps-link"
+                  >
+                    <ExternalLink size={16} /> View on Map
+                  </a>
+                </div>
+              </div>
+
+
             </div>
           </div>
         </div>

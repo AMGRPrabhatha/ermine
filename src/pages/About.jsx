@@ -3,6 +3,9 @@ import { ArrowRight, Trophy, Users, ShieldAlert, Award, ThumbsUp, Flag, ChevronD
 import { Link } from 'react-router-dom';
 import './About.css';
 import aboutHero from '../assets/images/aboutus.jpg';
+import nuwanImg from '../assets/images/Nuwan Muthuthanthri.jpeg';
+import shanthaImg from '../assets/images/Shantha Rathnayake.jpeg';
+import gayanRanganaImg from '../assets/images/Gayan Rangana.jpeg';
 
 const About = () => {
   useEffect(() => {
@@ -163,41 +166,43 @@ const About = () => {
           </div>
 
           <div className="team-grid">
+
+
             <div className="team-card fade-up">
               <div className="team-avatar-wrapper">
-                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80&fm=webp" alt="Pahan Vithanage" />
+                <img src={nuwanImg} alt="Nuwan Muthutanthri" />
               </div>
               <div className="team-info">
-                <h3>Pahan Vithanage</h3>
-                <span className="team-role">Director & Founder</span>
+                <h3>Nuwan Muthutanthri</h3>
+                <span className="team-role">Head of Operation & Quality Assurance</span>
                 <p>
-                  Visionary leader who founded Ermine following a successful executive engineering career. Under his management, the company has scaled exponentially. He holds a B.Sc. in Mechanical Engineering from the University of Moratuwa.
+                  21+ Years Experience in IE, Production & Operation in Bodyline, InQube & Bondville.
                 </p>
               </div>
             </div>
 
             <div className="team-card fade-up delay-100">
               <div className="team-avatar-wrapper">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80&fm=webp" alt="Nilmini Dassanayake" />
+                <img src={shanthaImg} alt="Shantha Rathnayake" />
               </div>
               <div className="team-info">
-                <h3>Nilmini Dassanayake</h3>
-                <span className="team-role">Director & Co-Founder</span>
+                <h3>Shantha Rathnayake</h3>
+                <span className="team-role">Head of Planning & Business Development</span>
                 <p>
-                  Dynamic, results-driven leader with a proven history spanning engineering, corporate finance, and operations. As a founding partner, she plays a critical role in strategic growth. She holds a B.Sc. in Chemical Engineering from the University of Moratuwa.
+                  30 Years Experience in IE, Planning, Merchandising, Production, & Quality Assurance in Bodyline, MAST Industries Inc. USA, & InQube.
                 </p>
               </div>
             </div>
 
             <div className="team-card fade-up delay-200">
               <div className="team-avatar-wrapper">
-                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80&fm=webp" alt="Gayan Yapa" />
+                <img src={gayanRanganaImg} alt="Gayan Rangana" />
               </div>
               <div className="team-info">
-                <h3>Gayan Yapa</h3>
-                <span className="team-role">Director & Co-Founder</span>
+                <h3>Gayan Rangana</h3>
+                <span className="team-role">Head of Automation & Industrial Engineering</span>
                 <p>
-                  Renowned thought leader and apparel technology specialist. Holding multiple patents in advanced garment engineering, he has pioneered Ermine's technological dominance. He holds a B.Sc. in Textile Engineering.
+                  15+ Years Experience in IE, Engineering, & Automation in Omega line, Bodyline, & Bondville.
                 </p>
               </div>
             </div>
