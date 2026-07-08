@@ -565,45 +565,23 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* 5. Expanded Customers & Partners */}
-      <section className="partners-section">
-        <div className="marquee-container fade-up">
-          <div className="marquee">
-            <span>STARTUPS</span>
-            <span className="dot">•</span>
-            <span>ATHLEISURE</span>
-            <span className="dot">•</span>
-            <span>GLOBAL BRANDS</span>
-            <span className="dot">•</span>
-            <span>INTIMATES</span>
-            <span className="dot">•</span>
-            <span>OUTDOOR GEAR</span>
-            <span className="dot">•</span>
-            <span>STARTUPS</span>
-            <span className="dot">•</span>
-            <span>ATHLEISURE</span>
-            <span className="dot">•</span>
-          </div>
-        </div>
-
-        <div className="container case-studies">
-          <div className="case-card slide-in-right">
-            <div className="case-image bg-active"></div>
-            <div className="case-content">
-              <span className="case-tag">Athleisure</span>
-              <h3>Performance Wear Scaling</h3>
-              <p>How we helped a rising startup scale production to 100k units/month with zero quality drop.</p>
+          
+          <div className="case-studies" style={{ marginTop: '2rem' }}>
+            <div className="case-card slide-in-right">
+              <div className="case-image bg-active"></div>
+              <div className="case-content">
+                <span className="case-tag">Athleisure</span>
+                <h3>Performance Wear Scaling</h3>
+                <p>How we helped a rising startup scale production to 100k units/month with zero quality drop.</p>
+              </div>
             </div>
-          </div>
-          <div className="case-card slide-in-right delay-100">
-            <div className="case-image bg-intimate"></div>
-            <div className="case-content">
-              <span className="case-tag">Intimates</span>
-              <h3>The Seamless Revolution</h3>
-              <p>Re-engineering a flagship bra line to eliminate stitching, increasing customer retention by 35%.</p>
+            <div className="case-card slide-in-right delay-100">
+              <div className="case-image bg-intimate"></div>
+              <div className="case-content">
+                <span className="case-tag">Intimates</span>
+                <h3>The Seamless Revolution</h3>
+                <p>Re-engineering a flagship bra line to eliminate stitching, increasing customer retention by 35%.</p>
+              </div>
             </div>
           </div>
         </div>

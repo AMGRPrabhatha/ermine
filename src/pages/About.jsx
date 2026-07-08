@@ -70,10 +70,11 @@ const About = () => {
       {/* 2. Brand Narrative Section */}
       <section className="about-story-section">
         <div className="container">
-          <div className="story-grid">
-            <div className="story-content fade-up">
-              <span className="section-badge">ESTABLISHED 2010</span>
-              <h2>Pioneering the Future of Seamless Apparel</h2>
+          <div className="story-header fade-up">
+            <span className="section-badge">ESTABLISHED 2010</span>
+            <h2>About <span style={{color: 'var(--color-accent)'}}>Ermine</span></h2>
+            
+            <div className="story-paragraphs">
               <p className="lead-paragraph">
                 Ermine is an innovative bonded apparel manufacturing company, led by dynamic and diverse professionals with decades of cumulative global experience.
               </p>
@@ -84,13 +85,26 @@ const About = () => {
                 Stitchless garments represent the pinnacle of technical apparel evolution, abandoning traditional needle-and-thread stitching. Over the past decade, global demand has shifted toward bonding to assemble fabric panels, create smooth hems, and integrate precise, structural components. Ermine continues to invest heavily in proprietary R&D to stand as a premier turnkey apparel solution provider.
               </p>
             </div>
-            <div className="story-media fade-up delay-200">
-              <div className="story-image-card">
-                <img src="/solutions-2.webp" alt="Ermine Precision R&D" />
-                <div className="story-stat-badge">
-                  <span className="stat-num">15+</span>
-                  <span className="stat-label">Years of R&D Excellence</span>
-                </div>
+          </div>
+
+          <div className="story-cards-grid">
+            <div className="story-feature-card fade-up">
+              <div className="card-image-wrapper">
+                <img src="/solutions-2.webp" alt="Ermine Excellence" />
+                <div className="card-badge">01</div>
+              </div>
+              <div className="card-text-content">
+                <p><strong>Ermine continues to invest heavily in proprietary R&D</strong> to stand as a premier turnkey apparel solution provider, boasting 15+ years of R&D excellence.</p>
+              </div>
+            </div>
+
+            <div className="story-feature-card fade-up delay-100">
+              <div className="card-image-wrapper">
+                <img src="/product-1.webp" alt="Ermine Global Solutions" />
+                <div className="card-badge">02</div>
+              </div>
+              <div className="card-text-content">
+                <p><strong>With our trusted manufacturing processes</strong>, we specialize in delivering customized, turnkey bonded apparel solutions to international brands and high-growth startups.</p>
               </div>
             </div>
           </div>
@@ -174,7 +188,7 @@ const About = () => {
               </div>
               <div className="team-info">
                 <h3>Nuwan Muthutanthri</h3>
-                <span className="team-role">Head of Operation & Quality Assurance</span>
+                <span className="team-role">Director & Co-Founder</span>
                 <p>
                   21+ Years Experience in IE, Production & Operation in Bodyline, InQube & Bondville.
                 </p>
@@ -187,7 +201,7 @@ const About = () => {
               </div>
               <div className="team-info">
                 <h3>Shantha Rathnayake</h3>
-                <span className="team-role">Head of Planning & Business Development</span>
+                <span className="team-role">Director & Co-Founder</span>
                 <p>
                   30 Years Experience in IE, Planning, Merchandising, Production, & Quality Assurance in Bodyline, MAST Industries Inc. USA, & InQube.
                 </p>
@@ -200,7 +214,7 @@ const About = () => {
               </div>
               <div className="team-info">
                 <h3>Gayan Rangana</h3>
-                <span className="team-role">Head of Automation & Industrial Engineering</span>
+                <span className="team-role">Director & Co-Founder</span>
                 <p>
                   15+ Years Experience in IE, Engineering, & Automation in Omega line, Bodyline, & Bondville.
                 </p>

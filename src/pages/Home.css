@@ -922,13 +922,13 @@
 }
 
 .case-card {
-  border-radius: 24px;
+  border-radius: 16px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -939,7 +939,7 @@
 }
 
 .case-image {
-  height: 300px;
+  height: 200px;
   background-size: cover;
   background-position: center;
 }
@@ -953,7 +953,7 @@
 }
 
 .case-content {
-  padding: 2.5rem;
+  padding: 1.5rem;
 }
 
 .case-tag {
@@ -1827,10 +1827,10 @@
 .video-mockup-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 16/7;
-  border-radius: 24px;
+  aspect-ratio: 16/6;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
