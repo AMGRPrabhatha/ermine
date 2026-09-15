@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 :root {
   /* Colors */
@@ -6,6 +6,8 @@
   --color-secondary: #ffffff;
   --color-accent: #800000; /* Rich Maroon */
   --color-accent-hover: #5a0000; /* Dark Maroon Hover */
+  --color-lime-accent: #cbf238; /* Chartreuse Lime */
+  --color-lime-hover: #b6de23;
   --color-text-dark: #111111;
   --color-text-light: #ffffff;
   --color-text-muted: #666666;
@@ -13,7 +15,7 @@
   
   /* Typography */
   --font-sans: 'Inter', sans-serif;
-  --font-serif: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
   
   /* Transitions */
   --transition-fast: 0.2s ease;
@@ -153,6 +155,64 @@ img {
 .btn-outline-light:hover {
   background-color: var(--color-text-light);
   color: var(--color-primary);
+}
+
+/* Modern Hero CTA Group & Buttons */
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.hero-cta-group.justify-center {
+  justify-content: center;
+}
+
+.btn-modern {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.8rem 2rem;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-primary-modern {
+  background: var(--color-lime-accent, #cbf238);
+  color: #111111 !important;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(203, 242, 56, 0.35);
+}
+
+.btn-primary-modern:hover {
+  background: var(--color-lime-hover, #b6de23);
+  color: #111111 !important;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(203, 242, 56, 0.45);
+}
+
+.btn-outline-modern {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.btn-outline-modern:hover {
+  background: rgba(255, 255, 255, 0.28);
+  color: #ffffff !important;
+  border-color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
 /* Animations */

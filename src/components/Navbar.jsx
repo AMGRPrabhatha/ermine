@@ -11,28 +11,24 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 30);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu when route changes
   useEffect(() => {
     setIsOpen(false);
     document.body.style.overflow = '';
   }, [location]);
 
-  // Prevent stale mobile-menu states from locking scroll
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : '';
-
     return () => {
       document.body.style.overflow = '';
     };
   }, [isOpen]);
 
-  // If viewport returns to desktop size, force-close mobile menu
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 960) {
@@ -40,104 +36,73 @@ const Navbar = () => {
         document.body.style.overflow = '';
       }
     };
-
     window.addEventListener('resize', handleResize);
     handleResize();
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const DesktopNavLinks = () => (
-    <>
-      <li className="nav-item">
-        <Link to="/" className="nav-links" onClick={() => setIsOpen(false)}>
-          Home
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link to="/about" className="nav-links" onClick={() => setIsOpen(false)}>
-          About Us
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link to="/solutions" className="nav-links" onClick={() => setIsOpen(false)}>
-          Solutions
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link to="/products" className="nav-links" onClick={() => setIsOpen(false)}>
-          Products
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link to="/capabilities" className="nav-links" onClick={() => setIsOpen(false)}>
-          Capabilities
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link to="/contact" className="nav-links" onClick={() => setIsOpen(false)}>
-          Contact Us
-        </Link>
-      </li>
-    </>
-  );
-
-  const MobileNavLinks = () => (
-    <>
-      <li className="nav-item">
-        <Link to="/" className="nav-links" onClick={() => setIsOpen(false)}>
-          Home
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link to="/about" className="nav-links" onClick={() => setIsOpen(false)}>
-          About Us
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link to="/solutions" className="nav-links" onClick={() => setIsOpen(false)}>
-          Solutions
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link to="/products" className="nav-links" onClick={() => setIsOpen(false)}>
-          Products
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link to="/capabilities" className="nav-links" onClick={() => setIsOpen(false)}>
-          Capabilities
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link to="/contact" className="nav-links" onClick={() => setIsOpen(false)}>
-          Contact Us
-        </Link>
-      </li>
-    </>
-  );
+  const navItems = [
+    { name: 'Home', path: '/' },
+    { name: 'About Us', path: '/about' },
+    { name: 'Solutions', path: '/solutions' },
+    { name: 'Products', path: '/products' },
+    { name: 'Capabilities', path: '/capabilities' },
+    { name: 'Contact Us', path: '/contact', isCta: true }
+  ];
 
   return (
     <>
-      <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isOpen ? 'menu-open' : ''}`}>
-        <div className="navbar-container">
-          <Link to="/" className="navbar-logo" onClick={() => setIsOpen(false)}>
-            <img src={logo} alt="Ermine Logo" className="logo-img" />
+      <header className={`site-header ${scrolled ? 'scrolled' : ''} ${isOpen ? 'menu-open' : ''}`}>
+        <div className="header-container">
+          
+          {/* Brand Logo */}
+          <Link to="/" className="header-logo" onClick={() => setIsOpen(false)}>
+            <img src={logo} alt="Ermine Logo" className="header-logo-img" />
           </Link>
 
-          <div className="menu-icon" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </div>
+          {/* Desktop Nav Links (Inline on Right) */}
+          <nav className="desktop-nav">
+            <ul className="nav-links-list">
+              {navItems.map((item, idx) => (
+                <li key={idx} className="nav-item">
+                  <Link
+                    to={item.path}
+                    className={`nav-link ${location.pathname === item.path ? 'active' : ''} ${item.isCta ? 'nav-cta-pill' : ''}`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-          <ul className="nav-menu desktop-menu">
-            <DesktopNavLinks />
-          </ul>
+          {/* Mobile Menu Icon */}
+          <button 
+            className="mobile-toggle-btn" 
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle navigation menu"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+
         </div>
-      </nav>
+      </header>
 
-      {/* Mobile Fullscreen Overlay - Rendered outside of nav to avoid CSS containing block issues */}
+      {/* Mobile Nav Overlay */}
       <div className={`mobile-nav-overlay ${isOpen ? 'active' : ''}`}>
         <ul className="mobile-nav-menu">
-          <MobileNavLinks />
+          {navItems.map((item, idx) => (
+            <li key={idx} className="mobile-nav-item">
+              <Link
+                to={item.path}
+                className={`mobile-nav-link ${location.pathname === item.path ? 'active' : ''} ${item.isCta ? 'mobile-nav-cta' : ''}`}
+                onClick={() => setIsOpen(false)}
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </>

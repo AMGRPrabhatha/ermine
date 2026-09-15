@@ -8,49 +8,49 @@ const services = [
   {
     title: "Product Design",
     description: "Ermine provides product design services from concept design to technical design for bonded apparel products. Our customers can introduce novel designs into the market with great attraction while optimizing costs.",
-    image: "/solutions-1.webp",
+    image: "/solutions/product-design.jpg",
     features: ["Concept Development", "Technical Specification", "Cost Optimization"]
   },
   {
     title: "Product Validation",
     description: "Methodical and scientific validation of bonded apparel products for comfort, quality, and durability. We provide detailed datasheets with analysis and conclusions for washing and pressing applications.",
-    image: "/solutions-2.webp",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80",
     features: ["Quality Testing", "Durability Analysis", "Scientific Validation"]
   },
   {
     title: "Product Innovations",
     description: "Enable your brand to release new apparel products or upgrades by adapting new innovations through our specialized bonded technologies and R&D expertise.",
-    image: "/solutions-3.webp",
+    image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80",
     features: ["New Feature Integration", "Version Upgrades", "Tech Adaptation"]
   },
   {
     title: "Tools and Machine Design",
     description: "Most of our machinery is developed in-house. We can customize tools and machinery required for new manufacturing requirements to give you a competitive advantage.",
-    image: "/solutions-1.webp",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80",
     features: ["Custom Tooling", "In-house R&D", "Machine Engineering"]
   },
   {
     title: "Process Innovations",
     description: "Our agile manufacturing process enables us to introduce innovations and customizations. Adapt to market-winning new approaches with speed and agility.",
-    image: "/solutions-2.webp",
+    image: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=1000&q=80",
     features: ["Agile Manufacturing", "Speed to Market", "Process Customization"]
   },
   {
     title: "Contract Manufacturing",
     description: "We provide contract manufacturing for global companies and startups utilizing bonded production technologies. We offer exceptional quality and cost benefits.",
-    image: "/solutions-3.webp",
+    image: "https://images.unsplash.com/photo-1537832816519-689ad163238b?auto=format&fit=crop&w=1000&q=80",
     features: ["Global Scaling", "Startup Support", "Volume Production"]
   },
   {
     title: "Material Selection and Sourcing",
     description: "Completely eliminate the burden of material sourcing. We handle the complex process transparently while achieving your end-product quality objectives.",
-    image: "/solutions-1.webp",
+    image: "https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&w=1000&q=80",
     features: ["Global Sourcing", "Quality Assurance", "Supply Chain Management"]
   },
   {
     title: "Component Manufacturing",
     description: "Design, develop, and manufacture bonded components for hybrid apparel products. Ideal for large-scale manufacturers looking to outsource specialized parts.",
-    image: "/solutions-2.webp",
+    image: "https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1000&q=80",
     features: ["Hybrid Integration", "Specialized Components", "Outsourcing Partner"]
   }
 ];
@@ -102,97 +102,146 @@ const Solutions = () => {
         </div>
       </section>
 
-      {/* 2. Solutions Grid - Redesigned to small, elegant cards */}
-      <section className="sol-grid-section">
+      {/* 2. Solutions Resources Grid (Redesigned matching reference) */}
+      <section className="sol-resources-section">
         <div className="container">
-          <div className="sol-grid">
-            {services.map((service, index) => (
-              <div 
-                key={index} 
-                className={`sol-card fade-up delay-${(index % 3) * 100}`}
-              >
-                <div className="sol-card-image">
-                  <img src={service.image} alt={service.title} loading="lazy" />
-                  <div className="sol-card-overlay"></div>
-                  <span className="sol-number">{(index + 1).toString().padStart(2, '0')}</span>
+          
+          {/* Header */}
+          <div className="sol-resources-header fade-up text-center">
+            <span className="sol-resources-eyebrow">Our Solutions</span>
+            <h2>Browse Our Solutions</h2>
+            <p>We provide specialized bonded apparel technologies and engineering services from industry leaders.</p>
+          </div>
+
+          {/* Featured Card (Card 0) */}
+          <div className="sol-featured-card fade-up">
+            <div className="sol-featured-img">
+              <img src={services[0].image} alt={services[0].title} />
+            </div>
+            <div className="sol-featured-body">
+              <span className="sol-category-badge">Featured Solution</span>
+              <h3>{services[0].title}</h3>
+              <p>{services[0].description}</p>
+              <div className="sol-featured-footer">
+                <div className="sol-feature-tags">
+                  {services[0].features.map((feat, i) => (
+                    <span key={i} className="sol-feature-tag">• {feat}</span>
+                  ))}
                 </div>
-                <div className="sol-card-body">
-                  <h2>{service.title}</h2>
+                <div className="sol-action-arrow">↗</div>
+              </div>
+            </div>
+          </div>
+
+          {/* 2-Column Grid for Remaining Cards */}
+          <div className="sol-cards-grid">
+            {services.slice(1).map((service, index) => (
+              <div 
+                key={index + 1} 
+                className={`sol-grid-card fade-up delay-${(index % 2) * 100}`}
+              >
+                <div className="sol-grid-img">
+                  <img src={service.image} alt={service.title} loading="lazy" />
+                </div>
+                <div className="sol-grid-body">
+                  <span className="sol-category-badge">{service.title.split(' ')[0]}</span>
+                  <h3>{service.title}</h3>
                   <p>{service.description}</p>
-                  <ul className="sol-features">
-                    {service.features.map((feat, i) => (
-                      <li key={i}>
-                        <CheckCircle2 size={13} className="icon-gold" /> 
-                        <span>{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="sol-card-arrow">
-                    <ArrowRight size={16} />
+                  <div className="sol-grid-footer">
+                    <div className="sol-feature-tags">
+                      {service.features.slice(0, 2).map((feat, i) => (
+                        <span key={i} className="sol-feature-tag">• {feat}</span>
+                      ))}
+                    </div>
+                    <div className="sol-action-arrow">↗</div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
+
         </div>
       </section>
 
-      {/* 3. Immersive Process Workflow (Relevant Section) */}
+      {/* 3. Immersive Process Workflow */}
       <section className="sol-workflow-section">
         <div className="container">
-          <div className="section-header text-center fade-up">
-            <span className="section-tag">Co-Creation Workflow</span>
-            <h2>Our Development Process</h2>
-            <p className="section-subtitle-muted">From custom material validation to scaled contract bonding, we deliver precision at every phase.</p>
+
+          {/* Large editorial headline */}
+          <div className="workflow-headline fade-up">
+            <p>
+              Discover the precision of our process
+              <br />
+              <span className="workflow-headline-light">and the impact of bonding innovation</span>
+              <br />
+              <span className="workflow-headline-light">on every garment we craft</span>
+            </p>
           </div>
 
-          <div className="workflow-timeline">
-            <div className="workflow-step fade-up">
-              <div className="step-number-wrapper">
-                <span className="step-number">01</span>
-                <div className="step-line"></div>
+          {/* Process rows list */}
+          <div className="workflow-rows">
+
+            <div className="workflow-row fade-up">
+              <div className="workflow-row-img">
+                <img src="/solutions-2.webp" alt="Consult & Co-Design" />
               </div>
-              <h3>Consult & Co-Design</h3>
-              <p>We work directly with your design teams to map custom aesthetic concepts into exact digital engineering blueprints.</p>
+              <div className="workflow-row-body">
+                <h3>Consult & Co-Design</h3>
+                <p>We work directly with your design teams to map custom aesthetic concepts into exact digital engineering blueprints.</p>
+              </div>
+              <div className="workflow-row-meta">
+                <span className="workflow-meta-label">Key Deliverable:</span>
+                <a className="workflow-meta-link">→ Design Blueprints</a>
+                <a className="workflow-meta-link">→ Adhesive Selection</a>
+              </div>
             </div>
 
-            <div className="workflow-step fade-up delay-100">
-              <div className="step-number-wrapper">
-                <span className="step-number">02</span>
-                <div className="step-line"></div>
+            <div className="workflow-row fade-up delay-100">
+              <div className="workflow-row-img">
+                <img src="/solutions-1.webp" alt="Material & Validation" />
               </div>
-              <h3>Material & Validation</h3>
-              <p>We conduct rigorous mechanical testing of fabric samples to guarantee bond durability through 50+ wash cycles.</p>
+              <div className="workflow-row-body">
+                <h3>Material & Validation</h3>
+                <p>We conduct rigorous mechanical testing of fabric samples to guarantee bond durability through 50+ wash cycles.</p>
+              </div>
+              <div className="workflow-row-meta">
+                <span className="workflow-meta-label">Key Deliverable:</span>
+                <a className="workflow-meta-link">→ Wash-Test Reports</a>
+                <a className="workflow-meta-link">→ Material Approval</a>
+              </div>
             </div>
 
-            <div className="workflow-step fade-up delay-200">
-              <div className="step-number-wrapper">
-                <span className="step-number">03</span>
-                <div className="step-line"></div>
+            <div className="workflow-row fade-up delay-200">
+              <div className="workflow-row-img">
+                <img src="/product-1.webp" alt="Precision Bonding" />
               </div>
-              <h3>Precision Bonding</h3>
-              <p>We engineer custom machinery tools and run high-frequency laser & ultrasonic garment processing.</p>
+              <div className="workflow-row-body">
+                <h3>Precision Bonding</h3>
+                <p>We engineer custom machinery tools and run high-frequency laser & ultrasonic garment processing.</p>
+              </div>
+              <div className="workflow-row-meta">
+                <span className="workflow-meta-label">Key Deliverable:</span>
+                <a className="workflow-meta-link">→ Stitchless Samples</a>
+                <a className="workflow-meta-link">→ QA Certification</a>
+              </div>
             </div>
 
-            <div className="workflow-step fade-up delay-300">
-              <div className="step-number-wrapper">
-                <span className="step-number">04</span>
+            <div className="workflow-row fade-up delay-300">
+              <div className="workflow-row-img">
+                <img src="/solutions-hero.webp" alt="Industrial Scaling" />
               </div>
-              <h3>Industrial Scaling</h3>
-              <p>Our agile manufacturing lines seamlessly scale volume production with zero compromise on luxury quality.</p>
+              <div className="workflow-row-body">
+                <h3>Industrial Scaling</h3>
+                <p>Our agile manufacturing lines seamlessly scale volume production with zero compromise on luxury quality.</p>
+              </div>
+              <div className="workflow-row-meta">
+                <span className="workflow-meta-label">Key Deliverable:</span>
+                <a className="workflow-meta-link">→ Bulk Production</a>
+                <a className="workflow-meta-link">→ Global Dispatch</a>
+              </div>
             </div>
+
           </div>
-        </div>
-      </section>
-
-      {/* 4. Streamlined CTA */}
-      <section className="sol-cta">
-        <div className="container text-center fade-up">
-          <h2>Ready to revolutionize your apparel?</h2>
-          <p>Let's discuss how our custom bonded solutions can accelerate your product lifecycle.</p>
-          <Link to="/contact" className="btn-sol-cta">
-            Contact Sales Team <ArrowRight size={20} />
-          </Link>
         </div>
       </section>
     </div>

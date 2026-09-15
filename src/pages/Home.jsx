@@ -1,11 +1,40 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowRight, Activity, Zap, ShieldCheck, Globe, Droplet, ArrowDownRight, Scissors, MapPin, Copy, Check, ExternalLink, Compass, Truck, Sun } from 'lucide-react';
+import { ArrowRight, Activity, Zap, ShieldCheck, Globe, Droplet, ArrowDownRight, ArrowUpRight, Scissors, MapPin, Copy, Check, ExternalLink, Compass, Truck, Sun, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 
 import homeHero from '../assets/images/homehero.webp';
+import homeHero2 from '../assets/images/homehero2.jpg';
 import brandVideo from '../assets/images/video.mp4';
 import textileImg from '../assets/images/Textile.jpg';
+import capImg from '../assets/images/capabilities.jpg';
+import solutionImg from '../assets/images/solution.jpg';
+import prodImg from '../assets/images/products.jpg';
+
+const heroImages = [homeHero, homeHero2];
+
+const whyChooseItems = [
+  {
+    title: "Expert Guidance, Unforgettable Precision",
+    desc: "Trust our expert team to craft personalized, high-performance apparel bonding solutions tailored to your every technical desire."
+  },
+  {
+    title: "Expertly Curated Engineering",
+    desc: "State-of-the-art ultrasonic and heat-press bonding patterns created to maximize fabric durability and flexibility."
+  },
+  {
+    title: "Sustainable & Eco-Focused Process",
+    desc: "Utilizing eco-friendly PU/TPU adhesive films and energy-efficient manufacturing systems."
+  },
+  {
+    title: "Turnkey Apparel Solutions",
+    desc: "End-to-end prototyping, material testing, scalable production, and global dispatch logistics."
+  },
+  {
+    title: "Exclusive Quality Assurance",
+    desc: "Rigorous stress testing and 50+ wash cycle validations guaranteeing zero bond degradation."
+  }
+];
 
 const Home = () => {
   const videoRef = React.useRef(null);
@@ -14,6 +43,27 @@ const Home = () => {
   const [duration, setDuration] = React.useState(0);
   const [isMuted, setIsMuted] = React.useState(true);
   const [isCopied, setIsCopied] = React.useState(false);
+  const [heroIndex, setHeroIndex] = useState(0);
+  const [prevHeroIndex, setPrevHeroIndex] = useState(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [activeAccordIndex, setActiveAccordIndex] = useState(0);
+
+  // Auto slideshow — switches every 5 seconds with a 1s crossfade
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPrevHeroIndex((prev) => prev);
+      setHeroIndex((prev) => {
+        setPrevHeroIndex(prev);
+        setIsTransitioning(true);
+        setTimeout(() => {
+          setIsTransitioning(false);
+          setPrevHeroIndex(null);
+        }, 1000);
+        return (prev + 1) % heroImages.length;
+      });
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleCopyAddress = () => {
     const addressText = "Ermine International Pvt Ltd\nNo 4, Ridee Mawatha\nKalamulla, Kalutara\nSri Lanka";
@@ -90,8 +140,8 @@ const Home = () => {
         });
       },
       { 
-        threshold: 0.01,              // Trigger as soon as 1% of the element is near view
-        rootMargin: '0px 0px 150px 0px' // Pre-load elements 150px before entering viewport
+        threshold: 0.01,
+        rootMargin: '200px 0px 200px 0px' // Pre-trigger both above and below viewport
       }
     );
 
@@ -104,502 +154,239 @@ const Home = () => {
   return (
     <div className="home-modern-wrapper">
       {/* 1. Immersive Hero Section */}
-      <section className="hero-modern">
-        {/* Full Bleed Image Background */}
-        <div className="hero-modern-bg" style={{ backgroundImage: `url(${homeHero})` }}></div>
+      <section className="hero-modern-container">
+        {/* Slideshow background layers */}
+        {heroImages.map((img, i) => (
+          <div
+            key={i}
+            className={`hero-modern-bg ${i === heroIndex ? 'hero-slide-active' : 'hero-slide-hidden'}`}
+            style={{ backgroundImage: `url(${img})` }}
+          ></div>
+        ))}
         <div className="hero-modern-overlay"></div>
 
-        <div className="container hero-centered">
-          <div className="hero-text-content fade-up text-center">
-            {/* <div className="badge">Leading Apparel Tech</div> */}
-            <h1 className="hero-title">
-              Precision Bonding Technologies
-            </h1>
-            <p className="hero-description mx-auto">
-            Advanced bonding innovations for sustainable industrial progress.
-            </p>
-            <div className="hero-cta-group justify-center">
-              <Link to="/solutions" className="btn-modern btn-primary-modern">
-                Explore Technology <ArrowRight size={18} />
-              </Link>
-              <Link to="/about" className="btn-modern btn-outline-modern">
-                Inquries
-              </Link>
-            </div>
+        <div className="container hero-centered-content fade-up">
+          <h1 className="hero-title">Precision Bonding<br/>with Ermine</h1>
+          <p className="hero-description">
+            Experience the extraordinary with Ermine. Explore advanced bonding innovations, enjoy premium manufacturing, and create magical apparel through carefully curated and unique industrial progress.
+          </p>
+          <div className="hero-cta-group">
+            <Link to="/solutions" className="btn-modern btn-primary-pill">
+              EXPLORE NOW <span className="arrow-circle"><ArrowRight size={16} /></span>
+            </Link>
+            <Link to="/about" className="btn-modern btn-text-link">
+              OUR STORY
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* 2. Innovation Section (Redesigned Modern Layout) */}
+      {/* 2. Brand Statement Section */}
       <section className="innovation-section">
         <div className="container">
-          <div className="innovation-grid">
-            <div className="innovation-content fade-up">
-              <span className="why-choose-badge">WHY CHOOSE</span>
-              <h2>Leading Innovation in <span className="highlight-gold">Textile Technology</span></h2>
-              <div className="title-underline"></div>
-              
-              <p className="innovation-intro">
-                Ermine is a leading provider of state-of-the-art bonding and fabric processing solutions. 
-                With a strong focus on innovation and precision, our goal is to revolutionize textile 
-                manufacturing through advanced technology and sustainable practices.
+          <div className="innovation-three-col">
+
+            {/* Left: narrow label */}
+            <div className="innov-label-col">
+              <span className="innov-label-text">Precision Bonding,<br />Reimagined</span>
+            </div>
+
+            {/* Center: large editorial statement */}
+            <div className="innov-statement-col">
+              <p className="innov-statement">
+                <strong>Tired of standard apparel manufacturing?</strong> At Ermine, we specialize in{' '}
+                <strong>precision stitchless bonding</strong> solutions for global brands.{' '}
+                <span className="innov-statement-muted">
+                  We handle the technology so you can focus on design, the brand, and the vision.
+                </span>
               </p>
-              
-              <div className="innovation-why-grid">
-                <div className="innovation-why-card">
-                  <div className="why-icon-badge">
-                    <ShieldCheck size={22} />
-                  </div>
-                  <div className="why-card-content">
-                    <h3>Advanced Technology</h3>
-                    <p>Cutting-edge bonding and fabric processing solutions engineered for tomorrow</p>
-                  </div>
-                </div>
+              <Link to="/about" className="innov-more-btn">More About Us</Link>
+            </div>
 
-                <div className="innovation-why-card">
-                  <div className="why-icon-badge">
-                    <Zap size={22} />
-                  </div>
-                  <div className="why-card-content">
-                    <h3>Precision Manufacturing</h3>
-                    <p>State-of-the-art climate-controlled facilities and dedicated expert technical team</p>
-                  </div>
-                </div>
-
-                <div className="innovation-why-card">
-                  <div className="why-icon-badge">
-                    <Globe size={22} />
-                  </div>
-                  <div className="why-card-content">
-                    <h3>Sustainable Practices</h3>
-                    <p>Eco-friendly, energy-efficient, and environmentally responsible production systems</p>
-                  </div>
-                </div>
-
-                <div className="innovation-why-card">
-                  <div className="why-icon-badge">
-                    <Activity size={22} />
-                  </div>
-                  <div className="why-card-content">
-                    <h3>Global Compliance</h3>
-                    <p>Robust quality assurance protocols compliant with elite international apparel standards</p>
-                  </div>
-                </div>
+            {/* Right: portrait image */}
+            <div className="innov-image-col">
+              <div className="innov-image-wrapper">
+                <img src={textileImg} alt="Ermine precision bonding" />
               </div>
             </div>
-            
-            <div className="innovation-image-col">
-              <div className="innovation-image-wrapper fade-up delay-200">
-                <img src={textileImg} alt="Textile Innovation" />
-              </div>
-            </div>
+
           </div>
         </div>
       </section>
 
-      {/* 3. Core Expertise (Modernized Bento Layout) */}
-      <section className="expertise-section-modern">
-        {/* Glow Effects */}
-        <div className="expertise-glow-1"></div>
-        <div className="expertise-glow-2"></div>
-        
+      {/* 3. Discover Capabilities Section (Grid Layout) */}
+      <section className="discover-section">
         <div className="container">
-          <div className="expertise-header-modern fade-up">
-            <span className="expertise-badge">Our Capabilities</span>
-            <h2 className="expertise-title-modern">Core Expertise</h2>
-            <div className="expertise-header-divider"></div>
-            <p className="expertise-subtitle-modern">
-              Engineered with absolute precision, utilizing state-of-the-art technologies to redefine textile performance and industrial bonding.
+          {/* Header */}
+          <div className="discover-header text-center fade-up">
+            <span className="discover-eyebrow">[EXPERIENCE OUR CAPABILITIES]</span>
+            <h2 className="discover-title">
+              Discover the innovation awaiting you at our<br />specialized bonding facilities
+            </h2>
+          </div>
+
+          {/* Grid Layout */}
+          <div className="discover-grid">
+            
+            {/* Left Large Card */}
+            <div className="discover-card-main fade-up">
+              <img src={capImg} alt="Curated Apparel Solutions" className="discover-card-bg" />
+              <div className="discover-card-overlay"></div>
+              
+              <Link to="/capabilities" className="discover-explore-btn">
+                Explore More <ArrowRight size={16} />
+              </Link>
+
+              <div className="discover-card-content">
+                <h3>Curated and Tailor-Made Apparel Solutions</h3>
+                <p>Explore specialized bonding technologies chosen for their precision engineering and performance.</p>
+              </div>
+            </div>
+
+            {/* Right Column Stack */}
+            <div className="discover-right-stack">
+              
+              {/* Right Top Card */}
+              <div className="discover-card-sub fade-up delay-100">
+                <img src={solutionImg} alt="Expert Guidance" className="discover-card-bg" />
+                <div className="discover-card-overlay"></div>
+                <div className="discover-card-content">
+                  <h3>Expert Technical Guidance for a Deeper, Superior Result</h3>
+                </div>
+              </div>
+
+              {/* Right Bottom Card */}
+              <div className="discover-card-sub fade-up delay-200">
+                <img src={prodImg} alt="Turnkey Manufacturing" className="discover-card-bg" />
+                <div className="discover-card-overlay"></div>
+                <div className="discover-card-content">
+                  <h3>Effortless Turnkey Manufacturing for Stress-Free Production</h3>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Why Choose Us Section (Selatan-inspired Layout) */}
+      <section className="why-choose-selatan-section">
+        <div className="container">
+          
+          {/* Top Header */}
+          <div className="selatan-header fade-up">
+            <div className="selatan-header-left">
+              <div className="selatan-eyebrow">
+                <span className="eyebrow-line"></span>
+                <span>WHY CHOOSE US</span>
+              </div>
+              <h2 className="selatan-title">
+                Unmatched Bonding <span className="title-muted">Expertise</span><br />
+                <span className="title-muted">at Ermine Apparel</span>
+              </h2>
+            </div>
+            
+            <Link to="/capabilities" className="selatan-learn-btn">
+              Learn more <span className="btn-arrow">↗</span>
+            </Link>
+          </div>
+
+          <div className="selatan-header-divider"></div>
+
+          {/* Body Content Grid */}
+          <div className="selatan-body-grid">
+            
+            {/* Left Column: Image + Caption */}
+            <div className="selatan-left-col fade-up">
+              <div className="selatan-img-wrapper">
+                <img src={capImg} alt="Ermine Bonding Expertise" />
+              </div>
+              <p className="selatan-img-caption">
+                At Ermine Apparel, we offer personalized apparel bonding solutions tailored to your unique manufacturing needs. Our expert team ensures a seamless experience, from initial planning to final dispatch.
+              </p>
+            </div>
+
+            {/* Right Column: Accordion List */}
+            <div className="selatan-right-col fade-up delay-100">
+              <div className="selatan-accordion-list">
+                {whyChooseItems.map((item, idx) => (
+                  <div 
+                    key={idx} 
+                    className={`selatan-accordion-item ${activeAccordIndex === idx ? 'active' : ''}`}
+                    onClick={() => setActiveAccordIndex(idx)}
+                  >
+                    <div className="selatan-item-header">
+                      <h3>{item.title}</h3>
+                      <ChevronRight size={18} className="selatan-chevron" />
+                    </div>
+                    {activeAccordIndex === idx && (
+                      <p className="selatan-item-desc">{item.desc}</p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* 4.5 Video Showcase Section (Editorial Style Layout) */}
+      <section className="product-showcase-section">
+        <div className="container">
+          
+          {/* Editorial Text Statement */}
+          <div className="showcase-editorial-header fade-up">
+            <p className="showcase-editorial-text">
+              <strong>We specialize in creating tailor-made bonded solutions across the globe,</strong>{' '}
+              <span className="editorial-text-muted">
+                blending must-see innovation with precision manufacturing to give you a true sense of apparel craftsmanship.
+              </span>
             </p>
           </div>
 
-          <div className="expertise-bento-grid">
-            {/* Bento Card 1: Ultrasonic (Large featured card) */}
-            <div className="expertise-bento-card bento-large fade-up">
-              <div className="bento-card-bg"></div>
-              <div className="bento-card-content">
-                <div className="bento-top-meta">
-                  <span className="bento-number">01</span>
-                  <div className="bento-icon-wrapper"><Zap size={26} /></div>
-                </div>
-                <div className="bento-text">
-                  <h3>Ultrasonic Cutting</h3>
-                  <p>
-                    Utilizing high-frequency acoustic vibrations to slice fabrics with unmatched speed, sealing edges simultaneously to eliminate fraying and create seamless borders.
-                  </p>
-                  <div className="bento-tech-tags">
-                    <span>Acoustic Vibrations</span>
-                    <span>Self-Sealing Edges</span>
-                    <span>Zero Fraying</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Bento Card 2: Laser Cutting */}
-            <div className="expertise-bento-card bento-standard fade-up delay-100">
-              <div className="bento-card-bg"></div>
-              <div className="bento-card-content">
-                <div className="bento-top-meta">
-                  <span className="bento-number">02</span>
-                  <div className="bento-icon-wrapper"><Activity size={26} /></div>
-                </div>
-                <div className="bento-text">
-                  <h3>Laser Cutting</h3>
-                  <p>
-                    CNC-controlled multi-dimensional laser heads deliver complex shapes with micron-level tolerance. Ideal for high-performance activewear and technical garments.
-                  </p>
-                  <div className="bento-tech-tags">
-                    <span>Micron Tolerance</span>
-                    <span>CNC Precision</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Bento Card 3: Fabric Bonding */}
-            <div className="expertise-bento-card bento-standard fade-up delay-200">
-              <div className="bento-card-bg"></div>
-              <div className="bento-card-content">
-                <div className="bento-top-meta">
-                  <span className="bento-number">03</span>
-                  <div className="bento-icon-wrapper"><Droplet size={26} /></div>
-                </div>
-                <div className="bento-text">
-                  <h3>Fabric Bonding</h3>
-                  <p>
-                    State-of-the-art molecular adhesion and film technology replaces standard seams, offering superior stretch, hydro-resistance, and streamlined silhouettes.
-                  </p>
-                  <div className="bento-tech-tags">
-                    <span>Molecular Adhesion</span>
-                    <span>Hydro-Resistance</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Bento Card 4: Tape Slitting */}
-            <div className="expertise-bento-card bento-large fade-up delay-300">
-              <div className="bento-card-bg"></div>
-              <div className="bento-card-content">
-                <div className="bento-top-meta">
-                  <span className="bento-number">04</span>
-                  <div className="bento-icon-wrapper"><Scissors size={26} /></div>
-                </div>
-                <div className="bento-text">
-                  <h3>Tape Slitting</h3>
-                  <p>
-                    Precision roll and tape slitting technologies for specialized adhesive film processing. Enabling custom width bond lines and seamless application profiles.
-                  </p>
-                  <div className="bento-tech-tags">
-                    <span>Custom Widths</span>
-                    <span>Roll Slitting</span>
-                    <span>Film Processing</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Bento Card 5: Quality Assurance (Wide featured card) */}
-            <div className="expertise-bento-card bento-wide fade-up delay-400">
-              <div className="bento-card-bg"></div>
-              <div className="bento-card-content">
-                <div className="bento-top-meta">
-                  <span className="bento-number">05</span>
-                  <div className="bento-icon-wrapper"><ShieldCheck size={26} /></div>
-                </div>
-                <div className="bento-text-horizontal">
-                  <div className="horizontal-main">
-                    <h3>Quality Assurance</h3>
-                    <p>
-                      Every bonding and cut undergoes rigorous multi-cycle stress, elongation, and hydrostatic testing to ensure compliance with elite athletic standards.
-                    </p>
-                  </div>
-                  <div className="horizontal-stats">
-                    <div className="stat-box">
-                      <span className="stat-num">100%</span>
-                      <span className="stat-label">Inspected</span>
-                    </div>
-                    <div className="stat-box">
-                      <span className="stat-num">50+</span>
-                      <span className="stat-label">Wash Cycles</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          {/* Video Frame Container */}
+          <div className="showcase-video-frame fade-up delay-100">
+            <video 
+              ref={videoRef}
+              src={brandVideo} 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+              className="showcase-frame-video"
+            />
+            <div className="video-frame-overlay"></div>
           </div>
+
         </div>
       </section>
 
-      {/* 2.5 Featured Categories (Premium 2-Column Grid Layout) */}
-      <section className="featured-categories-section">
+      {/* 5. Immersive CTA Banner (Reference Card Design) */}
+      <section className="home-banner-cta-section">
         <div className="container">
-          <div className="categories-grid">
-            <Link to="/products" className="category-card-wide fade-up">
-              <div className="category-bg" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp')" }}></div>
-              <div className="category-overlay"></div>
-              <div className="category-content">
-                <span className="category-tag">97% Polyester</span>
-                <h3>Elegant coat with the best materials</h3>
-              </div>
-            </Link>
-            
-            <Link to="/solutions" className="category-card-narrow fade-up delay-100">
-              <div className="category-bg" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp')" }}></div>
-              <div className="category-overlay"></div>
-              <div className="category-content">
-                <span className="category-tag">Precision Bonding</span>
-                <h3>Durable and strong stitches</h3>
-              </div>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Interactive Process Timeline */}
-      <section className="process-section">
-        <div className="container">
-          <div className="process-header fade-up">
-            <h2 className="section-title">How We Work</h2>
-            <Link to="/about" className="process-link">View Full Process <ArrowDownRight size={20}/></Link>
-          </div>
-          
-          <div className="timeline">
-            <div className="timeline-item fade-up">
-              <div className="timeline-dot">1</div>
-              <div className="timeline-content">
-                <h3>Concept & Prototyping</h3>
-                <p>We collaborate with your design team to engineer bonding patterns and select optimal adhesives for your specific fabric blends.</p>
+          <div className="home-cta-card fade-up">
+            <div className="cta-card-overlay"></div>
+            <div className="cta-card-inner">
+              <h2 className="cta-card-title">
+                Begin Your Exciting Ermine<br />
+                Apparel Experience Today
+              </h2>
+              <div className="cta-card-bottom">
+                <Link to="/contact" className="cta-pill-btn">
+                  <span className="cta-pill-text">Get In Touch</span>
+                  <span className="cta-pill-circle">
+                    <ArrowUpRight size={20} />
+                  </span>
+                </Link>
+                <p className="cta-card-desc">
+                  Start your Ermine partnership today. Explore cutting-edge bonding technology and enjoy tailored, expert-guided manufacturing.
+                </p>
               </div>
             </div>
-            <div className="timeline-item fade-up delay-100">
-              <div className="timeline-dot">2</div>
-              <div className="timeline-content">
-                <h3>Material Sourcing</h3>
-                <p>Procuring high-grade, sustainable PU and TPU films from certified global suppliers.</p>
-              </div>
-            </div>
-            <div className="timeline-item fade-up delay-200">
-              <div className="timeline-dot">3</div>
-              <div className="timeline-content">
-                <h3>Precision Manufacturing</h3>
-                <p>Automated ultrasonic and heat-press bonding executed in our climate-controlled facilities.</p>
-              </div>
-            </div>
-            <div className="timeline-item fade-up delay-300">
-              <div className="timeline-dot">4</div>
-              <div className="timeline-content">
-                <h3>Rigorous QA</h3>
-                <p>Every garment undergoes stretch, wash, and stress testing before global dispatch.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Strategically Located */}
-      <section className="location-section">
-        {/* Glow Effects */}
-        <div className="location-glow-1"></div>
-        <div className="location-glow-2"></div>
-
-        <div className="container">
-          <div className="location-grid">
-            {/* Left Layered Media Dashboard */}
-            <div className="location-media-wrapper fade-up">
-              {/* Floating Active Pulse Badge */}
-              <div className="media-status-badge">
-                <span className="pulse-dot"></span>
-                <span className="status-text">ACTIVE OPERATIONS | 24/7</span>
-              </div>
-
-              {/* Main Image Container */}
-              <div className="location-image-container-modern">
-                <img src="/products-hero.webp" alt="Ermine Manufacturing Facility" className="location-image" />
-              </div>
-
-              {/* Floating Glassmorphic Stats Card */}
-              <div className="media-stats-floating-card">
-                <div className="floating-card-stat">
-                  <div className="stat-icon-badge">
-                    <Compass size={18} />
-                  </div>
-                  <div className="stat-info">
-                    <span className="stat-value">Colombo Hub</span>
-                    <span className="stat-desc">45 mins to Main Port</span>
-                  </div>
-                </div>
-                <div className="floating-card-stat">
-                  <div className="stat-icon-badge">
-                    <Truck size={18} />
-                  </div>
-                  <div className="stat-info">
-                    <span className="stat-value">Global Logistics</span>
-                    <span className="stat-desc">Air & Sea Shipping Lanes</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Content Column */}
-            <div className="location-content fade-up delay-100">
-              <h2 className="section-title-alt">Strategically <span className="text-accent">Located</span></h2>
-              <p className="location-text">
-                Positioned at the heart of key Indian Ocean trade lanes, our state-of-the-art climate-controlled facility in Sri Lanka provides highly streamlined transit speeds and seamless access to elite global markets.
-              </p>
-
-              {/* Smart Address Card */}
-              <div className="smart-address-card">
-                <div className="address-header">
-                  <MapPin size={22} className="address-pin-icon" />
-                  <h4>Factory Headquarters</h4>
-                </div>
-
-                <div className="address-details">
-                  <div className="address-detail-item">
-                    <strong>Company</strong>
-                    <span>Ermine International Pvt Ltd</span>
-                  </div>
-                  <div className="address-detail-item">
-                    <strong>Address</strong>
-                    <span>No 4, Ridee Mawatha, Kalamulla, Kalutara, Sri Lanka</span>
-                  </div>
-                  <div className="address-detail-item">
-                    <strong>Clearance</strong>
-                    <span>Colombo Sea Port Proximity</span>
-                  </div>
-                </div>
-
-                <div className="address-actions">
-                  <button 
-                    onClick={handleCopyAddress} 
-                    className={`btn-copy-address ${isCopied ? 'copied' : ''}`}
-                    title="Copy address to clipboard"
-                  >
-                    {isCopied ? (
-                      <>
-                        <Check size={16} /> Copied!
-                      </>
-                    ) : (
-                      <>
-                        <Copy size={16} /> Copy Address
-                      </>
-                    )}
-                  </button>
-                  
-                  <a 
-                    href="https://maps.google.com/?q=Ermine+International+Pvt+Ltd+No+4+Ridee+Mawatha+Kalamulla+Kalutara+Sri+Lanka" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="btn-maps-link"
-                  >
-                    <ExternalLink size={16} /> View on Map
-                  </a>
-                </div>
-              </div>
-
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4.5 Product Showcase Section */}
-      <section className="product-showcase-section">
-        <div className="container">
-          <div className="showcase-header fade-up">
-            <div className="showcase-title-side">
-              <h2>Stylish Women's Coats <ArrowRight size={28} className="title-arrow" /></h2>
-              <span className="showcase-subtitle">Your Outerwear Upgrade</span>
-            </div>
-            <div className="showcase-desc-side">
-              <p>Stay cozy and stylish with our selection of women's coats! From classic trenches to warm parkas, we've got you covered in every season.</p>
-            </div>
-          </div>
-          
-          <div className="showcase-video-container fade-up delay-100">
-            <div className="video-mockup-wrapper">
-              <video 
-                ref={videoRef}
-                src={brandVideo} 
-                autoPlay 
-                loop 
-                muted 
-                playsInline 
-                className="showcase-video-player"
-                onTimeUpdate={() => setCurrentTime(videoRef.current.currentTime)}
-                onLoadedMetadata={() => setDuration(videoRef.current.duration)}
-              />
-              <div className="video-overlay-tint"></div>
-              
-              {/* Bottom Video Controls Bar - Fully Functional */}
-              <div className="video-controls-mockup">
-                <div className="controls-top-row">
-                  <div className="progress-bar-bg" onClick={handleSeek} style={{ cursor: 'pointer' }}>
-                    <div 
-                      className="progress-bar-fill" 
-                      style={{ width: `${(currentTime / (duration || 1)) * 100}%` }}
-                    ></div>
-                  </div>
-                </div>
-                <div className="controls-bottom-row">
-                  <div className="controls-left">
-                    <span className="play-icon" onClick={togglePlay} style={{ cursor: 'pointer' }}>
-                      {isPlaying ? '⏸' : '▶'}
-                    </span>
-                    <span className="skip-icon" onClick={skipBackward} style={{ cursor: 'pointer' }}>⟲ 15</span>
-                    <span className="skip-icon" onClick={skipForward} style={{ cursor: 'pointer' }}>⟳ 15</span>
-                    <span className="detail-product-label">Live Video</span>
-                  </div>
-                  <div className="controls-right">
-                    <span className="time-display">
-                      {formatTime(currentTime)} / {formatTime(duration)}
-                    </span>
-                    <span className="volume-icon" onClick={toggleMute} style={{ cursor: 'pointer' }}>
-                      {isMuted ? '🔇' : '🔊'}
-                    </span>
-                    <span className="fullscreen-icon" onClick={toggleFullscreen} style={{ cursor: 'pointer' }}>⛶</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="case-studies" style={{ marginTop: '2rem' }}>
-            <div className="case-card slide-in-right">
-              <div className="case-image bg-active"></div>
-              <div className="case-content">
-                <span className="case-tag">Athleisure</span>
-                <h3>Performance Wear Scaling</h3>
-                <p>How we helped a rising startup scale production to 100k units/month with zero quality drop.</p>
-              </div>
-            </div>
-            <div className="case-card slide-in-right delay-100">
-              <div className="case-image bg-intimate"></div>
-              <div className="case-content">
-                <span className="case-tag">Intimates</span>
-                <h3>The Seamless Revolution</h3>
-                <p>Re-engineering a flagship bra line to eliminate stitching, increasing customer retention by 35%.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. Immersive Video/Image CTA */}
-      <section className="immersive-cta">
-        <div className="cta-overlay"></div>
-        <div className="container cta-content fade-up">
-          <h2>Ready to Build the Future of Apparel?</h2>
-          <p>Partner with Ermine for unmatched precision and scale.</p>
-          <div className="hero-cta-group" style={{ justifyContent: 'center' }}>
-            <Link to="/contact" className="btn-modern btn-primary-modern">
-              Book a Consultation
-            </Link>
-            <Link to="/products" className="btn-modern btn-outline-light-modern">
-              View Catalog
-            </Link>
           </div>
         </div>
       </section>

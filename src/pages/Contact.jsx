@@ -1,8 +1,21 @@
-import React, { useEffect } from 'react';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Mail, Phone, MapPin, Search, Plus, Minus, ArrowRight } from 'lucide-react';
 import './Contact.css';
+import contactHero from '../assets/images/capabilities-hero.jpg';
+
+const faqData = [
+  { question: "What is your minimum order quantity (MOQ)?", answer: "Our standard MOQ is 500 units per style and color. For specialized bonded garments, the MOQ might vary based on material availability." },
+  { question: "What is your typical production lead time?", answer: "Our standard lead time is 60-90 days after sample approval, depending on the complexity of the bonded apparel and material sourcing." },
+  { question: "Do you provide prototyping and sampling services?", answer: "Yes, we have a dedicated R&D facility for prototyping and sampling. We work closely with your design team to perfect the stitchless construction." },
+  { question: "What materials can be bonded?", answer: "We can bond a wide variety of synthetic and natural performance fabrics, including nylon, polyester blends, and elastane. We test every fabric to ensure optimal adhesion." },
+  { question: "Do you handle international shipping and logistics?", answer: "Yes, we provide turnkey solutions including packaging and global logistics. We partner with reliable freight forwarders to deliver your garments safely." },
+  { question: "Can you accommodate custom machinery for unique designs?", answer: "Absolutely. We engineer custom machinery and attachments to fulfill highly specific and complex bonding requirements for our clients." },
+];
 
 const Contact = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [searchQuery, setSearchQuery] = useState("");
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -21,107 +34,166 @@ const Contact = () => {
     return () => elements.forEach((el) => observer.unobserve(el));
   }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Simulate form submission
-    alert("Thank you for your message! We will get back to you shortly.");
+  const filteredFaqs = faqData.filter(faq => 
+    faq.question.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const toggleAccordion = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
   };
 
   return (
     <div className="contact-wrapper">
-      {/* Minimalist Hero Section */}
+      {/* 1. Immersive Hero Section with Background Photo */}
       <section className="contact-hero">
-        <div className="contact-hero-bg"></div>
-        <div className="container contact-hero-content">
-          <h1 className="contact-title fade-up">Get in Touch</h1>
-          <p className="contact-subtitle fade-up delay-100">
-            Discover how Ermine's innovative bonded apparel solutions can accelerate your brand. We'd love to hear from you.
-          </p>
+        <div className="contact-hero-bg" style={{ backgroundImage: `url(${contactHero})` }}></div>
+        <div className="contact-hero-overlay"></div>
+        
+        <div className="container contact-hero-centered">
+          <div className="contact-hero-content fade-up text-center">
+            <h1>Contact Us</h1>
+            <p className="mx-auto">
+              Discover how Ermine's innovative bonded apparel solutions can accelerate your brand. Connect with our engineering team today.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Split Layout Content */}
-      <section className="contact-content-section">
+      {/* 2. Get In Touch – Redesigned Form matching reference UI */}
+      <section className="get-in-touch-section">
         <div className="container">
-          <div className="contact-split-grid">
+          
+          {/* Header */}
+          <div className="get-in-touch-header fade-up text-center">
+            <h2>Get In Touch</h2>
+            <p>
+              We'd love to hear from you. Reach out to discuss custom apparel bonding solutions, technical inquiries, or manufacturing partnerships.
+            </p>
+          </div>
+
+          {/* Form Container Card */}
+          <div className="contact-main-card fade-up">
             
-            {/* Left Column: Contact Info */}
-            <div className="contact-info-col slide-in-left">
-              <div className="info-card">
-                <h2>Contact Information</h2>
-                <p>Fill out the form and our team will get back to you within 24 hours.</p>
-                
-                <div className="info-list">
-                  <div className="info-item">
-                    <div className="info-icon"><Mail size={24} /></div>
-                    <div className="info-text">
-                      <h4>Email Us</h4>
-                      <p>sales@ermine.com</p>
-                    </div>
+            {/* Left Teal Info Box */}
+            <div className="contact-info-teal-box">
+              <div className="teal-box-top">
+                <h3>Contact Information</h3>
+                <p>We'll respond to your inquiry within 24 hours with expert technical guidance.</p>
+              </div>
+
+              <div className="teal-info-list">
+                <div className="teal-info-item">
+                  <div className="teal-icon-circle">
+                    <Phone size={18} />
                   </div>
-                  
-                  <div className="info-item">
-                    <div className="info-icon"><Phone size={24} /></div>
-                    <div className="info-text">
-                      <h4>Call Us</h4>
-                      <p>+94 11 234 5678</p>
-                    </div>
-                  </div>
-                  
-                  <div className="info-item">
-                    <div className="info-icon"><MapPin size={24} /></div>
-                    <div className="info-text">
-                      <h4>Headquarters</h4>
-                      <p>123 Innovation Drive<br/>Colombo 00300, Sri Lanka</p>
-                    </div>
+                  <div className="teal-info-text">
+                    <span>+94 34 227 7777</span>
+                    <span>+94 77 123 4567</span>
                   </div>
                 </div>
 
-                <div className="info-map-placeholder">
-                   <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&fm=webp" alt="Ermine Office" />
-                   <div className="map-overlay"></div>
+                <div className="teal-info-item">
+                  <div className="teal-icon-circle">
+                    <Mail size={18} />
+                  </div>
+                  <div className="teal-info-text">
+                    <span>sales@ermine.com</span>
+                  </div>
+                </div>
+
+                <div className="teal-info-item">
+                  <div className="teal-icon-circle">
+                    <MapPin size={18} />
+                  </div>
+                  <div className="teal-info-text">
+                    <span>No 4, Ridee Mawatha, Kalamulla, Kalutara, Sri Lanka</span>
+                  </div>
                 </div>
               </div>
+
+              {/* Decorative Translucent Circle */}
+              <div className="teal-decorative-circle"></div>
             </div>
 
-            {/* Right Column: Glassmorphic Form */}
-            <div className="contact-form-col slide-in-right">
-              <div className="glass-form-card">
-                <form onSubmit={handleSubmit} className="contact-form">
-                  <div className="form-row">
-                    <div className="input-group">
-                      <label htmlFor="firstName">First Name</label>
-                      <input type="text" id="firstName" required placeholder="John" />
-                    </div>
-                    <div className="input-group">
-                      <label htmlFor="lastName">Last Name</label>
-                      <input type="text" id="lastName" required placeholder="Doe" />
-                    </div>
-                  </div>
-                  
-                  <div className="input-group">
-                    <label htmlFor="email">Work Email</label>
-                    <input type="email" id="email" required placeholder="john@company.com" />
-                  </div>
-                  
-                  <div className="input-group">
-                    <label htmlFor="company">Company (Optional)</label>
-                    <input type="text" id="company" placeholder="Your Brand Name" />
-                  </div>
-                  
-                  <div className="input-group">
-                    <label htmlFor="message">Message</label>
-                    <textarea id="message" required rows="5" placeholder="How can we help you?"></textarea>
-                  </div>
-                  
-                  <button type="submit" className="btn-submit">
-                    Send Message <Send size={18} />
-                  </button>
-                </form>
+            {/* Right Form Fields */}
+            <form className="contact-form-fields" onSubmit={(e) => e.preventDefault()}>
+              <div className="form-row-2col">
+                <div className="form-field-group">
+                  <label>Your Name</label>
+                  <input type="text" placeholder="John Trangely" className="underline-input" required />
+                </div>
+                <div className="form-field-group">
+                  <label>Your Email</label>
+                  <input type="email" placeholder="hello@nurency.com" className="underline-input" required />
+                </div>
               </div>
-            </div>
+
+              <div className="form-field-group">
+                <label>Your Subject</label>
+                <input type="text" placeholder="I want to hire you quickly" className="underline-input" required />
+              </div>
+
+              <div className="form-field-group">
+                <label className="active-label">Message</label>
+                <textarea rows={3} placeholder="Write here your message..." className="underline-input underline-textarea" required></textarea>
+              </div>
+
+              <div className="form-submit-wrapper">
+                <button type="submit" className="teal-send-btn">
+                  Send Message
+                </button>
+              </div>
+            </form>
 
           </div>
+
+        </div>
+      </section>
+
+      {/* 3. FAQ Section (Naturely Style Layout) */}
+      <section className="faq-section">
+        <div className="container">
+          
+          {/* Eyebrow */}
+          <div className="faq-naturely-eyebrow fade-up">
+            <span className="faq-line"></span>
+            <span>FAQ</span>
+          </div>
+
+          {/* Header Split */}
+          <div className="faq-naturely-header fade-up">
+            <h2 className="faq-naturely-title">
+              Answers to Your <span className="title-grey">Ermine</span><br />
+              <span className="title-grey">Manufacturing Questions</span>
+            </h2>
+            <p className="faq-naturely-subtitle">
+              Find comprehensive answers to all your Ermine apparel bonding questions right here. Whether you need details on MOQs, lead times, or prototyping, we've got the information to ensure a smooth manufacturing partnership.
+            </p>
+          </div>
+
+          {/* Stacked Cards Accordion List */}
+          <div className="faq-naturely-list fade-up delay-100">
+            {filteredFaqs.map((faq, index) => (
+              <div 
+                key={index} 
+                className={`faq-naturely-card ${activeIndex === index ? 'active' : ''}`}
+                onClick={() => toggleAccordion(index)}
+              >
+                <div className="faq-naturely-card-header">
+                  <h4>{faq.question}</h4>
+                  <span className="faq-naturely-icon">
+                    {activeIndex === index ? <Minus size={20} /> : <Plus size={20} />}
+                  </span>
+                </div>
+                {activeIndex === index && (
+                  <div className="faq-naturely-card-body">
+                    <p>{faq.answer}</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
         </div>
       </section>
     </div>

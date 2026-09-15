@@ -2,10 +2,11 @@ import React, { useEffect } from 'react';
 import { ArrowRight, Trophy, Users, ShieldAlert, Award, ThumbsUp, Flag, ChevronDown, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './About.css';
-import aboutHero from '../assets/images/aboutus.jpg';
+import aboutHero from '../assets/images/about-hero.jpg';
 import nuwanImg from '../assets/images/Nuwan Muthuthanthri.jpeg';
 import shanthaImg from '../assets/images/Shantha Rathnayake.jpeg';
 import gayanRanganaImg from '../assets/images/Gayan Rangana.jpeg';
+import anushkaImg from '../assets/images/Anushka Mangala.jpg';
 
 const About = () => {
   useEffect(() => {
@@ -70,117 +71,219 @@ const About = () => {
       {/* 2. Brand Narrative Section */}
       <section className="about-story-section">
         <div className="container">
-          <div className="story-header fade-up">
-            <span className="section-badge">ESTABLISHED 2010</span>
-            <h2>About <span style={{color: 'var(--color-accent)'}}>Ermine</span></h2>
+
+          {/* Pill label */}
+          <div className="story-pill-label fade-up">
+            <span>• Who we are?</span>
+          </div>
+
+          {/* Large editorial statement */}
+          <div className="story-statement fade-up delay-100">
+            <p>
+              Ermine is an <strong>innovative bonded apparel</strong> manufacturing company, led by{' '}
+              <strong>dynamic professionals</strong> with decades of global experience.{' '}
+              Founded in <strong>Sri Lanka in 2010,</strong> we deliver{' '}
+              <strong>customized, turnkey bonded solutions</strong> that redefine the future of{' '}
+              stitchless apparel.
+            </p>
+          </div>
+
+          {/* Inline image trio */}
+          <div className="story-image-trio fade-up delay-200">
+            <div className="story-trio-img">
+              <img src="/solutions-2.webp" alt="Ermine craftsmanship" />
+            </div>
+            <div className="story-trio-img">
+              <img src="/product-1.webp" alt="Ermine performance" />
+            </div>
+            <div className="story-trio-img">
+              <img src="/solutions-hero.webp" alt="Ermine innovation" />
+            </div>
+          </div>
+
+          {/* Achievements divider */}
+          <div className="story-achievements-divider fade-up delay-300">
+            <span className="divider-line"></span>
+            <span className="divider-label">Our Achievements</span>
+            <span className="divider-line"></span>
+          </div>
+
+          {/* Stats row */}
+          <div className="story-stats-row fade-up delay-400">
+            <div className="story-stat-card">
+              <span className="stat-big-num">15+</span>
+              <span className="stat-desc">years of experience</span>
+            </div>
+            <div className="story-stat-card">
+              <span className="stat-big-num">500+</span>
+              <span className="stat-desc">global brand partners</span>
+            </div>
+            <div className="story-stat-card highlight-stat">
+              <span className="stat-big-num">100%</span>
+              <span className="stat-desc">stitchless technology</span>
+            </div>
+            <div className="story-stat-card">
+              <span className="stat-big-num">50+</span>
+              <span className="stat-desc">countries served</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* 3. Core Pillars Section (Refined Split Layout) */}
+      <section className="pillars-section-new">
+        <div className="container">
+          
+          {/* Header */}
+          <div className="pillars-new-header fade-up">
+            <span className="pillars-eyebrow">WHERE PRECISION MEETS SUSTAINABILITY</span>
+            <h2 className="pillars-new-title">
+              EXPERIENCE THE ART OF STITCHLESS APPAREL & FABRIC ENGINEERING
+            </h2>
+          </div>
+
+          {/* 3-Column Split Body */}
+          <div className="pillars-new-grid">
             
-            <div className="story-paragraphs">
-              <p className="lead-paragraph">
-                Ermine is an innovative bonded apparel manufacturing company, led by dynamic and diverse professionals with decades of cumulative global experience.
-              </p>
-              <p>
-                Founded in March 2010 in Sri Lanka (PV 71667), we specialize in delivering customized, turnkey bonded apparel solutions to international brands, high-growth startups, and large-scale industrial manufacturing partners.
-              </p>
-              <p>
-                Stitchless garments represent the pinnacle of technical apparel evolution, abandoning traditional needle-and-thread stitching. Over the past decade, global demand has shifted toward bonding to assemble fabric panels, create smooth hems, and integrate precise, structural components. Ermine continues to invest heavily in proprietary R&D to stand as a premier turnkey apparel solution provider.
-              </p>
+            {/* Left Column (Pillars 01 & 03) */}
+            <div className="pillars-col pillars-col-left fade-up">
+              
+              <div className="pillar-item-box">
+                <div className="pillar-item-header">
+                  <span className="pillar-num-green">01</span>
+                  <h3>OUR VISION</h3>
+                </div>
+                <p>
+                  To be the definitive global leader in stitchless apparel technology, constantly pushing the boundaries of fabric engineering.
+                </p>
+              </div>
+
+              <div className="pillar-divider-line"></div>
+
+              <div className="pillar-item-box">
+                <div className="pillar-item-header">
+                  <span className="pillar-num-green">03</span>
+                  <h3>OUR PHILOSOPHY</h3>
+                </div>
+                <p>
+                  Delivering absolute precision while prioritizing ecological sustainability, continuous innovation, and employee wellbeing.
+                </p>
+              </div>
+
             </div>
+
+            {/* Center Column: Tall Portrait Image */}
+            <div className="pillars-center-media fade-up delay-100">
+              <div className="pillars-media-wrapper">
+                <img src="/solutions-hero.webp" alt="Ermine Apparel Engineering" />
+              </div>
+            </div>
+
+            {/* Right Column (Pillars 02 & 04) */}
+            <div className="pillars-col pillars-col-right fade-up delay-200">
+              
+              <div className="pillar-item-box">
+                <div className="pillar-item-header right-aligned">
+                  <h3>OUR MISSION</h3>
+                  <span className="pillar-num-green">02</span>
+                </div>
+                <p className="text-right">
+                  To empower global fashion and performance brands with sustainable, highly durable bonded apparel solutions and components.
+                </p>
+              </div>
+
+              <div className="pillar-divider-line"></div>
+
+              <div className="pillar-item-box">
+                <div className="pillar-item-header right-aligned">
+                  <h3>OUR COMMITMENT</h3>
+                  <span className="pillar-num-green">04</span>
+                </div>
+                <p className="text-right">
+                  Pioneering eco-friendly PU & TPU films, zero-waste manufacturing, and uncompromising luxury quality across global supply chains.
+                </p>
+              </div>
+
+            </div>
+
           </div>
 
-          <div className="story-cards-grid">
-            <div className="story-feature-card fade-up">
-              <div className="card-image-wrapper">
-                <img src="/solutions-2.webp" alt="Ermine Excellence" />
-                <div className="card-badge">01</div>
-              </div>
-              <div className="card-text-content">
-                <p><strong>Ermine continues to invest heavily in proprietary R&D</strong> to stand as a premier turnkey apparel solution provider, boasting 15+ years of R&D excellence.</p>
-              </div>
-            </div>
-
-            <div className="story-feature-card fade-up delay-100">
-              <div className="card-image-wrapper">
-                <img src="/product-1.webp" alt="Ermine Global Solutions" />
-                <div className="card-badge">02</div>
-              </div>
-              <div className="card-text-content">
-                <p><strong>With our trusted manufacturing processes</strong>, we specialize in delivering customized, turnkey bonded apparel solutions to international brands and high-growth startups.</p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* 3. Core Pillars (Vision, Mission, Philosophy) */}
-      <section className="pillars-section">
+      {/* 4. Culture & Values (Naturely-inspired Layout) */}
+      <section className="about-culture-naturely">
         <div className="container">
-          <div className="pillars-grid">
-            <div className="pillar-card fade-up">
-              <div className="pillar-num">01</div>
-              <h3>Our Vision</h3>
-              <p>To be the definitive global leader in stitchless apparel technology, constantly pushing the boundaries of fabric engineering.</p>
+          
+          {/* Header */}
+          <div className="culture-naturely-header fade-up">
+            <div className="culture-header-left">
+              <h2>Embrace Sustainable Innovation</h2>
+              <p>
+                Driven by passion, continuous R&D innovation, and absolute integrity, our team crafts seamless apparel engineered for tomorrow.
+              </p>
             </div>
-            <div className="pillar-card fade-up delay-100">
-              <div className="pillar-num">02</div>
-              <h3>Our Mission</h3>
-              <p>To empower global fashion and performance brands with sustainable, highly durable bonded apparel solutions and components.</p>
-            </div>
-            <div className="pillar-card fade-up delay-200">
-              <div className="pillar-num">03</div>
-              <h3>Our Philosophy</h3>
-              <p>Delivering absolute precision while prioritizing ecological sustainability, continuous innovation, and employee wellbeing.</p>
-            </div>
+            <Link to="/capabilities" className="culture-learn-btn">
+              Learn more <span className="btn-arrow">↗</span>
+            </Link>
           </div>
-        </div>
-      </section>
 
-      {/* 4. Culture & Values (Visual Showcases) */}
-      <section className="about-culture-section">
-        <div className="container">
-          <div className="section-header text-center fade-up">
-            <h2>Our Culture & Values</h2>
-            <p>Driven by passion, continuous innovation, and absolute integrity</p>
-          </div>
-        </div>
+          {/* 2-Column Cards Grid */}
+          <div className="culture-naturely-grid">
+            
+            {/* Card 1 */}
+            <div className="culture-naturely-card fade-up">
+              <div className="culture-card-img">
+                <img 
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&fm=webp" 
+                  alt="Engaged & Inspired Teams" 
+                />
+              </div>
+              <div className="culture-card-body">
+                <h3>Engaged & Inspired Teams</h3>
+                <p>
+                  Our passionate workforce thrives in a collaborative, climate-controlled facility engineered for technical apparel excellence.
+                </p>
+                <p className="culture-subtext">
+                  Every team member is empowered to innovate, ensuring uncompromised precision and luxury quality across all product lines.
+                </p>
+              </div>
+            </div>
 
-        <div className="culture-showcase-grid">
-          <div className="culture-card fade-up">
-            <div className="culture-bg" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp')" }}></div>
-            <div className="culture-overlay"></div>
-            <div className="culture-content">
-              <span>PASSION</span>
-              <h3>Engaged & Inspired Teams</h3>
+            {/* Card 2 */}
+            <div className="culture-naturely-card fade-up delay-100">
+              <div className="culture-card-img">
+                <img 
+                  src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&fm=webp" 
+                  alt="Pioneering Fabric R&D" 
+                />
+              </div>
+              <div className="culture-card-body">
+                <h3>Pioneering Fabric R&D</h3>
+                <p>
+                  We continuously engineer and test new adhesive film formulations to maximize garment bond flexibility and 50+ wash durability.
+                </p>
+                <p className="culture-subtext">
+                  Our dedicated in-house R&D laboratory delivers rapid prototyping and custom attachments for leading global fashion brands.
+                </p>
+              </div>
             </div>
+
           </div>
-          <div className="culture-card fade-up delay-100">
-            <div className="culture-bg" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp')" }}></div>
-            <div className="culture-overlay"></div>
-            <div className="culture-content">
-              <span>INNOVATIVE</span>
-              <h3>Pioneering Fabric R&D</h3>
-            </div>
-          </div>
-          <div className="culture-card fade-up delay-200">
-            <div className="culture-bg" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp')" }}></div>
-            <div className="culture-overlay"></div>
-            <div className="culture-content">
-              <span>INTEGRITY</span>
-              <h3>Sustainable Manufacturing</h3>
-            </div>
-          </div>
+
         </div>
       </section>
 
       {/* 5. Leadership Section (Modern Squircle Headshots) */}
       <section className="leadership-section">
         <div className="container">
-          <div className="section-header text-center fade-up">
+          <div className="leadership-header fade-up">
             <h2>Leadership Team</h2>
             <p>Visionary directors guiding the future of seamless manufacturing</p>
           </div>
 
           <div className="team-grid">
-
 
             <div className="team-card fade-up">
               <div className="team-avatar-wrapper">
@@ -189,9 +292,7 @@ const About = () => {
               <div className="team-info">
                 <h3>Nuwan Muthutanthri</h3>
                 <span className="team-role">Director & Co-Founder</span>
-                <p>
-                  21+ Years Experience in IE, Production & Operation in Bodyline, InQube & Bondville.
-                </p>
+                <p>21+ Years Experience in IE, Production & Operation in Bodyline, InQube & Bondville.</p>
               </div>
             </div>
 
@@ -202,9 +303,7 @@ const About = () => {
               <div className="team-info">
                 <h3>Shantha Rathnayake</h3>
                 <span className="team-role">Director & Co-Founder</span>
-                <p>
-                  30 Years Experience in IE, Planning, Merchandising, Production, & Quality Assurance in Bodyline, MAST Industries Inc. USA, & InQube.
-                </p>
+                <p>30 Years Experience in IE, Planning, Merchandising, Production, & Quality Assurance in Bodyline, MAST Industries Inc. USA, & InQube.</p>
               </div>
             </div>
 
@@ -215,11 +314,21 @@ const About = () => {
               <div className="team-info">
                 <h3>Gayan Rangana</h3>
                 <span className="team-role">Director & Co-Founder</span>
-                <p>
-                  15+ Years Experience in IE, Engineering, & Automation in Omega line, Bodyline, & Bondville.
-                </p>
+                <p>15+ Years Experience in IE, Engineering, & Automation in Omega line, Bodyline, & Bondville.</p>
               </div>
             </div>
+
+            <div className="team-card fade-up delay-300">
+              <div className="team-avatar-wrapper">
+                <img src={anushkaImg} alt="Anushka Mangala" />
+              </div>
+              <div className="team-info">
+                <h3>Anushka Mangala</h3>
+                <span className="team-role">Director & Co-Founder</span>
+                <p>15+ Years Experience in IE, Production & Apparel Operations in Leading Garment Enterprises.</p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
