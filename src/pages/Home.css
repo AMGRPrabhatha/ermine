@@ -1657,6 +1657,11 @@
   margin: 0;
 }
 
+.discover-title .title-muted {
+  color: #999999;
+  font-weight: 300;
+}
+
 /* Grid Layout */
 .discover-grid {
   display: grid;

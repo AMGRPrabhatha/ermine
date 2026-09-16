@@ -221,7 +221,7 @@ const Home = () => {
           <div className="discover-header text-center fade-up">
             <span className="discover-eyebrow">[EXPERIENCE OUR CAPABILITIES]</span>
             <h2 className="discover-title">
-              Discover the innovation awaiting you at our<br />specialized bonding facilities
+              Discover the innovation <span className="title-muted">awaiting you at our<br />specialized bonding facilities</span>
             </h2>
           </div>
 
