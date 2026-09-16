@@ -367,37 +367,35 @@ const Home = () => {
 
       {/* 5. Immersive CTA Banner (Lids Club Split 2-Column Reference Layout) */}
       <section className="home-banner-cta-section">
-        <div className="container">
-          <div className="lids-split-container fade-up">
-            
-            {/* Left Light Editorial Card */}
-            <div className="lids-split-left">
-              <span className="lids-eyebrow">EXCLUSIVE BONDED APPAREL</span>
-              <h2 className="lids-title">
-                BEGIN YOUR EXCITING ERMINE APPAREL EXPERIENCE TODAY!
-              </h2>
-              <div className="lids-text-block">
-                <p>
-                  Designed in styles and tones that endure the passing of time and the passing of fickle trends.
-                </p>
-                <p>
-                  Built for longevity and rooted in practicality, these bonded apparel solutions accompany top global fashion brands through every manufacturing journey.
-                </p>
-              </div>
-              <Link to="/contact" className="lids-cta-link">
-                Get In Touch <span className="lids-arrow">↗</span>
-              </Link>
+        <div className="lids-split-container fade-up">
+          
+          {/* Left Light Editorial Card */}
+          <div className="lids-split-left">
+            <span className="lids-eyebrow">EXCLUSIVE BONDED APPAREL</span>
+            <h2 className="lids-title">
+              BEGIN YOUR EXCITING ERMINE APPAREL EXPERIENCE TODAY!
+            </h2>
+            <div className="lids-text-block">
+              <p>
+                Designed in styles and tones that endure the passing of time and the passing of fickle trends.
+              </p>
+              <p>
+                Built for longevity and rooted in practicality, these bonded apparel solutions accompany top global fashion brands through every manufacturing journey.
+              </p>
             </div>
-
-            {/* Right Feature Media Image */}
-            <div className="lids-split-right">
-              <img 
-                src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp" 
-                alt="Ermine Bonded Apparel Experience" 
-              />
-            </div>
-
+            <Link to="/contact" className="lids-cta-link">
+              Get In Touch <span className="lids-arrow">↗</span>
+            </Link>
           </div>
+
+          {/* Right Feature Media Image */}
+          <div className="lids-split-right">
+            <img 
+              src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp" 
+              alt="Ermine Bonded Apparel Experience" 
+            />
+          </div>
+
         </div>
       </section>
     </div>

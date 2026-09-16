@@ -1254,23 +1254,26 @@
 
 /* --- 5. Immersive CTA Banner (Lids Club Split 2-Column Reference Layout) --- */
 .home-banner-cta-section {
-  padding: 6rem 0;
-  background-color: #ffffff;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: #f3f2ef;
 }
 
 .lids-split-container {
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  border-radius: 24px;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.07);
-  min-height: 520px;
+  box-shadow: none;
+  min-height: 540px;
   background-color: #f3f2ef;
 }
 
 .lids-split-left {
   background-color: #f3f2ef;
-  padding: 4.5rem 4rem;
+  padding: 5rem 5rem 5rem max(5vw, 60px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1301,7 +1304,7 @@
   flex-direction: column;
   gap: 1.2rem;
   margin-bottom: 2.5rem;
-  max-width: 480px;
+  max-width: 520px;
 }
 
 .lids-text-block p {
@@ -1358,6 +1361,18 @@
 
 .lids-split-container:hover .lids-split-right img {
   transform: scale(1.04);
+}
+
+@media screen and (max-width: 992px) {
+  .lids-split-container {
+    grid-template-columns: 1fr;
+  }
+  .lids-split-left {
+    padding: 4rem 2rem;
+  }
+  .lids-split-right {
+    min-height: 380px;
+  }
 }
 
 @media screen and (max-width: 992px) {
