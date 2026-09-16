@@ -357,10 +357,7 @@ const About = () => {
                 <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80&fm=webp" alt="Dilani Wickramasinghe" className="review-avatar" />
                 <div className="review-user-info">
                   <div className="user-name-row">
-                    <div>
-                      <h4>Dilani Wickramasinghe</h4>
-                      <span className="review-store">ODEL Colombo</span>
-                    </div>
+                    <h4>Dilani Wickramasinghe</h4>
                     <span className="review-time">yesterday</span>
                   </div>
                   <div className="star-row">
@@ -371,7 +368,7 @@ const About = () => {
                 </div>
               </div>
               <p className="review-text">
-                "Ermine has transformed our seasonal outerwear collections across Sri Lanka. Their precision stitchless bonding and seam sealing give our garments a world-class luxury finish. Exceptional quality, technical guidance, and reliable turnaround!"
+                "Ermine has transformed our seasonal outerwear collections across Sri Lanka. Their precision stitchless bonding and seam sealing give our garments a world-class luxury finish. Exceptional quality, technical guidance, and reliable turnaround for our Colombo store!"
               </p>
               <div className="review-actions">
                 <button className="btn-action">Reply</button>
@@ -390,10 +387,7 @@ const About = () => {
                 <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80&fm=webp" alt="Kasun Perera" className="review-avatar" />
                 <div className="review-user-info">
                   <div className="user-name-row">
-                    <div>
-                      <h4>Kasun Perera</h4>
-                      <span className="review-store">House of Fashion Colombo</span>
-                    </div>
+                    <h4>Kasun Perera</h4>
                     <span className="review-time">yesterday</span>
                   </div>
                   <div className="star-row">
@@ -423,10 +417,7 @@ const About = () => {
                 <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80&fm=webp" alt="Shenali De Silva" className="review-avatar" />
                 <div className="review-user-info">
                   <div className="user-name-row">
-                    <div>
-                      <h4>Shenali De Silva</h4>
-                      <span className="review-store">Kelly Felder Sri Lanka</span>
-                    </div>
+                    <h4>Shenali De Silva</h4>
                     <span className="review-time">2 days ago</span>
                   </div>
                   <div className="star-row">
@@ -456,10 +447,7 @@ const About = () => {
                 <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80&fm=webp" alt="Nuwan Fernando" className="review-avatar" />
                 <div className="review-user-info">
                   <div className="user-name-row">
-                    <div>
-                      <h4>Nuwan Fernando</h4>
-                      <span className="review-store">Cotton Collection Kandy</span>
-                    </div>
+                    <h4>Nuwan Fernando</h4>
                     <span className="review-time">2 days ago</span>
                   </div>
                   <div className="star-row">
