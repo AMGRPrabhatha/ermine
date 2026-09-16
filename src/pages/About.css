@@ -829,6 +829,18 @@
   font-size: 1rem;
   font-weight: 700;
   color: #111111;
+  margin: 0;
+}
+
+.review-store {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #555555;
+  background-color: #eeeef0;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-top: 2px;
 }
 
 .review-time {

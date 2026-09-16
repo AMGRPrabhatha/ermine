@@ -354,10 +354,13 @@ const About = () => {
             {/* Review 1 */}
             <div className="review-card fade-up">
               <div className="review-header">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80&fm=webp" alt="Hasna Azlya" className="review-avatar" />
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80&fm=webp" alt="Dilani Wickramasinghe" className="review-avatar" />
                 <div className="review-user-info">
                   <div className="user-name-row">
-                    <h4>Hasna Azlya</h4>
+                    <div>
+                      <h4>Dilani Wickramasinghe</h4>
+                      <span className="review-store">ODEL Colombo</span>
+                    </div>
                     <span className="review-time">yesterday</span>
                   </div>
                   <div className="star-row">
@@ -368,12 +371,12 @@ const About = () => {
                 </div>
               </div>
               <p className="review-text">
-                "I absolutely adore my beige coat from Ermine! It's not just a coat; it's a statement piece that adds elegance to any outfit. The color is versatile, and the fit is incredibly flattering. It's become my go-to outerwear choice for both casual outings and formal events."
+                "Ermine has transformed our seasonal outerwear collections across Sri Lanka. Their precision stitchless bonding and seam sealing give our garments a world-class luxury finish. Exceptional quality, technical guidance, and reliable turnaround!"
               </p>
               <div className="review-actions">
                 <button className="btn-action">Reply</button>
                 <button className="btn-action">
-                  <ThumbsUp size={14} /> <span>22</span>
+                  <ThumbsUp size={14} /> <span>28</span>
                 </button>
                 <button className="btn-action report-btn">
                   <Flag size={14} />
@@ -384,10 +387,13 @@ const About = () => {
             {/* Review 2 */}
             <div className="review-card fade-up delay-100">
               <div className="review-header">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80&fm=webp" alt="Hellena Joy" className="review-avatar" />
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80&fm=webp" alt="Kasun Perera" className="review-avatar" />
                 <div className="review-user-info">
                   <div className="user-name-row">
-                    <h4>Hellena Joy</h4>
+                    <div>
+                      <h4>Kasun Perera</h4>
+                      <span className="review-store">House of Fashion Colombo</span>
+                    </div>
                     <span className="review-time">yesterday</span>
                   </div>
                   <div className="star-row">
@@ -398,12 +404,12 @@ const About = () => {
                 </div>
               </div>
               <p className="review-text">
-                "As a busy professional, I need outerwear that's both stylish and practical, and this beige coat ticks all the boxes. It's sleek and sophisticated, ideal for meetings and client lunches, yet comfortable enough for everyday wear. I've received countless compliments since I started wearing it!"
+                "Ermine is our go-to Sri Lankan partner for high-performance bonded apparel. The bonding strength, seam tape precision, and garment durability for our activewear lines are outstanding. Truly an industry pioneer in Sri Lanka!"
               </p>
               <div className="review-actions">
                 <button className="btn-action">Reply</button>
                 <button className="btn-action">
-                  <ThumbsUp size={14} /> <span>22</span>
+                  <ThumbsUp size={14} /> <span>34</span>
                 </button>
                 <button className="btn-action report-btn">
                   <Flag size={14} />
@@ -414,10 +420,13 @@ const About = () => {
             {/* Review 3 */}
             <div className="review-card fade-up">
               <div className="review-header">
-                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80&fm=webp" alt="Sarah Jasmine" className="review-avatar" />
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80&fm=webp" alt="Shenali De Silva" className="review-avatar" />
                 <div className="review-user-info">
                   <div className="user-name-row">
-                    <h4>Sarah Jasmine</h4>
+                    <div>
+                      <h4>Shenali De Silva</h4>
+                      <span className="review-store">Kelly Felder Sri Lanka</span>
+                    </div>
                     <span className="review-time">2 days ago</span>
                   </div>
                   <div className="star-row">
@@ -428,12 +437,12 @@ const About = () => {
                 </div>
               </div>
               <p className="review-text">
-                "I'm in love with my beige coat! It's so soft and cozy, like being wrapped in a warm hug. The color is gorgeous and goes with everything in my wardrobe. Whether I'm running errands or meeting friends for brunch, this coat effortlessly elevates my look."
+                "From initial prototyping in Colombo to mass store delivery, working with Ermine Apparel has been flawless. Their stitchless technology gives our jackets and sportswear a sleek, modern aesthetic that our Sri Lankan customers adore."
               </p>
               <div className="review-actions">
                 <button className="btn-action">Reply</button>
                 <button className="btn-action">
-                  <ThumbsUp size={14} /> <span>10</span>
+                  <ThumbsUp size={14} /> <span>19</span>
                 </button>
                 <button className="btn-action report-btn">
                   <Flag size={14} />
@@ -444,10 +453,13 @@ const About = () => {
             {/* Review 4 */}
             <div className="review-card fade-up delay-100">
               <div className="review-header">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80&fm=webp" alt="Taylor Swift" className="review-avatar" />
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80&fm=webp" alt="Nuwan Fernando" className="review-avatar" />
                 <div className="review-user-info">
                   <div className="user-name-row">
-                    <h4>Taylor Swift</h4>
+                    <div>
+                      <h4>Nuwan Fernando</h4>
+                      <span className="review-store">Cotton Collection Kandy</span>
+                    </div>
                     <span className="review-time">2 days ago</span>
                   </div>
                   <div className="star-row">
@@ -458,12 +470,12 @@ const About = () => {
                 </div>
               </div>
               <p className="review-text">
-                "This beige coat is a game-changer! I've never felt more confident and put-together than when I'm wearing it. The quality is top-notch, and the attention to detail is evident in every stitch. Plus, it's surprisingly warm without being bulky, making it perfect for chilly days."
+                "The technical expertise of the Ermine team is remarkable. Their bonded apparel solutions withstand intensive wear while maintaining exceptional comfort. Proud to partner with a top Sri Lankan manufacturing brand!"
               </p>
               <div className="review-actions">
                 <button className="btn-action">Reply</button>
                 <button className="btn-action">
-                  <ThumbsUp size={14} /> <span>10</span>
+                  <ThumbsUp size={14} /> <span>25</span>
                 </button>
                 <button className="btn-action report-btn">
                   <Flag size={14} />
