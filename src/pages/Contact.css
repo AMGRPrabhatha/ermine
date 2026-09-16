@@ -98,7 +98,7 @@
 /* --- 2. Get In Touch Section (Reference UI Redesign) --- */
 .get-in-touch-section {
   padding: 6rem 0 7rem;
-  background-color: #eaf6f4;
+  background-color: #ffffff;
 }
 
 .get-in-touch-header {
@@ -124,7 +124,8 @@
 .contact-main-card {
   background: #ffffff;
   border-radius: 28px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.07);
+  border: 1px solid #f0f0f0;
   padding: 1.5rem;
   display: flex;
   gap: 3rem;
@@ -132,9 +133,11 @@
   margin: 0 auto;
 }
 
-/* Left Teal Box */
+/* Left Liquid Glass Info Box */
+.contact-info-glass-box,
 .contact-info-teal-box {
-  background: #009688;
+  background: linear-gradient(135deg, rgba(17, 17, 17, 0.96) 0%, rgba(28, 28, 30, 0.92) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 24px;
   padding: 3.2rem 2.4rem;
   color: #ffffff;
@@ -145,8 +148,34 @@
   justify-content: space-between;
   flex: 0.85;
   min-height: 480px;
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
 }
 
+/* Liquid Glossy Sweep Light Animation */
+.contact-info-glass-box::before,
+.contact-info-teal-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.12) 50%,
+    transparent 100%
+  );
+  transform: rotate(25deg);
+  animation: liquidGlassSweep 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.glass-box-top h3,
 .teal-box-top h3 {
   font-size: 1.6rem;
   font-weight: 700;
@@ -154,13 +183,15 @@
   color: #ffffff;
 }
 
+.glass-box-top p,
 .teal-box-top p {
   font-size: 0.92rem;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.78);
   line-height: 1.55;
   margin-bottom: 3rem;
 }
 
+.glass-info-list,
 .teal-info-list {
   display: flex;
   flex-direction: column;
@@ -169,24 +200,29 @@
   z-index: 2;
 }
 
+.glass-info-item,
 .teal-info-item {
   display: flex;
   align-items: center;
   gap: 1.2rem;
 }
 
+.glass-icon-circle,
 .teal-icon-circle {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.18);
+  background: var(--color-lime-accent, #cbf238);
+  color: #111111;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
   flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(203, 242, 56, 0.35);
+  font-weight: 700;
 }
 
+.glass-info-text,
 .teal-info-text {
   display: flex;
   flex-direction: column;
@@ -196,11 +232,12 @@
   color: #ffffff;
 }
 
+.glass-decorative-circle,
 .teal-decorative-circle {
-  width: 220px;
-  height: 220px;
+  width: 240px;
+  height: 240px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(circle, rgba(203, 242, 56, 0.15) 0%, rgba(203, 242, 56, 0) 70%);
   position: absolute;
   bottom: -60px;
   right: -60px;
@@ -252,7 +289,7 @@
 }
 
 .underline-input:focus {
-  border-bottom-color: #009688;
+  border-bottom-color: var(--color-lime-accent, #cbf238);
 }
 
 .underline-textarea {
@@ -263,23 +300,26 @@
   margin-top: 1rem;
 }
 
+.glass-send-btn,
 .teal-send-btn {
-  background: #009688;
-  color: #ffffff;
-  border: none;
-  border-radius: 8px;
+  background: var(--color-lime-accent, #cbf238);
+  color: #111111;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 100px;
   padding: 0.85rem 2.4rem;
   font-size: 0.95rem;
   font-weight: 700;
+  letter-spacing: 0.5px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(0, 150, 136, 0.3);
+  box-shadow: 0 8px 24px rgba(203, 242, 56, 0.35);
 }
 
+.glass-send-btn:hover,
 .teal-send-btn:hover {
-  background: #00796b;
+  background: var(--color-lime-hover, #b6de23);
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(0, 150, 136, 0.45);
+  box-shadow: 0 12px 28px rgba(203, 242, 56, 0.5);
 }
 
 @media screen and (max-width: 992px) {

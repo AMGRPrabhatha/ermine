@@ -365,28 +365,38 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 5. Immersive CTA Banner (Reference Card Design) */}
+      {/* 5. Immersive CTA Banner (Lids Club Split 2-Column Reference Layout) */}
       <section className="home-banner-cta-section">
         <div className="container">
-          <div className="home-cta-card fade-up">
-            <div className="cta-card-overlay"></div>
-            <div className="cta-card-inner">
-              <h2 className="cta-card-title">
-                Begin Your Exciting Ermine<br />
-                Apparel Experience Today
+          <div className="lids-split-container fade-up">
+            
+            {/* Left Light Editorial Card */}
+            <div className="lids-split-left">
+              <span className="lids-eyebrow">EXCLUSIVE BONDED APPAREL</span>
+              <h2 className="lids-title">
+                BEGIN YOUR EXCITING ERMINE APPAREL EXPERIENCE TODAY!
               </h2>
-              <div className="cta-card-bottom">
-                <Link to="/contact" className="cta-pill-btn">
-                  <span className="cta-pill-text">Get In Touch</span>
-                  <span className="cta-pill-circle">
-                    <ArrowUpRight size={20} />
-                  </span>
-                </Link>
-                <p className="cta-card-desc">
-                  Start your Ermine partnership today. Explore cutting-edge bonding technology and enjoy tailored, expert-guided manufacturing.
+              <div className="lids-text-block">
+                <p>
+                  Designed in styles and tones that endure the passing of time and the passing of fickle trends.
+                </p>
+                <p>
+                  Built for longevity and rooted in practicality, these bonded apparel solutions accompany top global fashion brands through every manufacturing journey.
                 </p>
               </div>
+              <Link to="/contact" className="lids-cta-link">
+                Get In Touch <span className="lids-arrow">↗</span>
+              </Link>
             </div>
+
+            {/* Right Feature Media Image */}
+            <div className="lids-split-right">
+              <img 
+                src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80&fm=webp" 
+                alt="Ermine Bonded Apparel Experience" 
+              />
+            </div>
+
           </div>
         </div>
       </section>

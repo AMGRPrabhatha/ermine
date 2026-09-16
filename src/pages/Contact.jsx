@@ -74,45 +74,45 @@ const Contact = () => {
           {/* Form Container Card */}
           <div className="contact-main-card fade-up">
             
-            {/* Left Teal Info Box */}
-            <div className="contact-info-teal-box">
-              <div className="teal-box-top">
+            {/* Left Liquid Glass Info Box */}
+            <div className="contact-info-glass-box">
+              <div className="glass-box-top">
                 <h3>Contact Information</h3>
                 <p>We'll respond to your inquiry within 24 hours with expert technical guidance.</p>
               </div>
 
-              <div className="teal-info-list">
-                <div className="teal-info-item">
-                  <div className="teal-icon-circle">
+              <div className="glass-info-list">
+                <div className="glass-info-item">
+                  <div className="glass-icon-circle">
                     <Phone size={18} />
                   </div>
-                  <div className="teal-info-text">
+                  <div className="glass-info-text">
                     <span>+94 34 227 7777</span>
                     <span>+94 77 123 4567</span>
                   </div>
                 </div>
 
-                <div className="teal-info-item">
-                  <div className="teal-icon-circle">
+                <div className="glass-info-item">
+                  <div className="glass-icon-circle">
                     <Mail size={18} />
                   </div>
-                  <div className="teal-info-text">
+                  <div className="glass-info-text">
                     <span>sales@ermine.com</span>
                   </div>
                 </div>
 
-                <div className="teal-info-item">
-                  <div className="teal-icon-circle">
+                <div className="glass-info-item">
+                  <div className="glass-icon-circle">
                     <MapPin size={18} />
                   </div>
-                  <div className="teal-info-text">
+                  <div className="glass-info-text">
                     <span>No 4, Ridee Mawatha, Kalamulla, Kalutara, Sri Lanka</span>
                   </div>
                 </div>
               </div>
 
               {/* Decorative Translucent Circle */}
-              <div className="teal-decorative-circle"></div>
+              <div className="glass-decorative-circle"></div>
             </div>
 
             {/* Right Form Fields */}
@@ -139,7 +139,7 @@ const Contact = () => {
               </div>
 
               <div className="form-submit-wrapper">
-                <button type="submit" className="teal-send-btn">
+                <button type="submit" className="glass-send-btn">
                   Send Message
                 </button>
               </div>

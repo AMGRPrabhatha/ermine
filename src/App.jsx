@@ -8,10 +8,12 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Capabilities from './pages/Capabilities';
 import WhatsAppButton from './components/WhatsAppButton';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="app-container">
         <Navbar />
         <main className="main-content">
